@@ -2,6 +2,6 @@
 ## Team 34
 
 ### Team Members:
-- Student1 99100000
+- Mahdi Teymoori Anar 99101354
 - Student2 99100000
-- Student3 99102326
+- Student3 99100000
