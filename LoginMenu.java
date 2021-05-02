@@ -1,4 +1,8 @@
-﻿package Model 1;
+﻿package Model
+
+import java.util.regex.*;
+
+1;
 
 class LoginMenu
 {
@@ -7,7 +11,9 @@ class LoginMenu
     
     public final Matcher getCommandMatcher(String input, String regex)
     {
-        
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+        return matcher;
     }    
     
     
