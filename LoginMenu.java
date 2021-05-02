@@ -1,8 +1,8 @@
-﻿package Model
+﻿//package Model
 
 import java.util.regex.*;
 
-1;
+//1;
 
 class LoginMenu
 {
