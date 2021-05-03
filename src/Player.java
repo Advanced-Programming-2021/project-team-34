@@ -1,136 +1,104 @@
-﻿package Model 1;
+﻿public class Player {
+    private String username;
+    private String password;
+    private String nickname;
+    private int score;
+    private int coins;
+    private ArrayList<Card> cards;
+    private static ArrayList<Player> allPlayers;
+    public ArrayList<Deck> decks;
+    private Deck activeDeck;
 
-class Player
-{
-    private String username;		
-    private String password;		
-    private String nickname;		
-    private int score;		
-    private int coins;		
-    private ArrayList<Card> cards;		
-    private static ArrayList<Player> allPlayers;		
-    public ArrayList<Deck> decks;		
-    private Deck activeDeck;		
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    
-    
-    
-    public final void setName(String name)
-    {
-        
-    }    
-    
-    
-    public final void setPassword(String password)
-    {
-        
-    }    
-    
-    
-    public final void setNickname(String nickname)
-    {
-        
-    }    
-    
-    
-    public static Player getPlayerByUsername(String username)
-    {
-        
-    }    
-    
-    
-    public static Player getPlayerByNickname(String nickname)
-    {
-        
-    }    
-    
-    
-    public final cunstractor Player(String username, String password, String nickname)
-    {
-        
-    }    
-    
-    
-    public final void increaseScore(int score)
-    {
-        
-    }    
-    
-    
-    public final void increaseCoins(int coins)
-    {
-        
-    }    
-    
-    
-    public final void decreaseCoins(int coins)
-    {
-        
-    }    
-    
-    
-    public final void addCard(Card card)
-    {
-        
-    }    
-    
-    
-    public final void addCardToDeck(Card card, boolean flag)
-    {
-        
-    }    
-    
-    
-    public final void createDeck()
-    {
-        
-    }    
-    
-    
-    public final void deleteDeck(Deck deck)
-    {
-        
-    }    
-    
-    
-    public final void removeCardFromDeck(Deck deck, boolean flag)
-    {
-        
-    }    
-    
-    
-    public final void setActiveDeck(Deck deck)
-    {
-        
-    }    
-    
-    
-    public final void showDecks()
-    {
-        
-    }    
-    
-    
-    public final void showDeck(Deck deck, boolean flag)
-    {
-        
-    }    
-    
-    
-    public final void showAllCards()
-    {
-        
-    }    
-    
-    
-    public final void getName()
-    {
-        
-    }    
-    
-    
-    public final void getNickname()
-    {
-        
-    }    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public static Player getPlayerByUsername(String username) {
+        for (Player player : allPlayers) {
+            if (player.getUsername().equlas(username)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public static Player getPlayerByNickname(String nickname) {
+        for (Player player : allPlayers) {
+            if (player.getNickname().equlas(nickname)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public Player(String username, String password, String nickname) {
+        setUsername(username);
+        setNickname(nickname);
+        setPassword(password);
+        allPlayers.add(this);
+    }
+
+    public final void increaseScore(int score) {
+        this.score += score;
+    }
+
+    public void increaseCoins(int coins) {
+        this.coins += coins;
+    }
+
+    public void decreaseCoins(int coins) {
+        this.coins -= coins;
+    }
+
+    public void addCard(Card card) {
+
+    }
+
+    public void addCardToDeck(Card card, boolean flag) {
+
+    }
+
+    public void createDeck() {
+
+    }
+
+    public void deleteDeck(Deck deck) {
+
+    }
+
+    public void removeCardFromDeck(Deck deck, boolean flag) {
+
+    }
+
+    public void setActiveDeck(Deck deck) {
+
+    }
+
+    public void showDecks() {
+
+    }
+
+    public void showDeck(Deck deck, boolean flag) {
+
+    }
+
+    public void showAllCards() {
+
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
 }
