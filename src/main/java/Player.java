@@ -1,4 +1,7 @@
-﻿public class Player {
+﻿import java.util.ArrayList;
+
+public class Player {
+
     private String username;
     private String password;
     private String nickname;
@@ -23,7 +26,7 @@
 
     public static Player getPlayerByUsername(String username) {
         for (Player player : allPlayers) {
-            if (player.getUsername().equlas(username)) {
+            if (player.getUsername().equals(username)) {
                 return player;
             }
         }
@@ -32,7 +35,7 @@
 
     public static Player getPlayerByNickname(String nickname) {
         for (Player player : allPlayers) {
-            if (player.getNickname().equlas(nickname)) {
+            if (player.getNickname().equals(nickname)) {
                 return player;
             }
         }
@@ -46,7 +49,7 @@
         allPlayers.add(this);
     }
 
-    public final void increaseScore(int score) {
+    public void increaseScore(int score) {
         this.score += score;
     }
 
