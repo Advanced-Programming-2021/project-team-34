@@ -3,7 +3,7 @@ public class Card {
     private String name;
     private String type;
     private String description;
-    //private Player owner;
+    private Player owner;
     private static ArrayList<Card> allCards;
 
     public Card(String name, String type, String description) {
@@ -36,13 +36,13 @@ public class Card {
     public void setDescription(String description) {
         this.description = description;
     }
-    /*
+    
     public Player getOwner() {
         return this.owner;
     }
 
     public void setOwner(Player owner) {
         this.owner = owner;
-    }*/
+    }
 
 }
