@@ -8,8 +8,8 @@ public class Player {
     private int coin;
     private ArrayList<Card> cards;
     private static ArrayList<Player> allPlayers;
-    /*public ArrayList<Deck> decks;
-    private Deck activeDeck;*/
+    public ArrayList<Deck> decks;
+    private Deck activeDeck;
 
 
     public Player(String username, String password, String nickname) {
@@ -65,22 +65,15 @@ public class Player {
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
-    /*
-    public ArrayList<Deck> getDecks() {
-        return this.decks;
-    }
-
-    public void setDecks(ArrayList<Deck> decks) {
-        this.decks = decks;
-    }
 
     public Deck getActiveDeck() {
         return this.activeDeck;
     }
-
-    public void setActiveDeck(Deck activeDeck) {
-        this.activeDeck = activeDeck;
-    }*/
+    public void activateDeck(Deck deckToActive) {
+        if (decks.contains(deckToActive)){
+            activeDeck = deckToActive;
+        }
+    }
 
     public void increaseCoins(int coin) {
         this.coin += coin;
