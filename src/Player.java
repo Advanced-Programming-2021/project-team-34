@@ -16,6 +16,7 @@ public class Player {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        allPlayers.add(this);
     }
 
     public String getUsername() {
