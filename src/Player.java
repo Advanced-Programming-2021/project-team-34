@@ -70,8 +70,9 @@ public class Player {
     public Deck getActiveDeck() {
         return this.activeDeck;
     }
+
     public void activateDeck(Deck deckToActive) {
-        if (decks.contains(deckToActive)){
+        if (decks.contains((Deck) deckToActive)) {
             activeDeck = deckToActive;
         }
     }
@@ -79,26 +80,31 @@ public class Player {
     public void increaseCoins(int coin) {
         this.coin += coin;
     }
+
     public void decreaseCoins(int coin) {
         this.coin -= coin;
     }
+
     public void increaseScore(int score) {
         this.score += score;
     }
+
     public void decreaseScore(int score) {
         this.score -= score;
     }
+
     public static Player getPlayerByUsername(String username) {
-        for (Player player: allPlayers) {
-            if(player.username.equals(username)){
+        for (Player player : allPlayers) {
+            if (player.username.equals(username)) {
                 return player;
             }
         }
         return null;
     }
+
     public static Player getPlayerByNickname(String nickname) {
-        for (Player player: allPlayers) {
-            if(player.nickname.equals(nickname)){
+        for (Player player : allPlayers) {
+            if (player.nickname.equals(nickname)) {
                 return player;
             }
         }
