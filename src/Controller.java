@@ -2,18 +2,13 @@ import java.util.regex.*;
 import java.util.Scanner;
 
 public class Controller {
-    public static Matcher matcher;
-    public static Matcher matcher1;
-    public static Matcher matcher2;
-    public static Matcher matcher3;
-    public static Matcher matcher4;
-    public static Matcher matcher5;
-    public static Matcher matcher6;
+
     public static Scanner scanner = new Scanner(System.in);
+    public static Matcher matcher;
     private static String input;
 
     public static void runLoginMenu() {
-        LoginMenu menu = new LoginMenu();
+        LoginMenu LoginMenu = new LoginMenu();
         while (true) {
             input = scanner.nextLine().trim();
             matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
