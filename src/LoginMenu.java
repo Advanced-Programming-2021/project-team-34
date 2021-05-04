@@ -1,9 +1,6 @@
 import java.util.regex.*
 public class LoginMenu {
-    public Matcher getCommandMatcher(String input, String regex) {
-        Pattern pattern = Pattern.compile(regex);
-        return pattern.matcher(input);
-    }
+    
     public createUser(String username , String password , String nickname){
         if(!Player.getPlayerByUsername(username).equals(null)){
             System.out.println("user with username "+username+" already exists");
