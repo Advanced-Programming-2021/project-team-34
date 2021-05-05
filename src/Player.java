@@ -6,10 +6,10 @@ public class Player {
     private String nickname;
     private int score;
     private int coin;
-    private ArrayList<Card> cards;
-    private static ArrayList<Player> allPlayers;
-    public ArrayList<Deck> decks;
-    private Deck activeDeck;
+    //private ArrayList<Card> cards;
+    private static ArrayList<Player> allPlayers = new ArrayList<>();
+    //public ArrayList<Deck> decks;
+    //private Deck activeDeck;
 
 
     public Player(String username, String password, String nickname) {
@@ -59,23 +59,23 @@ public class Player {
         this.coin = coin;
     }
 
-    public ArrayList<Card> getCards() {
-        return this.cards;
-    }
+//    public ArrayList<Card> getCards() {
+//        return this.cards;
+//    }
 
-    public void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
-    }
+//    public void setCards(ArrayList<Card> cards) {
+//        this.cards = cards;
+//    }
 
-    public Deck getActiveDeck() {
-        return this.activeDeck;
-    }
+//    public Deck getActiveDeck() {
+//        return this.activeDeck;
+//    }
 
-    public void activateDeck(Deck deckToActive) {
-        if (decks.contains((Deck) deckToActive)) {
-            activeDeck = deckToActive;
-        }
-    }
+//    public void activateDeck(Deck deckToActive) {
+//        if (decks.contains((Deck) deckToActive)) {
+//            activeDeck = deckToActive;
+//        }
+//    }
 
     public void increaseCoins(int coin) {
         this.coin += coin;
@@ -95,18 +95,14 @@ public class Player {
 
     public static Player getPlayerByUsername(String username) {
         for (Player player : allPlayers) {
-            if (player.username.equals(username)) {
-                return player;
-            }
+            if (player.getUsername().equals(username)) return player;
         }
         return null;
     }
 
     public static Player getPlayerByNickname(String nickname) {
         for (Player player : allPlayers) {
-            if (player.nickname.equals(nickname)) {
-                return player;
-            }
+            if (player.getNickname().equals(nickname)) return player;
         }
         return null;
     }

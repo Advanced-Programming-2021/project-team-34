@@ -6,53 +6,67 @@ public class Controller {
     public static Scanner scanner = new Scanner(System.in);
     public static Matcher matcher;
     private static String input;
+    private static boolean flag = false;
 
     public static void runLoginMenu() {
-        LoginMenu LoginMenu = new LoginMenu();
         while (true) {
             input = scanner.nextLine().trim();
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(1);
-                String password = matcher.group(2);
-                String nickname = matcher.group(3);
-                new Player(username, password, nickname);
-            }
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(1);
-                String password = matcher.group(3);
-                String nickname = matcher.group(2);
-                new Player(username, password, nickname);
-            }
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(2);
-                String password = matcher.group(3);
-                String nickname = matcher.group(1);
-                new Player(username, password, nickname);
-            }
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(3);
-                String password = matcher.group(2);
-                String nickname = matcher.group(1);
-                new Player(username, password, nickname);
-            }
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(2);
-                String password = matcher.group(1);
-                String nickname = matcher.group(3);
-                new Player(username, password, nickname);
-            }
-            matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
-            if (matcher.find()) {
-                String username = matcher.group(3);
-                String password = matcher.group(1);
-                String nickname = matcher.group(2);
-                new Player(username, password, nickname);
-            }
+            createUser();
+            if (!flag)loginUser();
+        }
+    }
+
+    private static void createUser() {
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+" +
+                "(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(2), matcher.group(4), matcher.group(6));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--nickname|-n)\\s+" +
+                "(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(2), matcher.group(6), matcher.group(4));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--username|-u)\\s+" +
+                "(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(4), matcher.group(6), matcher.group(2));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--password|-p)\\s+" +
+                "(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(6), matcher.group(4), matcher.group(2));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+" +
+                "(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(4), matcher.group(2), matcher.group(6));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--nickname|-n)\\s+" +
+                "(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.createUser(matcher.group(6), matcher.group(2), matcher.group(4));
+        }
+    }
+
+    private static void loginUser() {
+        matcher = getMatch(input, "^\\s*user\\s+login\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)" +
+                "\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.login(matcher.group(4), matcher.group(2));
+        }
+        matcher = getMatch(input, "^\\s*user\\s+login\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)" +
+                "\\s*$");
+        if (matcher.find()) {
+            flag = true;
+            LoginMenu.login(matcher.group(2), matcher.group(4));
         }
     }
 

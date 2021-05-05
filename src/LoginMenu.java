@@ -1,30 +1,30 @@
-import java.util.regex.*
 public class LoginMenu {
-    
-    public createUser(String username , String password , String nickname){
-        if(!Player.getPlayerByUsername(username).equals(null)){
-            System.out.println("user with username "+username+" already exists");
-        }else if(!Player.getPlayerByNicknaPlayer(username , password , nickname).equals(null)){
-            System.out.println("user with nickname "+nickname+" already exists");
-        }else{
-            new Player(username,password,nickname);
+
+    public static void createUser(String username, String password, String nickname) {
+        if (Player.getPlayerByUsername(username) != null)
+            System.out.println("user with username " + username + " already exists");
+        else if (Player.getPlayerByNickname(nickname) != null)
+            System.out.println("user with nickname " + nickname + " already exists");
+        else {
+            new Player(username, password, nickname);
             System.out.println("user created successfully!");
         }
     }
-    public void login(String username , String password) {
-        Player player = Player.getPlayerByUsername(username , password);
-        if(player.equals(null)){
+
+    public static void login(String username, String password) {
+        if (Player.getPlayerByUsername(username) == null) System.out.println("Username and password didn't match!");
+        else if (!Player.getPlayerByUsername(username).getPassword().equals(password))
             System.out.println("Username and password didn't match!");
-        }else if(!player.getPassword().equals(password)){
-            System.out.println("Username and password didn't match!");
-        }else{
+        else {
             System.out.println("user logged in successfully!");
         }
     }
-    public menuExit(){
+
+    public static void menuExit() {
         ;
     }
-    public showCurrentMenu() {
+
+    public static void showCurrentMenu() {
         ;
     }
 
