@@ -13,6 +13,14 @@ public class Controller {
             input = scanner.nextLine().trim();
             createUser();
             if (!flag)loginUser();
+            if (!flag) {
+                matcher = getMatch(input, "^\\s*menu\\s+enter\\s+(LoginMenu|MainMenu|DuelMenu|DeckMenu|" +
+                        "ScoreboardMenu|ProfileMenu|ShopMenu|Import\\/ExportMenu)\\s*$");
+                if (matcher.find()) {
+                    flag = true;
+                    LoginMenu.menuEnter(matcher.group(1));
+                }
+            }
         }
     }
 
@@ -68,6 +76,10 @@ public class Controller {
             flag = true;
             LoginMenu.login(matcher.group(2), matcher.group(4));
         }
+    }
+
+    public static void runMainMenu(Player loginned) {
+
     }
 
 
