@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Monster extends Card {
     private int attPower;//attack power
     private int defPower;//defence power
@@ -9,13 +10,14 @@ public class Monster extends Card {
     public String Ritual;
     private ArrayList<Monster> monsters;
     private String monsterName;
-    private int timesAffected=0;
-    //TO DO : 
+    private int timesAffected = 0;
+
+    //TO DO :
     /* To Add Constructor */
     //!!!!!!!!!!!!!!!!!!!!!!
     //TO DO :
     /* To Add All Methods */
-    public Monster(String monsterName, String type, String description, int defAttPower, int defDefPower, int level){
+    public Monster(String monsterName, String type, String description, int defAttPower, int defDefPower, int level) {
         super(monsterName, type, description);
         setDefAttPower(defAttPower);
         setDefDefPower(defDefPower);
@@ -94,5 +96,5 @@ public class Monster extends Card {
     public void increaseTimesAffected() {
         this.timesAffected++;
     }
-    
+
 }
