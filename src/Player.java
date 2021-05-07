@@ -93,6 +93,10 @@ public class Player {
         this.score -= score;
     }
 
+    public static ArrayList<Player> getAllPlayers() {
+        return allPlayers;
+    }
+
     public static Player getPlayerByUsername(String username) {
         for (Player player : allPlayers) {
             if (player.getUsername().equals(username)) return player;
