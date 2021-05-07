@@ -10,17 +10,23 @@ public class Controller {
 
     public static void runLoginMenu() {
         while (true) {
+            flag = false;
             input = scanner.nextLine().trim();
             createUser();
-            if (!flag)loginUser();
-            if (!flag) {
-                matcher = getMatch(input, "^\\s*menu\\s+enter\\s+(LoginMenu|MainMenu|DuelMenu|DeckMenu|" +
-                        "ScoreboardMenu|ProfileMenu|ShopMenu|Import\\/ExportMenu)\\s*$");
-                if (matcher.find()) {
-                    flag = true;
-                    LoginMenu.menuEnter(matcher.group(1));
-                }
+            if (!flag) loginUser();
+            if (!flag && enterMenu()) {
+                flag = true;
+                LoginMenu.menuEnter(matcher.group(1));
             }
+            if (!flag && menuShowCurrent()) {
+                flag = true;
+                LoginMenu.showCurrentMenu();
+            }
+            if (!flag && exitMenu()) {
+                flag = true;
+                break;
+            }
+            if (!flag) System.out.println("invalid command");
         }
     }
 
@@ -76,6 +82,22 @@ public class Controller {
             flag = true;
             LoginMenu.login(matcher.group(2), matcher.group(4));
         }
+    }
+
+    private static boolean enterMenu() {
+        matcher = getMatch(input, "^\\s*menu\\s+enter\\s+(LoginMenu|MainMenu|DuelMenu|DeckMenu|" +
+                "ScoreboardMenu|ProfileMenu|ShopMenu|Import\\/ExportMenu)\\s*$");
+        return matcher.find();
+    }
+
+    private static boolean exitMenu() {
+        matcher = getMatch(input, "^\\s*menu\\s+exit\\s*$");
+        return matcher.find();
+    }
+
+    private static boolean menuShowCurrent() {
+        matcher = getMatch(input, "^\\s*menu\\s+show-current\\s*$");
+        return matcher.find();
     }
 
     public static void runMainMenu(Player loginned) {

@@ -1,6 +1,6 @@
 public class LoginMenu {
 
-    private static Player loginned = null;
+    private static Player loggedIn = null;
 
     public static void createUser(String username, String password, String nickname) {
         if (Player.getPlayerByUsername(username) != null)
@@ -18,26 +18,20 @@ public class LoginMenu {
         else if (!Player.getPlayerByUsername(username).getPassword().equals(password))
             System.out.println("Username and password didn't match!");
         else {
-            loginned = Player.getPlayerByUsername(username);
+            loggedIn = Player.getPlayerByUsername(username);
             System.out.println("user logged in successfully!");
         }
     }
 
     public static void menuEnter(String menu) {
         if (menu.equals("MainMenu")) {
-            if (loginned == null) System.out.println("please login first");
-            else {
-                Controller.runMainMenu(loginned);
-            }
+            if (loggedIn == null) System.out.println("please login first");
+            else Controller.runMainMenu(loggedIn);
         } else System.out.println("menu navigation is not possible");
     }
 
-    public static void menuExit() {
-        ;
-    }
-
     public static void showCurrentMenu() {
-        ;
+        System.out.println("Login menu");
     }
 
 }
