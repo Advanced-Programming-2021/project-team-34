@@ -13,8 +13,15 @@ public class Monster extends Card {
     //TO DO : 
     /* To Add Constructor */
     //!!!!!!!!!!!!!!!!!!!!!!
-    //TO DO : 
+    //TO DO :
     /* To Add All Methods */
+    public Monster(String monsterName, String type, String description, int defAttPower, int defDefPower, int level){
+        super(monsterName, type, description);
+        setDefAttPower(defAttPower);
+        setDefDefPower(defDefPower);
+        setLevel(level);
+    }
+
 
     public int getAttPower() {
         return this.attPower;
