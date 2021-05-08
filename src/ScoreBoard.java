@@ -19,8 +19,8 @@ public class ScoreBoard {
             String userCommand = scanner.nextLine().trim();
             if (userCommand.equals("menu show-current")) System.out.println("Scoreboard Menu");
             else if (userCommand.startsWith("menu enter")) System.out.println("menu navigation is not possible");
-            else if (userCommand.equals("scoreboard show"))showScoreboard();
-            else if (userCommand.equals("menu exit"))UserAndMenuController.currentMenu = Menus.MAIN_MENU;
+            else if (userCommand.equals("scoreboard show")) showScoreboard();
+            else if (userCommand.equals("menu exit")) UserAndMenuController.currentMenu = Menus.MAIN_MENU;
             else System.out.println("invalid command");
         }
     }
