@@ -46,16 +46,4 @@ public class ScoreBoard {
             if (k != (players.size() - 1) && players.get(k).getScore() > players.get(k + 1).getScore()) ranking++;
         }
     }
-
-    public void enterMenu() {
-        ;
-    }
-
-    public void exitMenu() {
-        ;
-    }
-
-    public void showCurrentMenu() {
-
-    }
 }
