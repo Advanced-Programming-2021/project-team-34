@@ -1,7 +1,7 @@
 public class UserAndMenuController {
 
     public static Menus currentMenu = Menus.LOGIN_MENU;
-    public static Player currentUser;
+    private static Player currentUser;
 
     public static void runTheProgram() {
         Controller.runLoginMenu();
@@ -9,15 +9,9 @@ public class UserAndMenuController {
 
     private static void exitCurrentMenu() {
         switch (currentMenu) {
-            case LOGIN_MENU:
-                currentMenu = Menus.EXIT;
-                break;
-            case MAIN_MENU:
-                currentMenu = Menus.LOGIN_MENU;
-                break;
-            default:
-                currentMenu = Menus.MAIN_MENU;
-                break;
+            case LOGIN_MENU -> currentMenu = Menus.EXIT;
+            case MAIN_MENU -> currentMenu = Menus.LOGIN_MENU;
+            default -> currentMenu = Menus.MAIN_MENU;
         }
     }
 
