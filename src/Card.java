@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Card {
     private String name;
     private String type;
@@ -36,7 +37,7 @@ public class Card {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     public Player getOwner() {
         return this.owner;
     }
