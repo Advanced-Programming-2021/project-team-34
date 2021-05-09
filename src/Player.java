@@ -6,10 +6,10 @@ public class Player {
     private String nickname;
     private int score;
     private int coin;
-    //private ArrayList<Card> cards;
+    private ArrayList<Card> cards;
     private static ArrayList<Player> allPlayers = new ArrayList<>();
-    //public ArrayList<Deck> decks;
-    //private Deck activeDeck;
+    public ArrayList<Deck> decks;
+    private Deck activeDeck;
 
 
     public Player(String username, String password, String nickname) {
@@ -114,6 +114,10 @@ public class Player {
             if (player.getNickname().equals(nickname)) return player;
         }
         return null;
+    }
+    public void createDeck(String name) {
+        Deck deck = new Deck(String name, Player this);
+        decks.add(deck);
     }
 
 }
