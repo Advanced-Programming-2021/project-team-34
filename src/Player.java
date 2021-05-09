@@ -18,21 +18,13 @@ public class Player {
         this.nickname = nickname;
         allPlayers.add(this);
     }
-
+    //start of setters and getters
     public String getUsername() {
         return this.username;
     }
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getNickname() {
@@ -77,6 +69,10 @@ public class Player {
 //        }
 //    }
 
+    public static ArrayList<Player> getAllPlayers() {
+        return allPlayers;
+    }
+    //end of setters and getters
     public void increaseCoins(int coin) {
         this.coin += coin;
     }
@@ -93,8 +89,17 @@ public class Player {
         this.score -= score;
     }
 
-    public static ArrayList<Player> getAllPlayers() {
-        return allPlayers;
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
+    }
+
+    public boolean changePassword(String newPassword , String oldPassword) {
+        if(this.password.equals(oldPassword)){
+            this.password = newPassword;
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static Player getPlayerByUsername(String username) {
