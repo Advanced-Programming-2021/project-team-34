@@ -119,5 +119,10 @@ public class Player {
         Deck deck = new Deck(String name, Player this);
         decks.add(deck);
     }
-
+    public boolean deleteDeck(Deck deck) {
+        if(decks.contains(deck)){
+            decks.remove(deck);
+            return true;
+        }else{return false;}
+    }
 }
