@@ -10,7 +10,7 @@ public class Deck {
         this.name = name;
         this.owner = owner;
     }
-
+    //start of setters and getters
     public String getName() {
         return this.name;
     }
@@ -23,26 +23,26 @@ public class Deck {
         return this.mainDeck;
     }
 
-    public void setMainDeck(ArrayList<Card> mainDeck) {
+    /*public void setMainDeck(ArrayList<Card> mainDeck) {
         this.mainDeck = mainDeck;
-    }
+    }*/
 
     public ArrayList<Card> getSideDeck() {
         return this.sideDeck;
     }
-
+    /*
     public void setSideDeck(ArrayList<Card> sideDeck) {
         this.sideDeck = sideDeck;
-    }
+    }*/
 
     public Player getOwner() {
         return this.owner;
     }
-
+    /*
     public void setOwner(Player owner) {
         this.owner = owner;
-    }
-
+    }*/
+    //end of setters and getters
     public void addCardToMainDeck(Card card) {
         mainDeck.add(card);
     }
