@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Card {
-    private String name;
-    private String type;
-    private String description;
-    private Player owner;
-    private static ArrayList<Card> allCards;
+public abstract class Card {
+    protected String name;
+    protected String type;
+    protected String description;
+    protected Player owner;
+    public static ArrayList<Card> allCards;
 
     public Card(String name, String type, String description) {
         this.name = name;
