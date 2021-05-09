@@ -51,6 +51,17 @@ public class Deck {
         sideDeck.add(card);
     }
 
+    public boolean deleteCardFromDeck(Card card) {/* Returnts true if remove successfully and false if card is not in the deck */
+        if(mainDeck.contains(card)){
+            mainDeck.remove(card);
+            return true;
+        }else if(sideDeck.contains(card)){
+            sideDeck.remove(card);
+            return true;
+        }
+        return false;
+    }
+
     public void transferCard(Card card) {
         if (mainDeck.contains(card)) {
             mainDeck.remove(card);
