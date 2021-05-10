@@ -14,11 +14,12 @@ public class Player {
 
 
     public Player(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
+        setUsername(username);
+        setPassword(password);
+        setNickname(nickname);
         allPlayers.add(this);
     }
+
     //start of setters and getters
     public String getUsername() {
         return this.username;
@@ -35,6 +36,8 @@ public class Player {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
+    public void setPassword(String password) { this.password = password; }
 
     public int getScore() {
         return this.score;
@@ -64,18 +67,23 @@ public class Player {
 //        return this.activeDeck;
 //    }
 
-//    public void activateDeck(Deck deckToActive) {
+    //    public void activateDeck(Deck deckToActive) {
 //        if (decks.contains((Deck) deckToActive)) {
 //            activeDeck = deckToActive;
 //        }
 //    }
-    public void setUserLoggedInOrOut(boolean isUserLoggedIn) { this.isUserLoggedIn = isUserLoggedIn; }
+    public void setUserLoggedInOrOut(boolean isUserLoggedIn) {
+        this.isUserLoggedIn = isUserLoggedIn;
+    }
 
-    public boolean isUserLoggedIn() { return isUserLoggedIn; }
+    public boolean isUserLoggedIn() {
+        return isUserLoggedIn;
+    }
 
     public static ArrayList<Player> getAllPlayers() {
         return allPlayers;
     }
+
     //end of setters and getters
     public void increaseCoins(int coin) {
         this.coin += coin;
@@ -97,15 +105,6 @@ public class Player {
         return this.password.equals(password);
     }
 
-    public boolean changePassword(String newPassword , String oldPassword) {
-        if(this.password.equals(oldPassword)){
-            this.password = newPassword;
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public static Player getPlayerByUsername(String username) {
         for (Player player : allPlayers) {
             if (player.getUsername().equals(username)) return player;
@@ -119,14 +118,18 @@ public class Player {
         }
         return null;
     }
+
     public void createDeck(String name) {
         Deck deck = new Deck(name, this);
         decks.add(deck);
     }
+
     public boolean deleteDeck(Deck deck) {
-        if(decks.contains(deck)){
+        if (decks.contains(deck)) {
             decks.remove(deck);
             return true;
-        }else{return false;}
+        } else {
+            return false;
+        }
     }
 }
