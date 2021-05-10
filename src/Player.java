@@ -10,6 +10,7 @@ public class Player {
     private static ArrayList<Player> allPlayers = new ArrayList<>();
     public ArrayList<Deck> decks;
     private Deck activeDeck;
+    private boolean isUserLoggedIn;
 
 
     public Player(String username, String password, String nickname) {
@@ -68,6 +69,9 @@ public class Player {
 //            activeDeck = deckToActive;
 //        }
 //    }
+    public void setUserLoggedInOrOut(boolean isUserLoggedIn) { this.isUserLoggedIn = isUserLoggedIn; }
+
+    public boolean isUserLoggedIn() { return isUserLoggedIn; }
 
     public static ArrayList<Player> getAllPlayers() {
         return allPlayers;
