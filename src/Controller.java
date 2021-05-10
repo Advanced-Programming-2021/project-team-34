@@ -96,14 +96,9 @@ public class Controller {
     }
 
     private static boolean menuShowCurrent() {
-        matcher = getMatch(input, "^\\s*menu\\s+show-current\\s*$");
+        matcher = getMatch(input, "^\\s*menu\\s+show -current\\s*$");
         return matcher.find();
     }
-
-    public static void runMainMenu(Player loginned) {
-
-    }
-
 
     public static Matcher getMatch(String input, String regex) {
         Pattern pattern = Pattern.compile(regex);
