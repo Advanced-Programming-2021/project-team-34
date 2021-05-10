@@ -116,7 +116,7 @@ public class Player {
         return null;
     }
     public void createDeck(String name) {
-        Deck deck = new Deck(String name, Player this);
+        Deck deck = new Deck(name, this);
         decks.add(deck);
     }
     public boolean deleteDeck(Deck deck) {
