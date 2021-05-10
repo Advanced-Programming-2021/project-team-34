@@ -23,12 +23,12 @@ public class MainMenu {
 
     private void runLoggingOutTheCurrentUser() {
         UserAndMenuController.setUserLoggedOut();
-//        currentUser.
+        currentUser.setUserLoggedInOrOut(false);
         System.out.println("logout successfully");
         isCurrentUserLoggedOut = true;
     }
 
-    private void runChangingMenu(String userCommand, Player currentUser) {
+    public static void runChangingMenu(String userCommand, Player currentUser) {
         String toEnterMenu = "menu enter (\\S+)";
         Matcher matcher = Controller.getMatch(userCommand, toEnterMenu);
         if (matcher.find()) {
@@ -39,20 +39,23 @@ public class MainMenu {
                     break;
                 case "Shop":
                     UserAndMenuController.currentMenu = Menus.SHOP_MENU;
-                    ShopMenu.getInstance(currentUser).runShoppingMenu(currentUser);
+                    ShoppingMenu.getInstance(currentUser).runShoppingMenu(currentUser);
                     break;
                 case "Deck":
                     UserAndMenuController.currentMenu = Menus.DECK_MENU;
-                    DeckMenu.getInstance(currentUser).runDeckMenu();
+                    DecksMenu.getInstance(currentUser).runDeckMenu();
                     break;
                 case "Duel":
                     UserAndMenuController.currentMenu = Menus.DUEL_MENU;
-                    DuelMenu.getInstance(currentUser).runDuelMenu();
+                    DuellingMenu.getInstance(currentUser).runDuelMenu();
                     break;
                 case "ScoreBoard":
                     UserAndMenuController.currentMenu = Menus.SCOREBOARD_MENU;
                     ScoreBoard.getInstance(currentUser).runScoreBoardMenu();
             }
         }
+        else System.out.println("invalid command");
     }
+
+
 }
