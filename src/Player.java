@@ -5,10 +5,9 @@ public class Player {
     private String password;
     private String nickname;
     private int score;
-    private int coin = 100000;
-    //to get cards from data base. only needed the name
-    private ArrayList<String> cards;
-    private static ArrayList<Player> allPlayers = new ArrayList<>();
+    private int coin;
+    private ArrayList<Card> cards;
+    private static ArrayList<Player> allPlayers = new ArrayList<Player>();
     public ArrayList<Deck> decks;
     private Deck activeDeck;
     private boolean isUserLoggedIn;
@@ -57,11 +56,11 @@ public class Player {
         this.coin = coin;
     }
 
-    public ArrayList<String> getCards() {
+    public ArrayList<Card> getCards() {
         return this.cards;
     }
 
-    public void setCards(ArrayList<String> cards) {
+    public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 
@@ -134,4 +133,55 @@ public class Player {
             return false;
         }
     }
+    /**
+     * 
+     * @param card
+     * @param deck
+     * @param inToMainDeck : true -> add to the main deck ; false -> add to the side deck
+     */
+    public void addCardToDeck(Card card, Deck deck , boolean inToMainDeck) {
+        if(inToMainDeck){
+            deck.addCardToMainDeck(card);
+        }else{
+            deck.addCardToSideDeck(card);
+        }
+    }
+    /**
+     * 
+     * @param card
+     * @return false if card was in cards , true if card wasn't in cards and added
+     */
+    public boolean addCard(Card card) {
+        if(this.cards.contains(card)){
+            return false;
+        }
+        this.cards.add(card);
+        return true;
+    }
+    /**
+     * 
+     * @param card
+     * @param deck
+     * @return false if card wasn't in deck , true if card ommited successfully
+     */
+    public boolean removeCardFromDeck(Card card , Deck deck){
+        return deck.deleteCardFromDeck(card);
+    }
+    public boolean showDeck(Deck deck) {
+        if(!decks.contains(deck)){
+            return false;
+        }deck.show();
+        return true;
+    }
+    public void showDecks() {
+        for (Deck deck : decks) {
+            deck.show();
+        }
+    }
+    public void showAllCards() {
+        for (Card card : cards) {
+            card.show();
+        }
+    }
+
 }
