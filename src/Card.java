@@ -17,38 +17,38 @@ public abstract class Card {
         if (!allCards.containsKey(name)) allCards.put(name, this);
     }
 
-    public abstract String getName() {
+    public String getName() {
         return this.name;
     }
 
-    public abstract void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public abstract String getType() {
+    public String getType() {
         return this.type;
     }
 
-    public abstract void setType(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public abstract String getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
-    public abstract void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public abstract Player getOwner() {
+    public Player getOwner() {
         return this.owner;
     }
 
-    public abstract void setOwner(Player owner) {
+    public void setOwner(Player owner) {
         this.owner = owner;
     }
-    public abstract void show() {
+    public void show() {
     }
 
     public int getPrice() {
