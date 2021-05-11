@@ -71,4 +71,8 @@ public class Deck {
             mainDeck.add(card);
         }
     }
+    //TO DO
+    public void show() {
+        System.out.println("To program!!!");
+    }
 }

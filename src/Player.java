@@ -7,7 +7,7 @@ public class Player {
     private int score;
     private int coin;
     private ArrayList<Card> cards;
-    private static ArrayList<Player> allPlayers = new ArrayList<>();
+    private static ArrayList<Player> allPlayers = new ArrayList<Player>();
     public ArrayList<Deck> decks;
     private Deck activeDeck;
 
@@ -116,7 +116,7 @@ public class Player {
         return null;
     }
     public void createDeck(String name) {
-        Deck deck = new Deck(String name, Player this);
+        Deck deck = new Deck(name, this);
         decks.add(deck);
     }
     public boolean deleteDeck(Deck deck) {
@@ -125,4 +125,55 @@ public class Player {
             return true;
         }else{return false;}
     }
+    /**
+     * 
+     * @param card
+     * @param deck
+     * @param inToMainDeck : true -> add to the main deck ; false -> add to the side deck
+     */
+    public void addCardToDeck(Card card, Deck deck , boolean inToMainDeck) {
+        if(inToMainDeck){
+            deck.addCardToMainDeck(card);
+        }else{
+            deck.addCardToSideDeck(card);
+        }
+    }
+    /**
+     * 
+     * @param card
+     * @return false if card was in cards , true if card wasn't in cards and added
+     */
+    public boolean addCard(Card card) {
+        if(this.cards.contains(card)){
+            return false;
+        }
+        this.cards.add(card);
+        return true;
+    }
+    /**
+     * 
+     * @param card
+     * @param deck
+     * @return false if card wasn't in deck , true if card ommited successfully
+     */
+    public boolean removeCardFromDeck(Card card , Deck deck){
+        return deck.deleteCardFromDeck(card);
+    }
+    public boolean showDeck(Deck deck) {
+        if(!decks.contains(deck)){
+            return false;
+        }deck.show();
+        return true;
+    }
+    public void showDecks() {
+        for (Deck deck : deck) {
+            deck.show();
+        }
+    }
+    public void showAllCards() {
+        for (Card card : cards) {
+            card.show();
+        }
+    }
+
 }
