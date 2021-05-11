@@ -13,11 +13,11 @@ public class ShowCard {
             }
             else{
                 SpellAndTrap spellAndTrap = (SpellAndTrap) Card.allCards.get(cardName);
-                UserInterface.printResponse("Name: " + cardName);
-                if (spellAndTrap.gettype == "spell") UserInterface.printResponse("Spell");
-                else UserInterface.printResponse("Trap");
-                UserInterface.printResponse("Type: " + spellAndTrap.getIcon());
-                UserInterface.printResponse("Description: " + spellAndTrap.getDescription());
+                System.out.println("Name: " + cardName);
+                if (spellAndTrap.getType() == "spell") System.out.println("Spell");
+                else System.out.println("Trap");
+                System.out.println("Type: " + spellAndTrap.getIcon());
+                System.out.println("Description: " + spellAndTrap.getDescription());
             }
         }
     }
