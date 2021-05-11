@@ -5,8 +5,9 @@ public class Player {
     private String password;
     private String nickname;
     private int score;
-    private int coin;
-    private ArrayList<Card> cards;
+    private int coin = 100000;
+    //to get cards from data base. only needed the name
+    private ArrayList<String> cards;
     private static ArrayList<Player> allPlayers = new ArrayList<>();
     public ArrayList<Deck> decks;
     private Deck activeDeck;
@@ -17,6 +18,7 @@ public class Player {
         setUsername(username);
         setPassword(password);
         setNickname(nickname);
+        isUserLoggedIn = true;
         allPlayers.add(this);
     }
 
@@ -55,13 +57,13 @@ public class Player {
         this.coin = coin;
     }
 
-//    public ArrayList<Card> getCards() {
-//        return this.cards;
-//    }
+    public ArrayList<String> getCards() {
+        return this.cards;
+    }
 
-//    public void setCards(ArrayList<Card> cards) {
-//        this.cards = cards;
-//    }
+    public void setCards(ArrayList<String> cards) {
+        this.cards = cards;
+    }
 
 //    public Deck getActiveDeck() {
 //        return this.activeDeck;

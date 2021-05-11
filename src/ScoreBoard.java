@@ -7,7 +7,7 @@ public class ScoreBoard {
 
     private Player currentUser;
     private static ScoreBoard scoreBoard = null;
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
 
     private ScoreBoard(Player currentUser) {
         this.currentUser = currentUser;
