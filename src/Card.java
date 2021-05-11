@@ -1,17 +1,20 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class Card {
     protected String name;
     protected String type;
     protected String description;
     protected Player owner;
-    public static ArrayList<Card> allCards;
+    protected static HashMap<String, Card> allCards;
+    private int price;
 
-    public Card(String name, String type, String description) {
+    public Card(int price, String name, String type, String description) {
         this.name = name;
         this.type = type;
         this.description = description;
-        allCards.add(this);
+        this.price = price;
+        if (!allCards.containsKey(name)) allCards.put(name, this);
     }
 
     public String getName() {
@@ -46,4 +49,7 @@ public abstract class Card {
         this.owner = owner;
     }
 
+    public int getPrice() {
+        return this.price;
+    }
 }

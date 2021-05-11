@@ -5,9 +5,10 @@ public class Monster extends Card {
     private int defPower;//defence power
     private int level;
     private String state;
-    private int defAttPower;//default attack power
-    private int defDefPower;//default defence power
+    private int defaultAttPower;//default attack power
+    private int defaultDefPower;//default defence power
     public String Ritual;
+    private int price;
     private ArrayList<Monster> monsters;
     private String monsterName;
     private int timesAffected = 0;
@@ -17,8 +18,8 @@ public class Monster extends Card {
     //!!!!!!!!!!!!!!!!!!!!!!
     //TO DO :
     /* To Add All Methods */
-    public Monster(String monsterName, String type, String description, int defAttPower, int defDefPower, int level) {
-        super(monsterName, type, description);
+    public Monster(int price, String monsterName, String type, String description, int defAttPower, int defDefPower, int level) {
+        super(price, monsterName, type, description);
         setDefAttPower(defAttPower);
         setDefDefPower(defDefPower);
         setLevel(level);
@@ -58,19 +59,19 @@ public class Monster extends Card {
     }
 
     public int getDefAttPower() {
-        return this.defAttPower;
+        return this.defaultAttPower;
     }
 
     public void setDefAttPower(int defAttPower) {
-        this.defAttPower = defAttPower;
+        defaultAttPower = defAttPower;
     }
 
     public int getDefDefPower() {
-        return this.defDefPower;
+        return this.defaultDefPower;
     }
 
     public void setDefDefPower(int defDefPower) {
-        this.defDefPower = defDefPower;
+        defaultDefPower = defDefPower;
     }
 
     public String getRitual() {
