@@ -43,15 +43,15 @@ public class Deck {
         this.owner = owner;
     }*/
     //end of setters and getters
-    public void addCardToMainDeck(Card card) {
+    protected void addCardToMainDeck(Card card) {
         mainDeck.add(card);
     }
 
-    public void addCardToSideDeck(Card card) {
+    protected void addCardToSideDeck(Card card) {
         sideDeck.add(card);
     }
 
-    public boolean deleteCardFromDeck(Card card) {/* Returnts true if remove successfully and false if card is not in the deck */
+    protected boolean deleteCardFromDeck(Card card) {/* Returnts true if remove successfully and false if card is not in the deck */
         if(mainDeck.contains(card)){
             mainDeck.remove(card);
             return true;
@@ -62,7 +62,7 @@ public class Deck {
         return false;
     }
 
-    public void transferCard(Card card) {
+    private void transferCard(Card card) {
         if (mainDeck.contains(card)) {
             mainDeck.remove(card);
             sideDeck.add(card);
