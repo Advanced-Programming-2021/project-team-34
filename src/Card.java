@@ -9,6 +9,7 @@ public abstract class Card {
     protected static HashMap<String, Card> allCards;
     private int price;
 
+
     public Card(int price, String name, String type, String description) {
         this.name = name;
         this.type = type;
@@ -47,8 +48,6 @@ public abstract class Card {
 
     public void setOwner(Player owner) {
         this.owner = owner;
-    }
-    public void show() {
     }
 
     public int getPrice() {

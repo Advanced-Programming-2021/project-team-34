@@ -31,7 +31,7 @@ public class LoginMenu {
     }
 
     public static void showCurrentMenu() {
-        System.out.println("Login menu");
+        System.out.println("Login Menu");
     }
 
 }

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Deck {
-    private String name;
+    private final String name;
     private ArrayList<Card> mainDeck;
     private ArrayList<Card> sideDeck;
-    private Player owner;
+    private final Player owner;
 
     public Deck(String name, Player owner) {
         this.name = name;
@@ -15,9 +15,6 @@ public class Deck {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public ArrayList<Card> getMainDeck() {
         return this.mainDeck;

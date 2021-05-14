@@ -14,7 +14,7 @@ public class MainMenu {
         while (!userCommand.equals("menu exit") && !isCurrentUserLoggedOut) {
             if (userCommand.startsWith("menu enter")) runChangingMenu(userCommand, currentUser);
             else if (userCommand.equals("user logout")) runLoggingOutTheCurrentUser();
-            else if (userCommand.equals("menu show -current")) System.out.println("Main Menu");
+            else if (userCommand.equals("menu show-current")) System.out.println("Main Menu");
             else System.out.println("invalid command");
 
             if (!isCurrentUserLoggedOut) userCommand = scanner.nextLine();
@@ -29,8 +29,7 @@ public class MainMenu {
     }
 
     public static void runChangingMenu(String userCommand, Player currentUser) {
-        String toEnterMenu = "menu enter (\\S+)";
-        Matcher matcher = Controller.getMatch(userCommand, toEnterMenu);
+        Matcher matcher = Controller.getMatch(userCommand,"");
         if (matcher.find()) {
             switch (matcher.group(1)) {
                 case "Profile":

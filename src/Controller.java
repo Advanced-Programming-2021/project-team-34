@@ -31,38 +31,32 @@ public class Controller {
     }
 
     private static void createUser() {
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+" +
-                "(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--username|-u) (\\w+) (--password|-p) (\\w+) (--nickname|-n) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(2), matcher.group(4), matcher.group(6));
         }
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--username|-u)\\s+(\\w+)\\s+(--nickname|-n)\\s+" +
-                "(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--username|-u) (\\w+) (--nickname|-n) (\\w+) (--password|-p) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(2), matcher.group(6), matcher.group(4));
         }
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--username|-u)\\s+" +
-                "(\\w+)\\s+(--password|-p)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--nickname|-n) (\\w+) (--username|-u) (\\w+) (--password|-p) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(4), matcher.group(6), matcher.group(2));
         }
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--nickname|-n)\\s+(\\w+)\\s+(--password|-p)\\s+" +
-                "(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--nickname|-n) (\\w+) (--password|-p) (\\w+) (--username|-u) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(6), matcher.group(4), matcher.group(2));
         }
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+" +
-                "(\\w+)\\s+(--nickname|-n)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--password|-p) (\\w+) (--username|-u) (\\w+) (--nickname|-n) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(4), matcher.group(2), matcher.group(6));
         }
-        matcher = getMatch(input, "^\\s*user\\s+create\\s+(--password|-p)\\s+(\\w+)\\s+(--nickname|-n)\\s+" +
-                "(\\w+)\\s+(--username|-u)\\s+(\\w+)\\s*$");
+        matcher = getMatch(input, "^user create (--password|-p) (\\w+) (--nickname|-n) (\\w+) (--username|-u) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.createUser(matcher.group(6), matcher.group(2), matcher.group(4));
@@ -70,14 +64,12 @@ public class Controller {
     }
 
     private static void loginUser() {
-        matcher = getMatch(input, "^\\s*user\\s+login\\s+(--password|-p)\\s+(\\w+)\\s+(--username|-u)\\s+(\\w+)" +
-                "\\s*$");
+        matcher = getMatch(input, "^user login (--password|-p) (\\w+) (--username|-u) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.login(matcher.group(4), matcher.group(2));
         }
-        matcher = getMatch(input, "^\\s*user\\s+login\\s+(--username|-u)\\s+(\\w+)\\s+(--password|-p)\\s+(\\w+)" +
-                "\\s*$");
+        matcher = getMatch(input, "^user login (--username|-u) (\\w+) (--password|-p) (\\w+)$");
         if (matcher.find()) {
             flag = true;
             LoginMenu.login(matcher.group(2), matcher.group(4));
@@ -85,18 +77,17 @@ public class Controller {
     }
 
     private static boolean enterMenu() {
-        matcher = getMatch(input, "^\\s*menu\\s+enter\\s+(LoginMenu|MainMenu|DuelMenu|DeckMenu|" +
-                "ScoreboardMenu|ProfileMenu|ShopMenu|Import\\/ExportMenu)\\s*$");
+        matcher = getMatch(input, "^menu enter (\\S+)$");
         return matcher.find();
     }
 
     private static boolean exitMenu() {
-        matcher = getMatch(input, "^\\s*menu\\s+exit\\s*$");
+        matcher = getMatch(input, "^menu exit$");
         return matcher.find();
     }
 
     private static boolean menuShowCurrent() {
-        matcher = getMatch(input, "^\\s*menu\\s+show -current\\s*$");
+        matcher = getMatch(input, "^menu show-current$");
         return matcher.find();
     }
 

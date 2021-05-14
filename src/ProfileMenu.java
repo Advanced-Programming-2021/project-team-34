@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class ProfileMenu {
     private static Player currentUser;
-    private static Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void runProfileMenu(Player newUser) {
 
@@ -15,7 +15,7 @@ public class ProfileMenu {
             if (userCommand.startsWith("Menu enter")) MainMenu.runChangingMenu(userCommand, currentUser);
             else if (userCommand.startsWith("profile change --nickname")) changingNickName(userCommand);
             else if (userCommand.equals("profile change --password")) changingPassword(userCommand);
-            else if (userCommand.equals("menu show -current")) System.out.println("Profile Menu");
+            else if (userCommand.equals("menu show-current")) System.out.println("Profile Menu");
             else if (userCommand.equals("menu exit")) {
                 UserAndMenuController.currentMenu = Menus.MAIN_MENU;
                 break;
@@ -25,8 +25,7 @@ public class ProfileMenu {
     }
 
     public static void changingPassword(String userCommand) {
-        Pattern pattern = Pattern.compile("");
-        Matcher matcher = pattern.matcher(userCommand);
+        Matcher matcher = Controller.getMatch(userCommand, "^profile change --password --current (\\S+) --new (\\S+)$");
         if (matcher.find()) {
             String currentPassword = matcher.group(1);
             String newPassword = matcher.group(2);
@@ -41,8 +40,7 @@ public class ProfileMenu {
     }
 
     public static void changingNickName(String userCommand) {
-        Pattern pattern = Pattern.compile("");
-        Matcher matcher = pattern.matcher(userCommand);
+        Matcher matcher = Controller.getMatch(userCommand, "^profile change --nickname (\\S+)$");
         if (matcher.find()){
             String newNickname = matcher.group(1);
             currentUser.setNickname(newNickname);
