@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Player {
@@ -6,9 +7,9 @@ public class Player {
     private String nickname;
     private int score;
     private int coin;
-    private ArrayList<Card> cards;
-    private static ArrayList<Player> allPlayers = new ArrayList<Player>();
-    public ArrayList<Deck> decks;
+    private ArrayList<String> cards;
+    private static ArrayList<Player> allPlayers = new ArrayList<>();
+    public static ArrayList<Deck> decks;
     private Deck activeDeck;
     private boolean isUserLoggedIn;
 
@@ -38,7 +39,9 @@ public class Player {
         this.nickname = nickname;
     }
 
-    public void setPassword(String password) { this.password = password; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public int getScore() {
         return this.score;
@@ -56,23 +59,22 @@ public class Player {
         this.coin = coin;
     }
 
-    public ArrayList<Card> getCards() {
+    public ArrayList<String> getCards() {
         return this.cards;
     }
 
-    public void setCards(ArrayList<Card> cards) {
+    public void setCards(ArrayList<String> cards) {
         this.cards = cards;
     }
 
-//    public Deck getActiveDeck() {
-//        return this.activeDeck;
-//    }
+    public Deck getActiveDeck() {
+        return this.activeDeck;
+    }
 
-    //    public void activateDeck(Deck deckToActive) {
-//        if (decks.contains((Deck) deckToActive)) {
-//            activeDeck = deckToActive;
-//        }
-//    }
+    public void setActiveDeck(Deck activeDeck) {
+        this.activeDeck = activeDeck;
+    }
+
     public void setUserLoggedInOrOut(boolean isUserLoggedIn) {
         this.isUserLoggedIn = isUserLoggedIn;
     }
@@ -120,68 +122,93 @@ public class Player {
         return null;
     }
 
-    public void createDeck(String name) {
+    public boolean createDeck(String name) {
+        for (Deck deck : decks) {
+            if (deck.getName().equals(name)) {
+                System.out.println("deck with name " + name + " already exist");
+                return false;
+            }
+        }
         Deck deck = new Deck(name, this);
         decks.add(deck);
+        System.out.println("deck created successfully");
+        return true;
     }
 
-    public boolean deleteDeck(Deck deck) {
-        if (decks.contains(deck)) {
-            decks.remove(deck);
-            return true;
-        } else {
-            return false;
+    public boolean deleteDeck(String deckName) {
+        for (Deck deck : decks) {
+            if (deck.getName().equals(deckName)) {
+                decks.remove(deck);
+                System.out.println("deck deleted successfully");
+                return true;
+            }
         }
+        System.out.println("deck with name " + deckName + " does not exist");
+        return false;
     }
+
     /**
-     * 
      * @param card
      * @param deck
      * @param inToMainDeck : true -> add to the main deck ; false -> add to the side deck
      */
-    public void addCardToDeck(Card card, Deck deck , boolean inToMainDeck) {
-        if(inToMainDeck){
+    public void addCardToDeck(Card card, Deck deck, boolean inToMainDeck) {
+        if (inToMainDeck) {
             deck.addCardToMainDeck(card);
-        }else{
+        } else {
             deck.addCardToSideDeck(card);
         }
     }
+
+    //!!!we can have 3 cards of each, so this evaluation is not accurate
+//    /**
+//     *
+//     * @param card
+//     * @return false if card was in cards , true if card wasn't in cards and added
+//     */
+//    public boolean addCard(Card card) {
+//        if(this.cards.contains(card)){
+//            return false;
+//        }
+//        this.cards.add(card);
+//        return true;
+//    }
+
     /**
-     * 
-     * @param card
-     * @return false if card was in cards , true if card wasn't in cards and added
-     */
-    public boolean addCard(Card card) {
-        if(this.cards.contains(card)){
-            return false;
-        }
-        this.cards.add(card);
-        return true;
-    }
-    /**
-     * 
      * @param card
      * @param deck
      * @return false if card wasn't in deck , true if card ommited successfully
      */
-    public boolean removeCardFromDeck(Card card , Deck deck){
+    public boolean removeCardFromDeck(Card card, Deck deck) {
         return deck.deleteCardFromDeck(card);
     }
+
     public boolean showDeck(Deck deck) {
-        if(!decks.contains(deck)){
+        if (!decks.contains(deck)) {
             return false;
-        }deck.show();
+        }
+        deck.show();
         return true;
     }
+
     public void showDecks() {
         for (Deck deck : decks) {
             deck.show();
         }
     }
+
+    //show cards according to their name
     public void showAllCards() {
-        for (Card card : cards) {
-            card.show();
+        for (String card : cards) {
+            ShowCard.showSelectedCard(card);
         }
+    }
+
+    public Deck getDeckByName(String deckName) {
+        for (Deck deck : decks) {
+            if (deck.getName().equals(deckName)) return deck;
+        }
+        return null;
     }
 
 }
