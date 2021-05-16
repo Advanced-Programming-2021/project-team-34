@@ -31,7 +31,7 @@ public class ShoppingMenu {
     }
 
     private void buyDemandedCard(String inputCommand) {
-        Pattern pattern = Pattern.compile("");
+        Pattern pattern = Pattern.compile("^shop buy (.+)$");
         Matcher matcher = pattern.matcher(inputCommand);
         if (matcher.find()){
             String cardName = matcher.group(1);

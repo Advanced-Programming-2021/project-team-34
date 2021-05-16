@@ -9,9 +9,15 @@ public class UserAndMenuController {
 
     private static void exitCurrentMenu() {
         switch (currentMenu) {
-            case LOGIN_MENU -> currentMenu = Menus.EXIT;
-            case MAIN_MENU -> currentMenu = Menus.LOGIN_MENU;
-            default -> currentMenu = Menus.MAIN_MENU;
+            case LOGIN_MENU:
+                currentMenu = Menus.EXIT;
+                break;
+            case MAIN_MENU:
+                currentMenu = Menus.LOGIN_MENU;
+                break;
+            default:
+                currentMenu = Menus.MAIN_MENU;
+                break;
         }
     }
 

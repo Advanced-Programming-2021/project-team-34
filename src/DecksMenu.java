@@ -50,13 +50,7 @@ public class DecksMenu {
         String cardName = matcher.group(1) ,deckName = matcher.group(2);
 
         if(currentUser.getDeckByName(deckName) == null ) System.out.println("deck with name " + deckName + " does not exists");
-        else if(numberOfCards(cardName,deckName)) System.out.println("card with name " + cardName + " does not exists");
-        else if(Objects.requireNonNull(currentUser.getDeckByName(deckName)).sideDeck.size() == 15) System.out.println("side deck is full");
-        else if(Deck.getNumberOfCardsInWholeDeck(deckName , cardName) == 3) System.out.println("there are already three cards with name " + cardName + " in deck " + deckName);
-        else{
-            Objects.requireNonNull(currentUser.getDeckByName(deckName)).sideDeck.add(Cards(cardName));
-            System.out.println("card added to deck successfully");
-        }
+
     }
 
     private void addCardToMainDeck(Matcher matcher) {
