@@ -42,7 +42,7 @@ public class DuellingMenu {
         String round = matcher.group(1);
         if (currentUser.getActiveDeck() == null)
             System.out.println(currentUser.getUsername() + " has no active deck");
-        else if (!currentUser.isDeckValid(currentUser.getActiveDeck().getName()))
+        else if (!Player.isDeckValid(currentUser.getActiveDeck().getName()))
             System.out.println(currentUser.getUsername() + "'s deck is not valid");
         else if (!(round.equals("1") || round.equals("3"))) System.out.println("number of rounds is not supported");
         else new Game(currentUser, new AI(AiUser));
@@ -103,9 +103,9 @@ public class DuellingMenu {
         Game battlefield = new Game(duelist1, duelist2);
 
         //round1Finish
-        if (battlefield.getWinner().getName().equals(currentUser.getUsername())) duelist1Wins++;
+        if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
-        System.out.println(battlefield.getWinner().getName() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
+        System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
         int round1Duelist1Lp = Board.duelist1.LP, round1Duelist2Lp = Board.duelist2.LP;
 
         //add card from side
@@ -117,9 +117,9 @@ public class DuellingMenu {
         battlefield = new Game(duelist1, duelist2);
 
         //round2Finish
-        if (battlefield.getWinner().getName().equals(currentUser.getUsername())) duelist1Wins++;
+        if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
-        System.out.println(battlefield.getWinner().getName() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
+        System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
         int round2Duelist1Lp = Board.duelist1.LP, round2Duelist2Lp = Board.duelist2.LP;
         if (round2Duelist1Lp < round1Duelist1Lp) round2Duelist1Lp = round1Duelist1Lp;
         if (round2Duelist2Lp < round1Duelist2Lp) round2Duelist2Lp = round1Duelist2Lp;
@@ -141,9 +141,9 @@ public class DuellingMenu {
         battlefield = new Game(duelist1, duelist2);
 
         //round3Finish
-        if (battlefield.getWinner().getName().equals(currentUser.getUsername())) duelist1Wins++;
+        if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
-        System.out.println(battlefield.getWinner().getName() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
+        System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
         int round3Duelist1Lp = Board.duelist1.LP, round3Duelist2Lp = Board.duelist2.LP;
         if (round3Duelist1Lp < round2Duelist1Lp) round3Duelist1Lp = round2Duelist1Lp;
         if (round3Duelist2Lp < round2Duelist2Lp) round3Duelist2Lp = round2Duelist2Lp;
@@ -162,7 +162,7 @@ public class DuellingMenu {
         }
     }
 
-    private void finish2Round(int duelist1Wins, int duelist2Wins, Player duelist1, Player duelist2, int round2Duelist2Lp) {
+    public void finish2Round(int duelist1Wins, int duelist2Wins, Player duelist1, Player duelist2, int round2Duelist2Lp) {
         System.out.println(duelist2.getUsername() + " won the whole match with score: " + duelist1Wins + " - " + duelist2Wins);
         duelist2.setScore(duelist2.getScore() + 3000);
         duelist2.setCoin(duelist2.getCoin() + 3000 + 3 * round2Duelist2Lp);
