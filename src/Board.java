@@ -223,4 +223,119 @@ public class Board {
 //    public static void write(char character){
 //        System.out.println(character);
 //    }
+    //start of setters and getters
+
+    public char[][] getPlayer1Board() {
+        return player1Board;
+    }
+
+    public void setPlayer1Board(char[][] player1Board) {
+        this.player1Board = player1Board;
+    }
+
+    public char[][] getPlayer2Board() {
+        return player2Board;
+    }
+
+    public void setPlayer2Board(char[][] player2Board) {
+        this.player2Board = player2Board;
+    }
+
+    public ArrayList<Card> getPlayer1Graveyard() {
+        return player1Graveyard;
+    }
+
+    public void setPlayer1Graveyard(ArrayList<Card> player1Graveyard) {
+        this.player1Graveyard = player1Graveyard;
+    }
+
+    public ArrayList<Card> getPlayer2Graveyard() {
+        return player2Graveyard;
+    }
+
+    public void setPlayer2Graveyard(ArrayList<Card> player2Graveyard) {
+        this.player2Graveyard = player2Graveyard;
+    }
+
+    public ArrayList<Card> getPlayer1Hand() {
+        return player1Hand;
+    }
+
+    public void setPlayer1Hand(ArrayList<Card> player1Hand) {
+        this.player1Hand = player1Hand;
+    }
+
+    public ArrayList<Card> getPlayer2Hand() {
+        return player2Hand;
+    }
+
+    public void setPlayer2Hand(ArrayList<Card> player2Hand) {
+        this.player2Hand = player2Hand;
+    }
+
+    public ArrayList<Card> getPlayer1Monsters() {
+        return player1Monsters;
+    }
+
+    public void setPlayer1Monsters(ArrayList<Card> player1Monsters) {
+        this.player1Monsters = player1Monsters;
+    }
+
+    public ArrayList<Card> getPlayer2Monsters() {
+        return player2Monsters;
+    }
+
+    public void setPlayer2Monsters(ArrayList<Card> player2Monsters) {
+        this.player2Monsters = player2Monsters;
+    }
+
+    public ArrayList<Card> getPlayer1TrapsAndSpells() {
+        return player1TrapsAndSpells;
+    }
+
+    public void setPlayer1TrapsAndSpells(ArrayList<Card> player1TrapsAndSpells) {
+        this.player1TrapsAndSpells = player1TrapsAndSpells;
+    }
+
+    public ArrayList<Card> getPlayer2TrapsAndSpells() {
+        return player2TrapsAndSpells;
+    }
+
+    public void setPlayer2TrapsAndSpells(ArrayList<Card> player2TrapsAndSpells) {
+        this.player2TrapsAndSpells = player2TrapsAndSpells;
+    }
+
+    public ArrayList<Card> getPlayer1RemainedDeck() {
+        return player1RemainedDeck;
+    }
+
+    public void setPlayer1RemainedDeck(ArrayList<Card> player1RemainedDeck) {
+        this.player1RemainedDeck = player1RemainedDeck;
+    }
+
+    public ArrayList<Card> getPlayer2RemainedDeck() {
+        return player2RemainedDeck;
+    }
+
+    public void setPlayer2RemainedDeck(ArrayList<Card> player2RemainedDeck) {
+        this.player2RemainedDeck = player2RemainedDeck;
+    }
+
+    public Card getFz1() {
+        return fz1;
+    }
+
+    public void setFz1(Card fz1) {
+        this.fz1 = fz1;
+    }
+
+    public Card getFz2() {
+        return fz2;
+    }
+
+    public void setFz2(Card fz2) {
+        this.fz2 = fz2;
+    }
+
+    //end of setters and getters
 }
