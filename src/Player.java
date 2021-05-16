@@ -12,6 +12,8 @@ public class Player {
     public static ArrayList<Deck> decks;
     private Deck activeDeck;
     private boolean isUserLoggedIn;
+    public int lifePoint;
+    public static int mostLifePoint = 10000;
 
 
     public Player(String username, String password, String nickname) {
@@ -19,7 +21,11 @@ public class Player {
         setPassword(password);
         setNickname(nickname);
         isUserLoggedIn = true;
+        lifePoint=mostLifePoint;
         allPlayers.add(this);
+    }
+    public void setLifePoint(){
+        this.lifePoint = mostLifePoint;
     }
 
     //start of setters and getters
