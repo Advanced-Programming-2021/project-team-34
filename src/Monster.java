@@ -1,4 +1,9 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Monster extends Card {
     private int attPower;//attack power
@@ -18,11 +23,26 @@ public class Monster extends Card {
     //!!!!!!!!!!!!!!!!!!!!!!
     //TO DO :
     /* To Add All Methods */
-    public Monster(int price, String monsterName, String type, String description, int defAttPower, int defDefPower, int level) {
-        super(price, monsterName, type, description);
-        setDefAttPower(defAttPower);
-        setDefDefPower(defDefPower);
-        setLevel(level);
+    public Monster(String monsterName) throws IOException {
+        super(monsterName);
+        String text = "";
+        File file = new File("Monster.CSV");
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            text = scanner.nextLine();
+            Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(\\S+?),(\\S+?),(\\S+?),(\\d+),(\\d+),(.+?)," +
+                    "(\\d+)");
+            Matcher matcher = pattern.matcher(text);
+            if (matcher.find()) {
+                setLevel(Integer.parseInt(matcher.group(1)));
+                setState(matcher.group(3));
+                super.type = matcher.group(4);
+                setDefAttPower(Integer.parseInt(matcher.group(5)));
+                setDefDefPower(Integer.parseInt(matcher.group(6)));
+                setDescription(matcher.group(7));
+                setPrice(Integer.parseInt(matcher.group(8)));
+            }
+        }
     }
 
 
@@ -40,6 +60,10 @@ public class Monster extends Card {
 
     public void setDefPower(int defPower) {
         this.defPower = defPower;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getLevel() {
