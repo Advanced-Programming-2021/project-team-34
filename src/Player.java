@@ -204,11 +204,17 @@ public class Player {
         }
     }
 
-    public Deck getDeckByName(String deckName) {
+    public static Deck getDeckByName(String deckName) {
         for (Deck deck : decks) {
             if (deck.getName().equals(deckName)) return deck;
         }
         return null;
     }
 
+    public static boolean isDeckValid(String deckName) {
+        return (getDeckByName(deckName).getMainDeck().size() <= 60 &&
+                getDeckByName(deckName).getMainDeck().size() >= 40 &&
+                getDeckByName(deckName).getSideDeck().size() <= 15
+        );
+    }
 }

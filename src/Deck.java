@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Deck {
     private final String name;
@@ -10,6 +11,7 @@ public class Deck {
         this.name = name;
         this.owner = owner;
     }
+
     //start of setters and getters
     public String getName() {
         return this.name;
@@ -35,6 +37,7 @@ public class Deck {
     public Player getOwner() {
         return this.owner;
     }
+
     /*
     public void setOwner(Player owner) {
         this.owner = owner;
@@ -49,10 +52,10 @@ public class Deck {
     }
 
     protected boolean deleteCardFromDeck(Card card) {/* Returnts true if remove successfully and false if card is not in the deck */
-        if(mainDeck.contains(card)){
+        if (mainDeck.contains(card)) {
             mainDeck.remove(card);
             return true;
-        }else if(sideDeck.contains(card)){
+        } else if (sideDeck.contains(card)) {
             sideDeck.remove(card);
             return true;
         }

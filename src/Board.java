@@ -12,6 +12,9 @@ public class Board {
     private ArrayList<Card> player1TrapsAndSpells;
     private ArrayList<Card> player2TrapsAndSpells;
 
+
+
+
     public void showPlayer1Board() {
 
     }
