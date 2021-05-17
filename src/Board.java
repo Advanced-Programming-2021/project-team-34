@@ -3,18 +3,25 @@ import java.util.ArrayList;
 public class Board {
     private char[][] player1Board;
     private char[][] player2Board;
-    private ArrayList<Card> player1Graveyard;
-    private ArrayList<Card> player2Graveyard;
-    private ArrayList<Card> player1Hand;
-    private ArrayList<Card> player2Hand;
-    private ArrayList<Card> player1Monsters;
-    private ArrayList<Card> player2Monsters;
-    private ArrayList<Card> player1TrapsAndSpells;
-    private ArrayList<Card> player2TrapsAndSpells;
-    private ArrayList<Card> player1RemainedDeck, player2RemainedDeck;
+    public ArrayList<Card> player1Graveyard;
+    public ArrayList<Card> player2Graveyard;
+    public ArrayList<Card> player1Hand;
+    public ArrayList<Card> player2Hand;
+    public ArrayList<Card> player1Monsters;
+    public ArrayList<Card> player2Monsters;
+    public ArrayList<Card> player1TrapsAndSpells;
+    public ArrayList<Card> player2TrapsAndSpells;
+    public ArrayList<Card> player1RemainedDeck, player2RemainedDeck;
     private Card fz1 , fz2;
     private Player you, opponent, player1, player2;
 
+    public void addToHand(Player player , Card card){
+        if(player.equals(player1)||player==player1){
+            player1Hand.add(card);
+        }else {
+            player2Hand.add(card);
+        }
+    }
     public Board(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;

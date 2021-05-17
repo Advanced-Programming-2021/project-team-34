@@ -45,7 +45,7 @@ public class DuellingMenu {
         else if (!Player.isDeckValid(currentUser.getActiveDeck().getName()))
             System.out.println(currentUser.getUsername() + "'s deck is not valid");
         else if (!(round.equals("1") || round.equals("3"))) System.out.println("number of rounds is not supported");
-        else new Game(currentUser, new AI(AiUser));
+        ///////////////////////////////////////////////////else new Game(currentUser, new AI(AiUser));
     }
 
     private void newDuel(Matcher matcher) {
