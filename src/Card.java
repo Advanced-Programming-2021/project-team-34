@@ -9,11 +9,8 @@ public abstract class Card {
     private int price;
 
 
-    public Card(int price, String name, String type, String description) {
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.price = price;
+    public Card(String name) {
+        setName(name);
         if (!allCards.containsKey(name)) allCards.put(name, this);
     }
 
