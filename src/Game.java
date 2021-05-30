@@ -19,7 +19,7 @@ public class Game {
         while (player1.lifePoint>0 && player2.lifePoint>0){
             if(turn==1){
                 currentPlayer = player1;
-            }else (turn==2){
+            }else if(turn==2){
                 currentPlayer = player2;
             }
 

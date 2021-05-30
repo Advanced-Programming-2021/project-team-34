@@ -84,12 +84,12 @@ public class DuellingMenu {
         if (duelist1Wins == 1) {
             System.out.println(duelist1 + " won the whole match with score: " + duelist1Wins + " - " + duelist2Wins);
             duelist1.setScore(duelist1.getScore() + 1000);
-            duelist1.setCoin(duelist1.getCoin() + 1000 + Board.duelist1.LP);
+            duelist1.setCoin(duelist1.getCoin() + 1000 + duelist1.lifePoint);
             duelist2.setCoin(duelist2.getCoin() + 100);
         } else {
             System.out.println(duelist2.getUsername() + " won the whole match with score: " + duelist1Wins + " - " + duelist2Wins);
             duelist2.setScore(duelist2.getScore() + 1000);
-            duelist2.setCoin(duelist2.getCoin() + 1000 + Board.duelist2.LP);
+            duelist2.setCoin(duelist2.getCoin() + 1000 + duelist2.lifePoint);
             duelist1.setCoin(duelist1.getCoin() + 100);
         }
     }
@@ -106,7 +106,7 @@ public class DuellingMenu {
         if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
         System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
-        int round1Duelist1Lp = Board.duelist1.LP, round1Duelist2Lp = Board.duelist2.LP;
+        int round1Duelist1Lp = duelist1.lifePoint, round1Duelist2Lp = duelist2.lifePoint;
 
         //add card from side
 
@@ -120,7 +120,7 @@ public class DuellingMenu {
         if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
         System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
-        int round2Duelist1Lp = Board.duelist1.LP, round2Duelist2Lp = Board.duelist2.LP;
+        int round2Duelist1Lp = duelist1.lifePoint, round2Duelist2Lp = duelist2.lifePoint;
         if (round2Duelist1Lp < round1Duelist1Lp) round2Duelist1Lp = round1Duelist1Lp;
         if (round2Duelist2Lp < round1Duelist2Lp) round2Duelist2Lp = round1Duelist2Lp;
 
@@ -136,15 +136,15 @@ public class DuellingMenu {
         //add card from side
 
         //round3
-        duelist1 =  currentUser;
-        duelist2 =  Objects.requireNonNull(Player.getPlayerByUsername(duelistName));
+        duelist1 = currentUser;
+        duelist2 = Objects.requireNonNull(Player.getPlayerByUsername(duelistName));
         battlefield = new Game(duelist1, duelist2);
 
         //round3Finish
         if (battlefield.getWinner().getUsername().equals(currentUser.getUsername())) duelist1Wins++;
         else duelist2Wins++;
         System.out.println(battlefield.getWinner().getUsername() + " won the game and the score is: " + duelist1Wins + " - " + duelist2Wins);
-        int round3Duelist1Lp = Board.duelist1.LP, round3Duelist2Lp = Board.duelist2.LP;
+        int round3Duelist1Lp = duelist1.lifePoint, round3Duelist2Lp = duelist2.lifePoint;
         if (round3Duelist1Lp < round2Duelist1Lp) round3Duelist1Lp = round2Duelist1Lp;
         if (round3Duelist2Lp < round2Duelist2Lp) round3Duelist2Lp = round2Duelist2Lp;
 
