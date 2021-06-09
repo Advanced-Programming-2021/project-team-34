@@ -2,9 +2,11 @@ import java.util.Random;
 
 public class Game {
     private Player winner;
-    Player player1, player2 , currentPlayer;
+    private Player player1, player2 , currentPlayer;
     int turn = 1;//1 - 2
-    Board board;
+     Board board;
+
+
     public Game(Player player1, Player player2){
         this.player1 = player1;
         this.player2 = player2;
