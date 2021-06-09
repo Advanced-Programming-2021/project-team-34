@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import java.util.Random;
 
 public class Game {
@@ -31,6 +33,9 @@ public class Game {
             endPhase(currentPlayer);
         }
     }
+
+    public void standbyPhase(Player currentPlayer) {
+    }
     Card drawCard;
     public void drawPhase(Player player){
         Random random = new Random(System.currentTimeMillis());
@@ -50,10 +55,22 @@ public class Game {
         }
 
     }
+    public void mainPhase1(Player player){
+        ;
+    }
+    public void battlePhase(Player player){
+
+    }
+    public void endPhase(Player player) {
+        turn = 3 - turn;
+    }
+
 
     public Player getWinner() {
         return winner;
     }
+
+    private Card getCardForBattle(){}
 
     public void setWinner(Player winner) {
         this.winner = winner;
