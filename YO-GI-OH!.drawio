@@ -1,1 +1,395 @@
-<mxfile host="Electron" modified="2021-05-19T04:55:02.781Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.9.8 Chrome/85.0.4183.121 Electron/10.1.5 Safari/537.36" etag="eWF8RyWuJsS_QOD0IL4F" version="13.9.8" type="device" pages="2"><diagram id="C5RBs43oDa-KdzZeNtuy" name="‌فاز حمله">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</diagram><diagram id="atEnlcx_RNerHEn1xEYG" name="Page-2">lZHJDoIwEIafpkcTaMXljAtqlMQlJt4aWqGxMKTWgD69mBax8aKnTr/5Z0ckzOu5omW2BsYlwh6rEZkgjH0P95vnRe6GBGNsQKoEs6IO7MSDt5GW3gTjV0eoAaQWpQsTKAqeaIdRpaByZWeQbtWSpvwL7BIqv+lRMJ1Z6g/GnSPiIs1s6REeGkdOW7Gd5JpRBtUHIlNEQgWgjZXXIZev5bV7ibebeBUsIl8Xy4F3CU4Hf98zyWb/hLxHULzQv6ZujK615uMcmEyf</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-10T10:22:09.735Z" agent="5.0 (Windows)" etag="VdWTFAdk7_cGsEuw7fqB" version="14.7.7" type="github" pages="4">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="‌فاز حمله">
+    <mxGraphModel dx="496" dy="1681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#283618" math="0" shadow="1">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="FFREqT8t1xSqENXU2XD2-1" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-4" value="Yes" style="html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="220" y="250" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-3" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-6" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="FFREqT8t1xSqENXU2XD2-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="554" y="-660" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-8" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="-600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-19" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-5" target="FFREqT8t1xSqENXU2XD2-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-5" value="&lt;font size=&quot;3&quot;&gt;آیا کارت هیولایی در زمین به حالت حمله داریم که در این دست حمله نکرده‌باشد؟&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="421" y="-650" width="266" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-10" value="&lt;font size=&quot;3&quot;&gt;آغاز فاز حمله&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="494" y="-750" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-14" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-12" target="FFREqT8t1xSqENXU2XD2-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-12" value="&lt;font size=&quot;3&quot;&gt;شما در این دست کارتی برای حمله ندارید.&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="270" y="-630" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-13" value="&lt;font style=&quot;font-size: 18px&quot;&gt;پایان فاز حمله&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="270" y="-750" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-16" value="&lt;font style=&quot;font-size: 18px&quot;&gt;نه&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="381" y="-600" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-21" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-18" target="FFREqT8t1xSqENXU2XD2-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-18" value="&lt;font size=&quot;3&quot;&gt;یا یکی از کارت‌های ممکن را بگزیند یا فاز را تمام کند&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="477" y="-520" width="154" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-25" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.003;entryY=0.595;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-20" target="FFREqT8t1xSqENXU2XD2-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-28" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-20" target="FFREqT8t1xSqENXU2XD2-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-20" value="&lt;font style=&quot;font-size: 18px&quot;&gt;آیا کارتی گزید؟ -یا این که تمام؟&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="260" y="-530" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-26" value="&lt;font style=&quot;font-size: 18px&quot;&gt;نه بلکه تمام&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="160" y="-540" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-30" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-27" target="FFREqT8t1xSqENXU2XD2-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-39" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-27" target="FFREqT8t1xSqENXU2XD2-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-27" value="&lt;span style=&quot;font-size: 18px&quot;&gt;آیا کارت هیولایی در زمین حرف است؟&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="261" y="-420" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-31" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-29" target="FFREqT8t1xSqENXU2XD2-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="-490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="681" y="-380" />
+              <mxPoint x="681" y="-490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-33" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-29" target="FFREqT8t1xSqENXU2XD2-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-29" value="&lt;span style=&quot;font-size: 18px&quot;&gt;آیا حمله‌ی مستقیم کنیم یا انصراف؟&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="501" y="-420" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-34" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-32" target="FFREqT8t1xSqENXU2XD2-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="-610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="780" y="-260" />
+              <mxPoint x="780" y="-600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-32" value="&lt;font style=&quot;font-size: 18px&quot;&gt;حمله‌ی مستقیم می‌کنیم&lt;br&gt;و نتیجه را بررسی و پردازش‌های مورد نیاز انجام.&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="521" y="-310" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-35" value="&lt;font style=&quot;font-size: 18px&quot;&gt;نه&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="440" y="-410" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-36" value="&lt;font style=&quot;font-size: 18px&quot;&gt;انصراف&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="690" y="-390" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-37" value="&lt;font style=&quot;font-size: 18px&quot;&gt;!!!حمله&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="591" y="-340" width="49" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-41" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-38" target="FFREqT8t1xSqENXU2XD2-40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-38" value="&lt;font style=&quot;font-size: 18px&quot;&gt;گرفتن کارتی که می‌خواهد بهش حمله‌کند&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="246" y="-300" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-42" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#283618;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FFREqT8t1xSqENXU2XD2-40" target="FFREqT8t1xSqENXU2XD2-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="-155" />
+              <mxPoint x="920" y="-600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-40" value="&lt;font style=&quot;font-size: 18px&quot;&gt;به کارت گزیده‌شده حمله‌کنیم و بررسی نتیجه و پردازش‌های مورد نیاز&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#BC6C25;strokeColor=#DDA15E;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="281" y="-200" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-43" value="&lt;font style=&quot;font-size: 18px&quot;&gt;بله&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="570" y="-550" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-44" value="&lt;font style=&quot;font-size: 18px&quot;&gt;بله کارتی گزید&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="210" y="-440" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="FFREqT8t1xSqENXU2XD2-46" value="&lt;font style=&quot;font-size: 18px&quot;&gt;بله&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="290" y="-330" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a5oqWzAmiNsecMrfB7ib-3" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="a5oqWzAmiNsecMrfB7ib-1" target="a5oqWzAmiNsecMrfB7ib-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5oqWzAmiNsecMrfB7ib-1" value="&lt;font style=&quot;font-size: 18px&quot;&gt;با فرمانی مکان کارت را می‌گیریم&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;sketch=0;strokeColor=#DDA15E;fillColor=#BC6C25;fontColor=#FEFAE0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="420" y="90" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a5oqWzAmiNsecMrfB7ib-2" value="&lt;font style=&quot;font-size: 18px&quot;&gt;آیا در آن جا کارت هیولای ما هست؟&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fontColor=#FEFAE0;strokeColor=#DDA15E;fillColor=#BC6C25;sketch=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="390" y="180" width="290" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="atEnlcx_RNerHEn1xEYG" name="فاز برداشت یا draw">
+    <mxGraphModel dx="248" dy="1254" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="ORNOK5IH1tnJ60k5ZU1T-0" />
+        <mxCell id="ORNOK5IH1tnJ60k5ZU1T-1" parent="ORNOK5IH1tnJ60k5ZU1T-0" />
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="NiX7NAp6c9_cobMiiFxC-1" target="-JwTziS2Yu9e7SEfz2Ox-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NiX7NAp6c9_cobMiiFxC-1" value="اغاز فاز " style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="80" y="-100" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="zpzgjslxM_1-XzgoGqMs-2" target="3PoMqD7Pc7LRRCRqCniG-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="zpzgjslxM_1-XzgoGqMs-2" target="3PoMqD7Pc7LRRCRqCniG-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zpzgjslxM_1-XzgoGqMs-2" value="ایا کارت در دک دارد ؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="62.5" y="140" width="105" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="3PoMqD7Pc7LRRCRqCniG-0" target="zpzgjslxM_1-XzgoGqMs-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="3PoMqD7Pc7LRRCRqCniG-0" target="-JwTziS2Yu9e7SEfz2Ox-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-0" value="یک کارت بردارد" style="whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="240" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-3" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="185" y="150" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-4" value="برنده حریف است. بازی تمام و میرویم به امتیاز دهی و ذخیره" style="whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="55" y="270" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3PoMqD7Pc7LRRCRqCniG-6" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="85" y="230" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-3" target="-JwTziS2Yu9e7SEfz2Ox-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-3" target="-JwTziS2Yu9e7SEfz2Ox-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-3" value="ایا کارت طلسم یا تله در زمین دارد" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="245" y="250" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-5" value="برو فاز بعد" style="whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="240" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-7" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="305" y="330" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="490" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-8" value="ایا میخواهد کارتی را فعال کند؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="435" y="250" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-10" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="375" y="270" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-13" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="425" y="370" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-15" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="565" y="260" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-16" target="-JwTziS2Yu9e7SEfz2Ox-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-16" value="&lt;div&gt;کارت ها را انتخاب کن&lt;/div&gt;&lt;div&gt;بعد اثر را فعال کن&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="610" y="260" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-19" target="zpzgjslxM_1-XzgoGqMs-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-19" target="-JwTziS2Yu9e7SEfz2Ox-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-19" value="ایا اولین نوبت بازیکن شروع کننده است" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="62.5" y="50" width="105" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-20" target="-JwTziS2Yu9e7SEfz2Ox-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ORNOK5IH1tnJ60k5ZU1T-1" source="-JwTziS2Yu9e7SEfz2Ox-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="20" y="5" />
+              <mxPoint x="20" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-20" value="ایا نوبت بازیکن شروع کننده بازی است؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="60" y="-20" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-23" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="75" y="30" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-25" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="75" y="110" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-27" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="25" y="-20" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-JwTziS2Yu9e7SEfz2Ox-29" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="ORNOK5IH1tnJ60k5ZU1T-1">
+          <mxGeometry x="175" y="50" width="30" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="O1_D9JE4pJTsTRkHtAFU" name="standby phase">
+    <mxGraphModel dx="248" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-0" />
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-1" parent="8eQ3bm_bDbbWGuu8U8iJ-0" />
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-3" target="8eQ3bm_bDbbWGuu8U8iJ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-3" value="شروع انتظار" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="30" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-4" target="8eQ3bm_bDbbWGuu8U8iJ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-4" target="8eQ3bm_bDbbWGuu8U8iJ-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-4" value="کارتی در زمین داریم که اثرشان در این مرحله فعال میشود؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="10" y="170" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-6" target="8eQ3bm_bDbbWGuu8U8iJ-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-6" value="اثرات را فعال کن" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="30" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-8" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="105" y="250" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-10" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="185" y="180" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-15" target="8eQ3bm_bDbbWGuu8U8iJ-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-15" target="8eQ3bm_bDbbWGuu8U8iJ-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-15" value="ایا کارت طلسم و تله داریم؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="210" y="280" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-21" value="برو فاز بعد" style="whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="210" y="400" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-24" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="275" y="350" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-26" target="8eQ3bm_bDbbWGuu8U8iJ-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="8eQ3bm_bDbbWGuu8U8iJ-26" target="U9b8ZEPZSS5z8bf0dZ0c-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-26" value="ایا میخواهی کارتی را فعال کنی؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="340" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8eQ3bm_bDbbWGuu8U8iJ-27" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="275" y="230" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-1" value="خیر" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="385" y="350" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-3" value="بله" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="445" y="230" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.064;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1" source="U9b8ZEPZSS5z8bf0dZ0c-4" target="8eQ3bm_bDbbWGuu8U8iJ-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="557" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="432" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9b8ZEPZSS5z8bf0dZ0c-4" value="کارت ها را انتخاب و فعال&amp;nbsp; کن" style="whiteSpace=wrap;html=1;" vertex="1" parent="8eQ3bm_bDbbWGuu8U8iJ-1">
+          <mxGeometry x="510" y="230" width="80" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="RZUdcka6AtzHbcAPYisU" name="فاز اصلی 1">
+    <mxGraphModel dx="248" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-0" />
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-1" parent="O3d7G3NNvlWdTgreg1_E-0" />
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="O3d7G3NNvlWdTgreg1_E-1" source="O3d7G3NNvlWdTgreg1_E-2" target="O3d7G3NNvlWdTgreg1_E-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="O3d7G3NNvlWdTgreg1_E-1" source="O3d7G3NNvlWdTgreg1_E-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-2" value="شروع فاز" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="O3d7G3NNvlWdTgreg1_E-1">
+          <mxGeometry x="150" y="62" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O3d7G3NNvlWdTgreg1_E-3" value="قصد احضار هیولا را دارم؟" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="O3d7G3NNvlWdTgreg1_E-1">
+          <mxGeometry x="110" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
