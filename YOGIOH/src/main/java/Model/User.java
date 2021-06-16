@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 
 public class User {
-    private static final ArrayList<User> users;
+    public static final ArrayList<User> users;
 
     static {
         users = new ArrayList<>();
@@ -17,7 +17,6 @@ public class User {
     //    private ArrayList<Deck> decks;
 //    private Deck activeDeck;
     private final ArrayList<Card> cards;
-
     {
         cards = new ArrayList<>();
 //        decks = new ArrayList<>();
@@ -75,8 +74,13 @@ public class User {
             if (users.get(i).getHighScore() < this.getHighScore()) {
                 users.add(users.get(users.size() - 1));
                 for (int j = users.size() - 2; j >= i; j--) {
-                    if (j != i) users.add(j, users.get(j - 1));
-                    else users.add(j, this);
+                    if (j != i) {
+                        users.add(j, users.get(j - 1));
+                    }
+                    else {
+                        users.add(j, this);
+                    }
+                    users.remove(users.get(j + 1));
                 }
                 return;
             }
