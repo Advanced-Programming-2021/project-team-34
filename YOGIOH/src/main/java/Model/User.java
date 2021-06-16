@@ -117,11 +117,23 @@ public class User {
         return password.equals(passwordToBeChecked);
     }
 
+
     public boolean changePassword(String currentPassword, String newPassword) {
         if (checkPassword(currentPassword)) {
             this.password = newPassword;
             return true;
         }
         return false;
+    }
+
+    public int getRank() {
+        int ans = 1;
+        for (User user :
+                users) {
+            if (user.getHighScore() > this.highScore) {
+                ans++;
+            }
+        }
+        return ans;
     }
 }

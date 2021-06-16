@@ -48,39 +48,10 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Command" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Command" />
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.CommandHelper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Tests.test1User">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="YOGIOH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommandType.testDeterminingFieldsInCheckIfMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.CommandHelper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="View.CommandHelper" />
-      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.CommandType" />
-      <option name="METHOD_NAME" value="testDeterminingFieldsInCheckIfMatches" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,6 +67,38 @@
       <option name="PACKAGE_NAME" value="View.CommandHelper" />
       <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Command" />
       <option name="METHOD_NAME" value="testCommand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test1User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="test1User" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test2User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="test2User" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.test1User" />
+        <item itemvalue="JUnit.Tests.test2User" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Tests.testCommand" />
         <item itemvalue="JUnit.Command.testCommand" />
-        <item itemvalue="Application.Command" />
-        <item itemvalue="JUnit.CommandType.testDeterminingFieldsInCheckIfMatches" />
       </list>
     </recent_temporary>
   </component>

@@ -23,10 +23,17 @@ public class Tests {
         assertFalse(User.checkPassword("mahdi" , "123456"));
         assertEquals(1, user1.getRank());
         assertEquals(1, user2.getRank());
-        assertEquals(3, user3.getRank());
         assertEquals(3000, user3.getHighScore());
+        assertEquals(3, user3.getRank());
         assertTrue(user3.changePassword("333" , "4444"));
         assertTrue(User.checkPassword(user3.getUsername() , "4444"));
+    }
+
+    @Test
+    public void test2User() {
+        User user1 = new User("mahdi" , "1234" , "mhd");
+        User user2 = new User("aliRZ888" , "888" , "aliAgha");
+        assertEquals("mahdi" , user1.getUsername());
     }
 
 }
