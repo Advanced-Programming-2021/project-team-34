@@ -14,6 +14,14 @@ public class User {
 //    private ArrayList<Deck> decks;
 //    private Deck activeDeck;
 
+
+    public User(String username, String password, String nickname) {
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+
+    }
+
     static {
         users = new ArrayList<>();
     }
@@ -44,23 +52,16 @@ public class User {
     }
 
     public void setHighScore(int highScore) {
-        this.highScore = highScore;
+        if (highScore>this.highScore) {
+            this.highScore = highScore;
+            // TO-DO
+            // order in arraylist users
+            // save data in file
+        }
     }
 
     public String getUsername() {
         return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getNickname() {
@@ -97,7 +98,10 @@ public class User {
         else return checkPassword(password);
     }
 
-//    public boolean changePassword(String currentPassword, String newPassword) {
-//        checkPassword(this.getUsername(), currentPassword);
-//    }
+    public boolean changePassword(String currentPassword, String newPassword) {
+        if (checkPassword(currentPassword)) {
+            this.password = newPassword;
+            return true;
+        } return false;
+    }
 }
