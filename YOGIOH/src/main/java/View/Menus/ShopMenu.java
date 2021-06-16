@@ -40,9 +40,24 @@ public class ShopMenu extends ViewMenu {
     private static void initializeMenu() {
         toContinue = true;
         Command.clearValidCommandTypes();
-        CommandType commandType = new CommandType();
+        initializeExitCommandType();
+        initializeShowCurrentMenuCommandType();
         initializeBuyCardCommandType();
         initializeShowAllCommandType();
+    }
+
+    private static void initializeShowCurrentMenuCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setName("show current menu");
+        commandType.setMainPart("menu show-current");
+        Command.addCommandType(commandType);
+    }
+
+    private static void initializeExitCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setMainPart("menu exit");
+        commandType.setName("exit");
+        Command.addCommandType(commandType);
     }
 
     private static void initializeShowAllCommandType() {
