@@ -10,6 +10,10 @@ public abstract class Card {
     protected static HashMap<String, Card> allCards;
     private int price;
 
+    static {
+        allCards = new HashMap<>();
+    }
+
 
     public Card(String name) {
         setName(name);
@@ -52,3 +56,4 @@ public abstract class Card {
         return this.price;
     }
 }
+
