@@ -195,4 +195,8 @@ public class Deck {
     public void setUnlocked() {
         locked = false;
     }
+
+    public String getError() {
+        return error;
+    }
 }
