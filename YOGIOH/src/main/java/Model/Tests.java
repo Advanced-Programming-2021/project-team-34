@@ -15,6 +15,7 @@ public class Tests {
         user1.setHighScore(10000);
         user2.setHighScore(10000);
         user3.setHighScore(2000);
+        user3.setHighScore(2300);
         user3.setHighScore(3000);
         user3.setHighScore(2500);
         user4.setHighScore(0);
