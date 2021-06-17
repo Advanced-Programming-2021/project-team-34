@@ -16,9 +16,8 @@ public class User {
     private int highScore;
     //    private ArrayList<Deck> decks;
 //    private Deck activeDeck;
-    private final ArrayList<Card> cards;
+    private ArrayList<Card> cards = new ArrayList<Card>();
     {
-        cards = new ArrayList<>();
 //        decks = new ArrayList<>();
     }
 
@@ -139,5 +138,13 @@ public class User {
             }
         }
         return ans;
+    }
+
+    public void addCard(Card card) {
+        cards.add(card);
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
     }
 }
