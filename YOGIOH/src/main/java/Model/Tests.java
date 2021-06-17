@@ -2,6 +2,8 @@ package Model;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Tests {
@@ -37,4 +39,14 @@ public class Tests {
         assertEquals("mahdi" , user1.getUsername());
     }
 
+    @Test
+    public void test1Monster() {
+        Monster monster1 = null;
+        try {
+            monster1 = new Monster("Yomi Ship");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assertEquals(800 , monster1.getDefAttPower());
+    }
 }

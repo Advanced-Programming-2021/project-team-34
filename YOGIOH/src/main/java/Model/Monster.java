@@ -28,7 +28,7 @@ public class Monster extends Card {
     public Monster(String monsterName) throws IOException {
         super(monsterName);
         String text = "";
-        File file = new File("Monster.CSV");
+        File file = new File("src/main/resources/Monster.CSV");
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
             text = scanner.nextLine();
