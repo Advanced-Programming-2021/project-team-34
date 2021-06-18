@@ -8,17 +8,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Monster extends Card {
-    private int attPower;//attack power
-    private int defPower;//defence power
     private int level;
-    private String state;
+    private String monsterType;
     private int defaultAttPower;//default attack power
     private int defaultDefPower;//default defence power
     public String Ritual;
     private int price;
     private ArrayList<Monster> monsters;
     private String monsterName;
-    private int timesAffected = 0;
+    private String attribute;
 
     //TO DO :
     /* To Add Constructor */
@@ -37,7 +35,8 @@ public class Monster extends Card {
             Matcher matcher = pattern.matcher(text);
             if (matcher.find()) {
                 setLevel(Integer.parseInt(matcher.group(1)));
-                setState(matcher.group(3));
+                attribute = matcher.group(2);
+                setMonsterType(matcher.group(3));
                 super.type = matcher.group(4);
                 setDefAttPower(Integer.parseInt(matcher.group(5)));
                 setDefDefPower(Integer.parseInt(matcher.group(6)));
@@ -47,22 +46,6 @@ public class Monster extends Card {
         }
     }
 
-
-    public int getAttPower() {
-        return this.attPower;
-    }
-
-    public void setAttPower(int attPower) {
-        this.attPower = attPower;
-    }
-
-    public int getDefPower() {
-        return this.defPower;
-    }
-
-    public void setDefPower(int defPower) {
-        this.defPower = defPower;
-    }
 
     public void setPrice(int price) {
         this.price = price;
@@ -76,12 +59,12 @@ public class Monster extends Card {
         this.level = level;
     }
 
-    public String getState() {
-        return this.state;
+    public String getMonsterType() {
+        return this.monsterType;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setMonsterType(String monsterType) {
+        this.monsterType = monsterType;
     }
 
     public int getDefAttPower() {
@@ -116,12 +99,7 @@ public class Monster extends Card {
         this.monsterName = monsterName;
     }
 
-    public int getTimesAffected() {
-        return this.timesAffected;
+    public String getAttribute() {
+        return attribute;
     }
-
-    public void increaseTimesAffected() {
-        this.timesAffected++;
-    }
-
 }

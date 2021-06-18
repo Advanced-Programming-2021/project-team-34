@@ -48,5 +48,8 @@ public class Tests {
             e.printStackTrace();
         }
         assertEquals(800 , monster1.getDefAttPower());
+        assertEquals("Effect" , monster1.getType());
+        assertEquals("Aqua" , monster1.getMonsterType());
+        assertEquals("WATER" , monster1.getAttribute());
     }
 }
