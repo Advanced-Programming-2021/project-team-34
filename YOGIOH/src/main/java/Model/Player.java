@@ -1,5 +1,9 @@
 package Model;
 
+import Model.GameObjects.CardInGame;
+import Model.GameObjects.MonsterInGame;
+import Model.GameObjects.SpellAndTrapInGame;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -9,11 +13,11 @@ public class Player {
     private User user;
     private int lifePoint;
     private int score;
-    private ArrayList<Card> inHandCards;
-    private ArrayList<Card> inDeckCards;
-    private ArrayList<Card> graveyard;
-    private ArrayList<Card> monstersOnTheField;
-    private ArrayList<Card> spellAndTrapsOnTheField;
+    private ArrayList<CardInGame> inHandCards;
+    private ArrayList<CardInGame> inDeckCards;
+    private ArrayList<CardInGame> graveyard;
+    private ArrayList<MonsterInGame> monstersOnTheField;
+    private ArrayList<SpellAndTrapInGame> spellAndTrapsOnTheField;
     private Card fZ;
 
     public Player(User user) {
@@ -31,14 +35,6 @@ public class Player {
     }
 
     public void drawACardFromDeck() {
-
-    }
-
-    public void summon(Monster monsterToSummon) {
-
-    }
-
-    public void flipSummon(Monster monsterToFlipSummon) {
 
     }
 

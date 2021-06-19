@@ -2,11 +2,10 @@ package Model.GameObjects;
 
 import Model.Monster;
 
-public class MonsterInGame {
+public class MonsterInGame extends CardInGame {
     Monster monster;
     int defencePower;
     int attackPower;
-    MonsterInGameState state = MonsterInGameState.IN_OUR_DECK;
     private int timesAffected = 0;
 
     public MonsterInGame(Monster monster) {
@@ -15,7 +14,23 @@ public class MonsterInGame {
         attackPower = monster.getDefAttPower();
     }
 
+    public int getTimesAffected() {
+        return timesAffected;
+    }
     public void increaseTimesAffected() {
         this.timesAffected++;
     }
+
+    public Monster getMonster() {
+        return monster;
+    }
+
+    public int getDefencePower() {
+        return defencePower;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
 }
