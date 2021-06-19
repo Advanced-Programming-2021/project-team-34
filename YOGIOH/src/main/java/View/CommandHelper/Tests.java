@@ -36,6 +36,13 @@ public class Tests {
 
     @Test
     public void test2Command() {
-
+        Command.clearValidCommandTypes();
+        CommandType commandType = new CommandType();
+        commandType.setMainPart("");
+        commandType.setName("select Card");
+        commandType.addField("select");
+        Command.addCommandType(commandType);
+        Command command = new Command("select 12");
+        assertEquals("select Card" , command.getType());
     }
 }

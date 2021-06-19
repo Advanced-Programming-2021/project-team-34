@@ -17,10 +17,10 @@ public class Command {
     }
 
     public String getField(String fieldName) {
-        if (commandType == null) {
-            System.out.println("In this command , commandType is null!!!!!!!");
-            return "In this command , commandType is null!!!!!!!";
-        }
+//        if (commandType == null) {
+//            System.out.println("In this command , commandType is null!!!!!!!");
+//            return "In this command , commandType is null!!!!!!!";
+//        }
         Field field = commandType.getField(fieldName);
         if (field == null) {
             return "There is no field with name : \""+fieldName+"\" in command \""+input+"\"";

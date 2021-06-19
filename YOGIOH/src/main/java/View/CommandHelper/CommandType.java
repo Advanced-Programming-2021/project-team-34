@@ -34,9 +34,15 @@ public class CommandType {
         String[] words = input.split(" ");
         String[] mainPartWords = mainPart.split(" ");
         int currentIndex = 0;
-        if (!checkMatch(words, mainPartWords, 0)) {
+        if (!mainPart.equals("") && !checkMatch(words, mainPartWords, 0)) {
+//            System.out.println("It seems not to match! ... mainPart = \""+mainPart+"\" and " +
+//                    "mainPartWords.length = "+mainPartWords.length+" and the first element of that is \""+mainPartWords[0]+"\"!");
             return false;
-        } currentIndex += mainPartWords.length;
+        }
+//        System.out.println("It seems to match! ...");
+        if (!mainPart.equals("")) {
+            currentIndex += mainPartWords.length;
+        }
         ArrayList<Field> remainedFields = (ArrayList<Field>) fields.clone();
         boolean matched;
         for (int i = 0; i < fields.size(); i++) {
