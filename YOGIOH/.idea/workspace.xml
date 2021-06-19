@@ -49,46 +49,54 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="YOGIOH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CommandType">
+    <configuration name="CommandType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Model.*" />
+          <option name="PATTERN" value="View.CommandHelper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="PACKAGE_NAME" value="View.CommandHelper" />
+      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.CommandType" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.test1Monster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests (۱)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Model.*" />
+          <option name="PATTERN" value="View.CommandHelper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test1Monster" />
+      <option name="PACKAGE_NAME" value="View.CommandHelper" />
+      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test2Command" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="View.CommandHelper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="View.CommandHelper" />
+      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Tests" />
+      <option name="METHOD_NAME" value="test2Command" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.test1User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.test2Deck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
@@ -98,13 +106,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test1User" />
+      <option name="METHOD_NAME" value="test2Deck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.test2User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testUserAndMonster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +122,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test2User" />
+      <option name="METHOD_NAME" value="testUserAndMonster" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Tests" />
-        <item itemvalue="JUnit.Tests.test1Monster" />
-        <item itemvalue="JUnit.Tests.test1User" />
-        <item itemvalue="JUnit.Tests.test2User" />
+        <item itemvalue="JUnit.CommandType" />
+        <item itemvalue="JUnit.Tests (۱)" />
+        <item itemvalue="JUnit.Tests.test2Command" />
+        <item itemvalue="JUnit.Tests.test2Deck" />
+        <item itemvalue="JUnit.Tests.testUserAndMonster" />
       </list>
     </recent_temporary>
   </component>

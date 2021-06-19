@@ -17,7 +17,7 @@ public class ProfileMenu extends ViewMenu {
         Command myCommand;
         String typeOfMyCommand;
         while (toContinue) {
-            show("MAIN MENU");
+            show("PROFILE MENU");
             input = input();
             myCommand = new Command(input);
             typeOfMyCommand = myCommand.getType();

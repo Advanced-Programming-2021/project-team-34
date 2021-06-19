@@ -147,4 +147,13 @@ public class User {
     public ArrayList<Card> getCards() {
         return cards;
     }
+
+    public static User getUserByNickname(String nickname) {
+        for (User user :
+                users) {
+            if (user.getNickname().equals(nickname)) {
+                return user;
+            }
+        } return null;
+    }
 }

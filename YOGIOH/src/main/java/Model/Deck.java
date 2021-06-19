@@ -37,22 +37,38 @@ public class Deck {
             return;
         }
         cardsInMainDeck.add(card);
+        if (!locked) {
+            numberOfCardsInMainDeck++;
+        }
     }
     public void addCardToSideDeck(Card card) {
         if (card == null) {
             return;
+        }
+        if (!locked) {
+            numberOfCardsInSideDeck++;
         }
         cardsInSideDeck.add(card);
     }
     public boolean deleteCardFromMainDeck(Card card) {
         if (card == null) {
             return false;
-        } return  (cardsInMainDeck.remove(card));
+        }
+        boolean result = cardsInMainDeck.remove(card);
+        if (result && !locked) {
+            numberOfCardsInMainDeck--;
+        }
+        return result;
     }
     public boolean deleteCardFromSideDeck(Card card) {
         if (card == null) {
             return false;
-        } return cardsInSideDeck.remove(card);
+        }
+        boolean result = cardsInSideDeck.remove(card);
+        if (result && !locked) {
+            numberOfCardsInSideDeck--;
+        }
+        return result;
     }
     public boolean deleteCardFromMainDeck(String name) {
         for (Card card :
