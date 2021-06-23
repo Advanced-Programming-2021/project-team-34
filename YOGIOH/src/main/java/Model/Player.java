@@ -61,4 +61,28 @@ public class Player {
     public int getLifePoint() {
         return lifePoint;
     }
+
+    public ArrayList<CardInGame> getInHandCards() {
+        return inHandCards;
+    }
+
+    public ArrayList<CardInGame> getInDeckCards() {
+        return inDeckCards;
+    }
+
+    public ArrayList<CardInGame> getGraveyard() {
+        return graveyard;
+    }
+
+    public ArrayList<MonsterInGame> getMonstersOnTheField() {
+        return monstersOnTheField;
+    }
+
+    public ArrayList<SpellAndTrapInGame> getSpellAndTrapsOnTheField() {
+        return spellAndTrapsOnTheField;
+    }
+
+    public Card getfZ() {
+        return fZ;
+    }
 }
