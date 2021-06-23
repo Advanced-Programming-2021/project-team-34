@@ -57,4 +57,8 @@ public class Player {
     public User getUser() {
         return user;
     }
+
+    public int getLifePoint() {
+        return lifePoint;
+    }
 }
