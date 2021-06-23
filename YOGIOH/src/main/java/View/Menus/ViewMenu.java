@@ -8,6 +8,9 @@ public class ViewMenu {
     public static void print(String stringToBeWritten) {
         System.out.println(stringToBeWritten);
     }
+    public static void write(String stringToBeWritten) {
+        System.out.print(stringToBeWritten);
+    }
     public static String input() {
         return scanner.nextLine();
     }
@@ -32,4 +35,5 @@ public class ViewMenu {
         showTitle(menuName);
         manyLinesAfter(5);
     }
+
 }
