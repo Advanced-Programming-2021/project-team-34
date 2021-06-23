@@ -53,4 +53,8 @@ public class Player {
     public Card getFZ() {
         return fZ;
     }
+
+    public User getUser() {
+        return user;
+    }
 }
