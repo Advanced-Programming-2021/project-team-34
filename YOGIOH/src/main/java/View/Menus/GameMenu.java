@@ -1,5 +1,7 @@
 package View.Menus;
 
+import Controller.MenuController;
+import Controller.MenuNames;
 import Model.GameObjects.CardInGame;
 import Model.GameObjects.CardInGameState;
 import Model.GameObjects.MonsterInGame;
@@ -20,10 +22,98 @@ public class GameMenu extends ViewMenu {
         String input;
         Command myCommand;
         String typeOfMyCommand;
-        showGamePlay();
+        while (toContinue) {
+            showGamePlay();
+            manyLinesAfter(2);
+            print("------------------\ninput a command : ");
+            input = input();
+            myCommand = new Command(input);
+            typeOfMyCommand = myCommand.getType();
+            switch (typeOfMyCommand) {
+                case "invalid type":
+                    print("The command you inputted is not valid in this menu!!!");
+                    break;
+                case "exit":
+                    MenuController.setMenuName(MenuNames.MainMenu);
+                    toContinue = false;
+                    break;
+                case "show current menu":
+                    print("Game Menu");
+                    break;
+                case "select card":
+                    selectCard(myCommand);
+                    break;
+                case "summon":
+                    summon(myCommand);
+                    break;
+                case "next phase":
+                    nextPhase();
+                    break;
+                case "set":
+                    set();
+                    break;
+                case "set position":
+                    setPosition(myCommand);
+                    break;
+            }
+        }
+    }
+
+    private static void setPosition(Command command) {
+        String positionToSet = command.getField("position");
+        boolean success = Controller.Menus.GameMenu.setPosition(positionToSet);
+        if (success) {
+            print("monster card position changed successfully");
+        } else {
+            print(Controller.Menus.GameMenu.getError());
+        }
+    }
+
+    private static void set() {
+        boolean success = Controller.Menus.GameMenu.set();
+        if (success) {
+            print("set successfully");
+        } else {
+            print(Controller.Menus.GameMenu.getError());
+        }
+    }
+
+    private static void nextPhase() {
+        String result = Controller.Menus.GameMenu.nextPhase();
+        print(result);
+    }
+
+    private static void summon(Command command) {
+        boolean success = Controller.Menus.GameMenu.summon();
+        if (success) {
+            print("summoned successfully");
+        } else {
+            print(Controller.Menus.GameMenu.getError());
+        }
+    }
+
+    private static void selectCard(Command command) {
+        String cardAddress = command.getField("select");
+        boolean success;
+        if (cardAddress.equals("-d")) {
+            success = Controller.Menus.GameMenu.unselect();
+            if (success) {
+                print("card deselected");
+            }
+        } else {
+            success = Controller.Menus.GameMenu.select(cardAddress);
+            if (success) {
+                print("card selected");
+            }
+        }
+        if (!success) {
+            print(Controller.Menus.GameMenu.getError());
+        }
+
     }
 
     private static void showGamePlay() {
+        showTitle("GAME MENU");
         showOpponentsBoard();
         print("\n--------------------------------------------\n");
         showCurrentsBoard();
@@ -124,9 +214,12 @@ public class GameMenu extends ViewMenu {
         print(player.getUser().getNickname()+":"+player.getLifePoint());
     }
 
+    // initialize
     private static void initializeMenu() {
         toContinue = true;
         Command.clearValidCommandTypes();
+        initializeExitCommandType();
+        initializeShowCurrentMenuCommandType();
         initializeSelectCardCommandType(); // to forget the selected card , the "select" field of it should be "d"
         initializeSummonCommandType();
         initializeSetCommandType();
@@ -139,6 +232,28 @@ public class GameMenu extends ViewMenu {
         initializeShowCommandType();
         initializeCancelCommandType();
         initializeSurrenderCommandType();
+        initializeNextPhaseCommandType();
+    }
+
+    private static void initializeNextPhaseCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setName("next phase");
+        commandType.setMainPart("next phase");
+        Command.addCommandType(commandType);
+    }
+
+    private static void initializeShowCurrentMenuCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setMainPart("menu show-current");
+        commandType.setName("show current menu");
+        Command.addCommandType(commandType);
+    }
+
+    private static void initializeExitCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setName("exit");
+        commandType.setMainPart("menu exit");
+        Command.addCommandType(commandType);
     }
 
     private static void initializeSurrenderCommandType() {
