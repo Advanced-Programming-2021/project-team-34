@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder" />
+    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ViewMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ViewMenu.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,54 +58,15 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommandType">
-    <configuration name="CommandType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.CommandHelper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="View.CommandHelper" />
-      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.CommandType" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests (۱)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.CommandHelper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="View.CommandHelper" />
-      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Tests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.test2Command" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.CommandHelper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="View.CommandHelper" />
-      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Tests" />
-      <option name="METHOD_NAME" value="test2Command" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.test2Deck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
@@ -106,13 +76,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test2Deck" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testUserAndMonster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.test1Monster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +91,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="testUserAndMonster" />
+      <option name="METHOD_NAME" value="test1Monster" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test1User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="test1User" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test2User" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="test2User" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommandType" />
-        <item itemvalue="JUnit.Tests (۱)" />
-        <item itemvalue="JUnit.Tests.test2Command" />
-        <item itemvalue="JUnit.Tests.test2Deck" />
-        <item itemvalue="JUnit.Tests.testUserAndMonster" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.Tests.test1Monster" />
+        <item itemvalue="JUnit.Tests.test1User" />
+        <item itemvalue="JUnit.Tests.test2User" />
       </list>
     </recent_temporary>
   </component>
@@ -167,14 +168,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="TEXT_FILTER_SETTINGS">
-                <TextFilterSettings>
-                  <option name="REGEX" value="true" />
-                  <option name="MATCH_CASE" value="true" />
-                </TextFilterSettings>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -182,6 +176,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="در این جا فایل نو جایگزین فایل‌های دیگر گیت‌هاب می‌شود و در آن کتاب‌خانه‌ی CommandHelper نوشته‌شده و افزوده‌شده و برخی از بخش‌های view نوشته‌شده‌اند." />
     <MESSAGE value="DeckMenu initialization" />
     <MESSAGE value="in YOGIOH folder" />
