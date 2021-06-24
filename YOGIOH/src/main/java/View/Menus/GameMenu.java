@@ -55,7 +55,82 @@ public class GameMenu extends ViewMenu {
                 case "set position":
                     setPosition(myCommand);
                     break;
+                case "flip summon":
+                    flipSummon();
+                    break;
+                case "attack":
+                    attack(myCommand);
+                    break;
+                case "active effect":
+                    activeEffect();
+                    break;
+                case "show graveyard":
+                    showGraveYard();
+                    break;
+                case "surrender":
+                    surrender();
+                    break;
             }
+            getConfirmation();
+        }
+    }
+
+    private static void surrender() {
+        Controller.Menus.GameMenu.surrender();
+    }
+
+    private static void showGraveYard() {
+        manyLinesAfter();
+        showTitle("SHOWING GRAVEYARDS");
+        showTitle("OPPONENT GRAVEYARD");
+        if (opponentPlayer.getGraveyard().size() == 0) {
+            print("graveyard empty");
+        } else {
+            for (CardInGame card :
+                    opponentPlayer.getGraveyard()) {
+                print(card.getCard().getName() + ":" + card.getCard().getDescription());
+            }
+        }
+        showTitle("YOUR GRAVEYARD");
+        if (currentPlayer.getGraveyard().size() == 0) {
+            print("graveyard empty");
+        } else {
+            for (CardInGame card :
+                    currentPlayer.getGraveyard()) {
+                print(card.getCard().getName() + ":" + card.getCard().getDescription());
+            }
+        }
+        while (!"back".equals(input())) {
+            print("input \"back\" to go back : ");
+        }
+    }
+
+    private static void activeEffect() {
+        boolean success = Controller.Menus.GameMenu.activeEffect();
+        if (success) {
+            print("spell activated");
+        } else {
+            print(Controller.Menus.GameMenu.getError());
+        }
+    }
+
+    private static void attack(Command command) {
+        String field = command.getField("attack");
+        String result;
+        if (field.equals("direct")) {
+            result = Controller.Menus.GameMenu.directAttack();
+        } else {
+            result = Controller.Menus.GameMenu.attackToAMonster(field);
+        }
+        print(result);
+    }
+
+    private static void flipSummon() {
+        boolean success = Controller.Menus.GameMenu.flipSummon();
+        if (success) {
+            print("flip summoned successfully");
+        } else {
+            print(Controller.Menus.GameMenu.getError());
         }
     }
 
@@ -112,6 +187,8 @@ public class GameMenu extends ViewMenu {
 
     }
 
+    // show Game Play
+
     private static void showGamePlay() {
         showTitle("GAME MENU");
         showOpponentsBoard();
@@ -153,7 +230,6 @@ public class GameMenu extends ViewMenu {
     }
 
     private static void showCardsInSpellAndTrapZone(Player player) {
-        // !!!!!!!!!!!!!!!!!!!!!!!111 To edit!
         print(  "\t"+getTextOfSePellAndTrapToShow(player.getSpellAndTrapsOnTheField().get((player == currentPlayer) ? (4) : (3)))+
                 "\t"+getTextOfSePellAndTrapToShow(player.getSpellAndTrapsOnTheField().get((player == currentPlayer) ? (2) : (1)))+
                 "\t"+getTextOfSePellAndTrapToShow(player.getSpellAndTrapsOnTheField().get(0))+
@@ -292,7 +368,7 @@ public class GameMenu extends ViewMenu {
 
     private static void initializeActiveEffectCommandType() {
         CommandType commandType = new CommandType();
-        commandType.setMainPart("active effect");
+        commandType.setMainPart("activate effect");
         commandType.setName("active effect");
         Command.addCommandType(commandType);
     }
