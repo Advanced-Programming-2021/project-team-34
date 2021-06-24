@@ -84,7 +84,7 @@ public class CommandType {
                 j++;
             }
         }
-        if (ansch[j-1] == ' ') {
+        if (j>=1 && ansch[j-1] == ' ') {
             ansch[j-1] = '\0';
             j--;
         }

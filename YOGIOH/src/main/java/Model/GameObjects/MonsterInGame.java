@@ -10,6 +10,7 @@ public class MonsterInGame extends CardInGame {
 
     public MonsterInGame(Monster monster) {
         this.monster = monster;
+        super.card = monster;
         defencePower = monster.getDefDefPower();
         attackPower = monster.getDefAttPower();
     }
