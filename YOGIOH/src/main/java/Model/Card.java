@@ -6,8 +6,8 @@ public abstract class Card {
     protected String name;
     protected String type;
     protected String description;
-//    protected Player owner;
-    protected static HashMap<String, Card> allCards;
+    //    protected Player owner;
+    private static HashMap<String, Card> allCards;
     private int price;
 
     static {
@@ -28,6 +28,8 @@ public abstract class Card {
         this.name = name;
     }
 
+    public static HashMap<String, Card> getAllCards() { return allCards; }
+
     public String getType() {
         return this.type;
     }
@@ -43,7 +45,6 @@ public abstract class Card {
     public void setDescription(String description) {
         this.description = description;
     }
-//
 //    public Player getOwner() {
 //        return this.owner;
 //    }
