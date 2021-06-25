@@ -2,6 +2,7 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
+import Model.User;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
@@ -48,6 +49,7 @@ public class StartMenu extends ViewMenu {
                 myCommand.getField("password"));
         if (success) {
             print("You logged in successfully");
+            MenuController.setLoggedInUser(User.getUserByUsername(myCommand.getField("username")));
             toContinue = false;
             // in controller : MenuController.setMenuName(MenuNames.MainMenu);
         } else {
@@ -61,6 +63,8 @@ public class StartMenu extends ViewMenu {
                 myCommand.getField("password"));
         if (success) {
             print("user created successfully");
+            //set user logged in
+            MenuController.setLoggedInUser(User.getUserByUsername(myCommand.getField("username")));
         } else {
             print(Controller.Menus.StartMenu.getError());
         }
