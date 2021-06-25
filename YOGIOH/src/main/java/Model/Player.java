@@ -18,6 +18,7 @@ public class Player {
     private ArrayList<CardInGame> graveyard;
     private ArrayList<MonsterInGame> monstersOnTheField;
     private ArrayList<SpellAndTrapInGame> spellAndTrapsOnTheField;
+    private ArrayList<Integer> playerLPs = new ArrayList<>();
     private Card fZ;
 
     public Player(User user) {
@@ -84,5 +85,15 @@ public class Player {
 
     public Card getfZ() {
         return fZ;
+    }
+
+    public int getMaxLP(){
+        int maxLP = playerLPs.get(0);
+        for (int i = 1; i < playerLPs.size(); i++){
+            if (playerLPs.get(i) > maxLP){
+                maxLP = playerLPs.get(i);
+            }
+        }
+        return maxLP;
     }
 }
