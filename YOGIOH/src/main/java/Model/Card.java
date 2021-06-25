@@ -7,7 +7,7 @@ public abstract class Card {
     protected String type;
     protected String description;
     //    protected Player owner;
-    private static HashMap<String, Card> allCards;
+    protected static HashMap<String, Card> allCards;
     private int price;
 
     static {
