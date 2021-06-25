@@ -11,10 +11,10 @@ import java.util.regex.Matcher;
 public class ShopMenu {
 
     public String buyCard(String cardName, String username) {
-        if (!isThereAnyCardWithThisName(cardName)) {
+        if (!Card.getAllCards().containsKey(cardName)) {
             return "there is no card with this name";
         }
-        Card card = Card.allCards.get(cardName);
+        Card card = Card.getAllCards().get(cardName);
         if (Objects.requireNonNull(User.getUserByUsername(username)).doesHaveEnoughCoin(card.getPrice())) {
             return "not enough money";
         }
@@ -23,15 +23,11 @@ public class ShopMenu {
         return "shop completed";
     }
 
-    private boolean isThereAnyCardWithThisName(String cardName) {
-        return Card.allCards.containsKey(cardName);
-    }
-
     //show command for a specific card
     public String cardShow(String cardName) {
         if (cardName != null){
-            if (Card.allCards.containsKey(cardName)){
-                return Card.allCards.get(cardName).toString();
+            if (Card.getAllCards().containsKey(cardName)){
+                return Card.getAllCards().get(cardName).toString();
             }
             return "card with this name, could not be found!";
         }
