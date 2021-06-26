@@ -158,7 +158,7 @@ public class Tests {
         assertTrue(deck.isValid());
         System.out.println(deck.getError());
         deck.addCardToMainDeck(monsterArrayList.get(0));
-        assertFalse(deck.isValid());
+        assertTrue(deck.isValid());
         deck.deleteCardFromMainDeck(monsterArrayList.get(0));
         assertTrue(deck.isValid());
     }

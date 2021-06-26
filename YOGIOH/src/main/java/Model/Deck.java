@@ -36,6 +36,7 @@ public class Deck {
         if (card == null) {
             return;
         }
+        if (cardsInMainDeck.contains(card)) {return;}
         cardsInMainDeck.add(card);
         if (!locked) {
             numberOfCardsInMainDeck++;
@@ -45,6 +46,7 @@ public class Deck {
         if (card == null) {
             return;
         }
+        if (cardsInSideDeck.contains(card)) {return;}
         if (!locked) {
             numberOfCardsInSideDeck++;
         }
