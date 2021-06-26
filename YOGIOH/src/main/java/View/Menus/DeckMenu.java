@@ -2,6 +2,8 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
+import Model.Monster;
+import Model.SpellAndTrap;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
@@ -37,7 +39,24 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
+    // methods
+    public static void showCard(Monster monster) {
+        print("Name : "+ monster.getName());
+        print("Level : "+ monster.getLevel());
+        print("Type : "+ monster.getMonsterType());
+        print("ATK : " + monster.getDefAttPower());
+        print("DEF : " + monster.getDefDefPower());
+        print("Description : " + monster.getDescription());
+    }
 
+    public static void showCard(SpellAndTrap spellAndTrap) {
+        print("Name : " + spellAndTrap.getName());
+        print((spellAndTrap.isSpell()) ? ("Spell") : ("Trap"));
+        print("Type : " + spellAndTrap.getSpellAndTrapType());
+        print("Description : "+ spellAndTrap.getDescription());
+    }
+
+    // initialize
     private static void initializeMenu() {
         toContinue = true;
         Command.clearValidCommandTypes();

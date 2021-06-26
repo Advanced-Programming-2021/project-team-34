@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/SpellAndTrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
       <recent name="Controller.Menus" />
       <recent name="Controller" />
     </key>
