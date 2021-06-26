@@ -309,6 +309,15 @@ public class GameMenu extends ViewMenu {
         initializeCancelCommandType();
         initializeSurrenderCommandType();
         initializeNextPhaseCommandType();
+        initializeShowCardCommandType();
+    }
+
+    private static void initializeShowCardCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setMainPart("card");
+        commandType.addField("show");
+        commandType.setName("show card");
+        Command.addCommandType(commandType);
     }
 
     private static void initializeNextPhaseCommandType() {
