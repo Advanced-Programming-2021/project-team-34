@@ -14,6 +14,7 @@ public class GameMenu extends ViewMenu {
     static boolean toContinue = true;
     static Player currentPlayer, opponentPlayer; /* Be careful : set these two variables before calling run */
     public static void run() {
+        Controller.Menus.GameMenu.initializeViewPlayers();
         initializeMenu();
         doMain();
     }

@@ -1,5 +1,6 @@
 package View.Menus;
 
+import Controller.MenuNames;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
@@ -14,7 +15,48 @@ public class DuelMenu extends ViewMenu {
         String input;
         Command myCommand;
         String typeOfMyCommand;
-        
+        while (toContinue) {
+            input = input();
+            myCommand = new Command(input);
+            typeOfMyCommand = myCommand.getType();
+            switch (typeOfMyCommand) {
+                case "exit":
+                    Controller.MenuController.setMenuName(MenuNames.MainMenu);
+                    toContinue = false;
+                    break;
+                case "show current menu":
+                    print("duel menu");
+                    break;
+                case "duel":
+                    duel(myCommand);
+                    break;
+                case "duel with ai":
+                    duelWithAI(myCommand);
+                    break;
+            }
+            getConfirmation();
+        }
+    }
+
+    private static void duelWithAI(Command command) {
+        String rounds = command.getField("round");
+        boolean success = Controller.Menus.DuelMenu.duelWithAI(rounds);
+        if (success) {
+            print("success");
+        } else {
+            print(Controller.Menus.DuelMenu.getError());
+        }
+    }
+
+    private static void duel(Command command) {
+        String secondPlayer = command.getField("second-player");
+        String rounds = command.getField("round");
+        boolean success = Controller.Menus.DuelMenu.duel(secondPlayer , rounds);
+        if (success) {
+            print("success!");
+        } else {
+            print(Controller.Menus.DuelMenu.getError());
+        }
     }
 
     private static void initializeMenu() {
@@ -22,6 +64,22 @@ public class DuelMenu extends ViewMenu {
         Command.clearValidCommandTypes();
         initializeNewDuelCommandType();
         initializeNewDuelWithAICommandType();
+        initializeExitCommandType();
+        initializeShowMenuNameCommandType();
+    }
+
+    private static void initializeShowMenuNameCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setMainPart("menu show-current");
+        commandType.setName("show current menu");
+        Command.addCommandType(commandType);
+    }
+
+    private static void initializeExitCommandType() {
+        CommandType commandType = new CommandType();
+        commandType.setName("exit");
+        commandType.setMainPart("menu exit");
+        Command.addCommandType(commandType);
     }
 
     private static void initializeNewDuelWithAICommandType() {

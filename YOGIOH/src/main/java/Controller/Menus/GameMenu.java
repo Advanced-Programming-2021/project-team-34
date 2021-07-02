@@ -54,4 +54,8 @@ public class GameMenu {
     public static void surrender() {
 
     }
+
+    public static void initializeViewPlayers() {
+
+    }
 }
