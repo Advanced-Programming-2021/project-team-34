@@ -31,6 +31,10 @@ public class MenuController {
                     break;
                 case MainMenu:
                     View.Menus.MainMenu.run();
+                    break;
+                case DuelMenu:
+                    View.Menus.GameMenu.run();
+                    break;
             }
         }
     }

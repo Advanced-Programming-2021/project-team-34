@@ -52,6 +52,7 @@ public class MainMenu extends ViewMenu {
         boolean success = Controller.Menus.DuelMenu.duelWithAI(rounds);
         if (success) {
             print("success");
+            MenuController.setMenuName(MenuNames.DuelMenu);
         } else {
             print(Controller.Menus.DuelMenu.getError());
         }
@@ -63,6 +64,8 @@ public class MainMenu extends ViewMenu {
         boolean success = Controller.Menus.DuelMenu.duel(secondPlayer , rounds);
         if (success) {
             print("success!");
+            toContinue = false;
+            MenuController.setMenuName(MenuNames.DuelMenu);
         } else {
             print(Controller.Menus.DuelMenu.getError());
         }
