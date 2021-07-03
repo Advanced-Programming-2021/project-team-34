@@ -34,8 +34,48 @@ public class DeckMenu extends ViewMenu {
                 case "show current menu":
                     print("Deck Menu");
                     break;
+                case "create deck":
+                    createDeck(myCommand);
+                    break;
+                case "delete deck":
+                    deleteDeck(myCommand);
+                    break;
+                case "set active deck":
+                    activateDeck(myCommand);
+                    break;
+
             }
             getConfirmation();
+        }
+    }
+
+    private static void activateDeck(Command command) {
+        String deckName = command.getField("set-activate");
+        boolean success = Controller.Menus.DeckMenu.activateDeck(deckName);
+        if (success) {
+            print("deck activated successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
+        }
+    }
+
+    private static void deleteDeck(Command command) {
+        String deckName = command.getField("delete");
+        boolean success = Controller.Menus.DeckMenu.deleteDeck(deckName);
+        if (success) {
+            print("deck deleted successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
+        }
+    }
+
+    private static void createDeck(Command command) {
+        String deckName = command.getField("create");
+        boolean success = Controller.Menus.DeckMenu.createDeck(deckName);
+        if (success) {
+            print("deck created successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
         }
     }
 
@@ -61,7 +101,7 @@ public class DeckMenu extends ViewMenu {
         toContinue = true;
         Command.clearValidCommandTypes();
         initializeExitCommandType();
-        initializeShowCurrentMenyCommandType();
+        initializeShowCurrentMenuCommandType();
         initializeDeckCreateCommandType();
         initializeDeckDeleteCommandType();
         initializeDeckSetActiveCommandType();
@@ -181,7 +221,7 @@ public class DeckMenu extends ViewMenu {
         Command.addCommandType(commandType);
     }
 
-    private static void initializeShowCurrentMenyCommandType() {
+    private static void initializeShowCurrentMenuCommandType() {
         CommandType commandType = new CommandType();
         commandType.setName("show current menu");
         commandType.setMainPart("menu show-current");
