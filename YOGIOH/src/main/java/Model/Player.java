@@ -13,13 +13,13 @@ public class Player {
     private User user;
     private int lifePoint;
     private int score;
-    private ArrayList<CardInGame> inHandCards;
-    private ArrayList<CardInGame> inDeckCards;
-    private ArrayList<CardInGame> graveyard;
-    private ArrayList<MonsterInGame> monstersOnTheField;
-    private ArrayList<SpellAndTrapInGame> spellAndTrapsOnTheField;
+    private ArrayList<CardInGame> inHandCards = new ArrayList<>(6);
+    private ArrayList<CardInGame> inDeckCards = new ArrayList<>(60);
+    private ArrayList<CardInGame> graveyard = new ArrayList<>();
+    private ArrayList<MonsterInGame> monstersOnTheField = new ArrayList<>(5);
+    private ArrayList<SpellAndTrapInGame> spellAndTrapsOnTheField = new ArrayList<>(5);
     private ArrayList<Integer> playerLPs = new ArrayList<>();
-    private Card fZ;
+    private CardInGame fZ;
 
     public Player(User user) {
         this.user = user;
@@ -51,7 +51,7 @@ public class Player {
 //
 //    }
 
-    public Card getFZ() {
+    public CardInGame getFZ() {
         return fZ;
     }
 
@@ -81,10 +81,6 @@ public class Player {
 
     public ArrayList<SpellAndTrapInGame> getSpellAndTrapsOnTheField() {
         return spellAndTrapsOnTheField;
-    }
-
-    public Card getfZ() {
-        return fZ;
     }
 
     public int getMaxLP(){
