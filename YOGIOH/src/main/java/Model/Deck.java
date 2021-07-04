@@ -1,11 +1,13 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Deck {
     ArrayList<Card> cardsInMainDeck = new ArrayList<Card>();
     ArrayList<Card> cardsInSideDeck = new ArrayList<Card>();
     Card cardInFZ;
+    String name;
     String error = "No Error!";
     boolean locked = false;// should be true if we are playing in 3-round mode
     int numberOfCardsInMainDeck;// to check that size of arrayList don't change when it is locked
@@ -217,4 +219,28 @@ public class Deck {
     public String getError() {
         return error;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void sortCards() {
+        cardsInSideDeck.sort(new Comparator<Card>() {
+            @Override
+            public int compare(Card card, Card t1) {
+                return String.CASE_INSENSITIVE_ORDER.compare(card.getName(), t1.getName());
+            }
+        });
+        cardsInMainDeck.sort(new Comparator<Card>() {
+            @Override
+            public int compare(Card card, Card t1) {
+                return String.CASE_INSENSITIVE_ORDER.compare(card.getName(), t1.getName());
+            }
+        });
+    }
+
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 public abstract class Card {
     protected String name;
     protected String type;
+    TypeOfCard typeOfCard = TypeOfCard.NOT_DETERMINED;
     protected String description;
     //    protected Player owner;
     protected static HashMap<String, Card> allCards;
@@ -55,6 +56,10 @@ public abstract class Card {
 
     public int getPrice() {
         return this.price;
+    }
+
+    public TypeOfCard getTypeOfCard() {
+        return typeOfCard;
     }
 }
 

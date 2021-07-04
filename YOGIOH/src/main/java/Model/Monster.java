@@ -25,6 +25,7 @@ public class Monster extends Card {
     /* To Add All Methods */
     public Monster(String monsterName) throws IOException {
         super(monsterName);
+        super.typeOfCard = TypeOfCard.MONSTER;
         String text = "";
         File file = new File("src/main/resources/Monster.csv");
         Scanner scanner = new Scanner(file);

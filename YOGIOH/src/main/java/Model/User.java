@@ -22,8 +22,8 @@ public class User {
     private String nickname;
     private int coin;
     private int highScore;
-    //    private ArrayList<Deck> decks;
-//    private Deck activeDeck;
+    private ArrayList<Deck> decks = new ArrayList<Deck>();
+    private Deck activeDeck;
     private ArrayList<Card> cards = new ArrayList<Card>();
     {
 //        decks = new ArrayList<>();
@@ -103,14 +103,14 @@ public class User {
         return nickname;
     }
 
-//    public Deck getActiveDeck() {
-//        return activeDeck;
-//    }
+    public Deck getActiveDeck() {
+        return activeDeck;
+    }
 
 
-//    public ArrayList<Deck> getDecks() {
-//        return decks;
-//    }
+    public ArrayList<Deck> getDecks() {
+        return decks;
+    }
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
@@ -178,6 +178,14 @@ public class User {
         allUsersWriter.write(gson.toJson(users));
         allUsersWriter.close();
     }
-
+    public Deck getDeckByName(String deckName) {
+        for (Deck deck :
+                decks) {
+            if (deck.getName().equals(deckName)) {
+                return deck;
+            }
+        }
+        return null;
+    }
 
 }

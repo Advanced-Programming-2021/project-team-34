@@ -2,10 +2,12 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
-import Model.Monster;
-import Model.SpellAndTrap;
+import Model.*;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class DeckMenu extends ViewMenu {
     static boolean toContinue = true;
@@ -55,9 +57,107 @@ public class DeckMenu extends ViewMenu {
                 case "remove card from deck":
                     removeCardFromMainDeck(myCommand);
                     break;
+                case "show all decks":
+                    showAllDecks();
+                    break;
+                case "show one side deck":
+                    showOneSideDeck(myCommand);
+                    break;
+                case "show one deck":
+                    showOneMainDeck(myCommand);
+                    break;
+                case "deck show cards":
+                    showBoughtCard();
+                    break;
 
             }
             getConfirmation();
+        }
+    }
+
+    private static void showBoughtCard() {
+        User user = Controller.MenuController.getLoggedInUser();
+        user.getCards().sort(new Comparator<Card>() {
+            @Override
+            public int compare(Card card, Card t1) {
+                return String.CASE_INSENSITIVE_ORDER.compare(card.getName(), t1.getName());
+            }
+        });
+        for (Card card :
+                user.getCards()) {
+            print(card.getName()+" : "+card.getDescription());
+        }
+    }
+
+    private static void showOneMainDeck(Command command) {
+        String deckName = command.getField("deck-name");
+        Deck deck = Controller.MenuController.getLoggedInUser().getDeckByName(deckName);
+        if (deck == null) {
+            print("deck with name "+deckName+" does not exist");
+        } else {
+            deck.sortCards();
+            print("Deck: "+deckName);
+            print("Main deck:");
+            print("Monsters:");
+            for (Card card :
+                    deck.getCardsInMainDeck()) {
+                if (card.getTypeOfCard().equals(TypeOfCard.MONSTER)) {
+                    print(card.getName()+" : "+ card.getDescription());
+                }
+            }
+            print("Spell and Traps:");
+            for (Card card :
+                    deck.getCardsInMainDeck()) {
+                if (card.getTypeOfCard().equals(TypeOfCard.SPELL) || card.getTypeOfCard().equals(TypeOfCard.TRAP)) {
+                    print(card.getName()+" : "+ card.getDescription());
+                }
+            }
+        }
+    }
+
+    private static void showOneSideDeck(Command command) {
+        String deckName = command.getField("deck-name");
+        Deck deck = Controller.MenuController.getLoggedInUser().getDeckByName(deckName);
+        if (deck == null) {
+            print("deck with name "+deckName+" does not exist");
+        } else {
+            deck.sortCards();
+            print("Deck: "+deckName);
+            print("Side deck:");
+            print("Monsters:");
+            for (Card card :
+                    deck.getCardsInSideDeck()) {
+                if (card.getTypeOfCard().equals(TypeOfCard.MONSTER)) {
+                    print(card.getName()+" : "+ card.getDescription());
+                }
+            }
+            print("Spell and Traps:");
+            for (Card card :
+                    deck.getCardsInSideDeck()) {
+                if (card.getTypeOfCard().equals(TypeOfCard.SPELL) || card.getTypeOfCard().equals(TypeOfCard.TRAP)) {
+                    print(card.getName()+" : "+ card.getDescription());
+                }
+            }
+        }
+    }
+
+    private static void showAllDecks() {
+        User user = MenuController.getLoggedInUser();
+        print("Decks : ");
+        print("Active Deck : ");
+        Deck activeDeck = user.getActiveDeck();
+        if (activeDeck != null) {
+            print(activeDeck.getName());
+        }
+        print("Other Decks");
+        ArrayList<Deck> allDecks = user.getDecks();
+        if (allDecks.size()>1) {
+            for (Deck deck :
+                    allDecks) {
+                if (deck != activeDeck) {
+                    print(deck.getName());
+                }
+            }
         }
     }
 
