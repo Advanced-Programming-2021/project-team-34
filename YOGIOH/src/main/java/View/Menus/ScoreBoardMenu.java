@@ -19,7 +19,7 @@ public class ScoreBoardMenu extends ViewMenu {
         Command myCommand;
         String typeOfMyCommand;
         while (toContinue) {
-            show("LOGIN MENU");
+            show("SCORE BOARD MENU");
             input = input();
             myCommand = new Command(input);
             typeOfMyCommand = myCommand.getType();
@@ -61,6 +61,7 @@ public class ScoreBoardMenu extends ViewMenu {
     }
 
     private static void initializeMenu() {
+        toContinue = true;
         Command.clearValidCommandTypes();
         initializeExitCommandType();
         initializeShowCurrentMenuCommandType();
