@@ -1,5 +1,6 @@
 package Controller.Menus;
 
+import Model.Player;
 import Model.User;
 
 public class DuelMenu {
