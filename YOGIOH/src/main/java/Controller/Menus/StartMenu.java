@@ -16,6 +16,7 @@ public class StartMenu {
         if (success) {
             error = "There is no Error";
             MenuController.setMenuName(MenuNames.MainMenu);
+            MainMenu.setUser(User.getUserByUsername(username));
             return true;
         } else {
             error = "Username and password didn't match";
@@ -24,16 +25,15 @@ public class StartMenu {
     }
 
     public static boolean register(String username, String nickname, String password) {
-        User user = User.getUserByUsername(username);
-        if (user != null) {
-            error = "user with username @"+username+" already exists";
+        if (User.getUserByUsername(username) != null) {
+            error = "user with username @" + username + " already exists";
             return false;
         }
         if (User.getUserByNickname(nickname) != null) {
-            error = "user with nickname "+nickname +" already exists";
+            error = "user with nickname " + nickname + " already exists";
             return false;
         }
-        user = new User(username, password, nickname);
+        new User(username, password, nickname);
         return true;
     }
 }

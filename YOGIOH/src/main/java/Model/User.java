@@ -1,9 +1,17 @@
 package Model;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
-    public static final ArrayList<User> users;
+    public static ArrayList<User> users;
 
     static {
         users = new ArrayList<>();
@@ -156,4 +164,20 @@ public class User {
             }
         } return null;
     }
+
+    public static void loadAllUsers() throws IOException {
+        Gson gson = new Gson();
+        users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
+                new TypeToken<List<User>>() {
+        }.getType());
+    }
+
+    public static void saveAllUsers() throws IOException {
+        Gson gson = new Gson();
+        FileWriter allUsersWriter = new FileWriter("src/main/resources/allUsers.json");
+        allUsersWriter.write(gson.toJson(users));
+        allUsersWriter.close();
+    }
+
+
 }

@@ -1,7 +1,18 @@
 package Controller.Menus;
 
+import Model.Card;
+import Model.Player;
+
 public class GameMenu {
     private static String error;
+
+    private static Player player1 = new Player(MainMenu.getUser());
+    private static Player player2;
+    private static Card selectedCard;
+
+    public static void setPlayer2(Player player2) {
+        GameMenu.player2 = player2;
+    }
 
     public static boolean unselect() {
         return false;
