@@ -20,7 +20,7 @@ public class DuelMenu {
             error = "number of rounds is not supported";
             return false;
         }
-
+        GameMenu.setPlayer2(new Player(User.getUserByUsername(secondPlayer)));
         return true;
     }
 
