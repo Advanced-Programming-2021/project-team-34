@@ -30,7 +30,7 @@ public class MainMenu extends ViewMenu {
                     toContinue = false;
                     break;
                 case "show current menu":
-                    print("Login Menu");
+                    print("Main Menu");
                     break;
                 case "enterProfileMenu":
                     MenuController.setMenuName(MenuNames.ProfileMenu);

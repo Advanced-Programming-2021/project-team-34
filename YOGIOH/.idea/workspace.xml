@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/TypeOfCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DuelMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/StartMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DuelMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +52,7 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="YOGIOH" />
@@ -141,8 +123,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CommandType" />
         <item itemvalue="JUnit.Tests (۱)" />
         <item itemvalue="JUnit.Tests.test1Deck" />
