@@ -43,9 +43,65 @@ public class DeckMenu extends ViewMenu {
                 case "set active deck":
                     activateDeck(myCommand);
                     break;
+                case "add card":
+                    addCardToMainDeck(myCommand);
+                    break;
+                case "add card to side deck":
+                    addCardToSideDeck(myCommand);
+                    break;
+                case "remove card from side deck":
+                    removeCardFromSideDeck(myCommand);
+                    break;
+                case "remove card from deck":
+                    removeCardFromMainDeck(myCommand);
+                    break;
 
             }
             getConfirmation();
+        }
+    }
+
+    private static void removeCardFromMainDeck(Command command) {
+        String cardName = command.getField("card");
+        String deckName = command.getField("deck");
+        boolean success = Controller.Menus.DeckMenu.removeCardFromMainDeck(deckName , cardName);
+        if (success) {
+            print("card removed from main deck successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
+        }
+    }
+
+    private static void removeCardFromSideDeck(Command command) {
+        String cardName = command.getField("card");
+        String deckName = command.getField("deck");
+        boolean success = Controller.Menus.DeckMenu.removeCardFromSideDeck(deckName , cardName);
+        if (success) {
+            print("card removed from side deck successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
+        }
+    }
+
+    private static void addCardToSideDeck(Command command) {
+        String cardName = command.getField("card");
+        String deckName = command.getField("deck");
+        boolean success = Controller.Menus.DeckMenu.addCardToSideDeck(deckName , cardName);
+        if (success) {
+            print("card added to side deck successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
+        }
+    }
+
+    private static void addCardToMainDeck(Command command) {
+        String cardName = command.getField("card");
+        String deckName = command.getField("deck");
+        boolean success = Controller.Menus.DeckMenu.addCardToMainDeck(deckName , cardName);
+        if (success) {
+            print("card added to deck successfully");
+        } else {
+            print(Controller.Menus.DeckMenu.getError());
         }
     }
 

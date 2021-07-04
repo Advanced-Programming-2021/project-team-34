@@ -18,4 +18,20 @@ public class DeckMenu {
     public static boolean activateDeck(String deckName) {
         return false;
     }
+
+    public static boolean addCardToMainDeck(String deckName, String cardName) {
+        return false;
+    }
+
+    public static boolean addCardToSideDeck(String deckName, String cardName) {
+        return false;
+    }
+
+    public static boolean removeCardFromSideDeck(String deckName, String cardName) {
+        return false;
+    }
+
+    public static boolean removeCardFromMainDeck(String deckName, String cardName) {
+        return false;
+    }
 }
