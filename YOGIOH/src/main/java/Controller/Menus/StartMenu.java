@@ -16,6 +16,7 @@ public class StartMenu {
         if (success) {
             error = "There is no Error";
             MenuController.setMenuName(MenuNames.MainMenu);
+            MainMenu.setUser(User.getUserByUsername(username));
             return true;
         } else {
             error = "Username and password didn't match";
