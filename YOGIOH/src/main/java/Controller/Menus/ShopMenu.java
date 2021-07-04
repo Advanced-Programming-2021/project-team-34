@@ -8,7 +8,21 @@ import java.util.Objects;
 
 
 public class ShopMenu {
+    static String error;
 
+    public static String getError() {
+        return error;
+    }
+
+    public static void setError(String error) {
+        ShopMenu.error = error;
+    }
+
+    public static boolean buyCard(String nameOfCardToBuy) {
+        return false;
+    }
+
+    // TODO : probably to delete the method below
     public String buyCard(String cardName, String username) {
         if (!Card.getAllCards().containsKey(cardName)) {
             return "there is no card with this name";

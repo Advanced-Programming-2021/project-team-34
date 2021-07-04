@@ -5,6 +5,8 @@ import Controller.MenuNames;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
+import java.util.ArrayList;
+
 public class ShopMenu extends ViewMenu {
     static boolean toContinue = true;
     public static void run() {
@@ -32,9 +34,30 @@ public class ShopMenu extends ViewMenu {
                 case "show current menu":
                     print("Shop Menu");
                     break;
+                case "show all":
+                    showAll();
+                    break;
+                case "buy card":
+                    buy(myCommand);
+                    break;
             }
             getConfirmation();
         }
+    }
+
+    private static void buy(Command command) {
+        String nameOfCardToBuy = command.getField("buy");
+        boolean success = Controller.Menus.ShopMenu.buyCard(nameOfCardToBuy);
+        if (success) {
+            print("card bought successfully");
+        } else {
+            print(Controller.Menus.ShopMenu.getError());
+        }
+
+    }
+
+    private static void showAll() {
+        // TODO : @aliagha do this
     }
 
     private static void initializeMenu() {
