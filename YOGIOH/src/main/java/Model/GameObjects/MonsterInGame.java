@@ -7,6 +7,7 @@ public class MonsterInGame extends CardInGame {
     int defencePower;
     int attackPower;
     private int timesAffected = 0;
+    String type = "monster";
 
     public MonsterInGame(Monster monster) {
         this.monster = monster;
@@ -34,4 +35,8 @@ public class MonsterInGame extends CardInGame {
         return attackPower;
     }
 
+    @Override
+    public String getType() {
+        return type;
+    }
 }
