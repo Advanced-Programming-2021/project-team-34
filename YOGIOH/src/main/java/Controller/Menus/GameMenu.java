@@ -2,8 +2,12 @@ package Controller.Menus;
 
 import Controller.MenuController;
 import Model.GameObjects.CardInGame;
+import Model.GameObjects.CardInGameState;
+import Model.GameObjects.MonsterInGame;
+import Model.GameObjects.SpellAndTrapInGame;
 import Model.Player;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +20,8 @@ public class GameMenu {
     private static Player otherPlayer = player2;
     private static CardInGame selectedCard;
     private static GamePhase phase = GamePhase.DrawPhase;
+    private static boolean hasSetOrSummonMonster = false;
+    private static ArrayList<MonsterInGame> attackedMonsters = new ArrayList<>();
 
     public static void setPlayer2(Player player2) {
         GameMenu.player2 = player2;
@@ -164,6 +170,7 @@ public class GameMenu {
         Player player = currentPlayer;
         currentPlayer = otherPlayer;
         otherPlayer = player;
+        hasSetOrSummonMonster = false;
     }
 
     public static boolean set() {
@@ -181,14 +188,58 @@ public class GameMenu {
             if (!isInHand) {
                 error = "you can’t set this card";
                 return false;
-            } else {
-
+            } else if (phase!= GamePhase.MainPhase1 && phase!= GamePhase.MainPhase2) {
+                error = "you can’t do this action in this phase";
+                return false;
+            } else if (selectedCard.getType().equals("monster")) {
+                if (currentPlayer.getMonstersOnTheField().size() > 4) {
+                    error = "monster card zone is full";
+                    return false;
+                } else if (hasSetOrSummonMonster) {
+                    error = "you already summoned/set on this turn";
+                    return false;
+                } else {
+                    currentPlayer.getMonstersOnTheField().add((MonsterInGame) selectedCard);
+                    selectedCard.setState(CardInGameState.IN_DEFENCE_POSITION);
+                    hasSetOrSummonMonster = true;
+                    selectedCard = null;
+                    return true;
+                }
+            } else if (selectedCard.getType().equals("spell or trap")) {
+                if (currentPlayer.getSpellAndTrapsOnTheField().size() > 4) {
+                    error = "spell card zone is full";
+                    return false;
+                } else {
+                    currentPlayer.getSpellAndTrapsOnTheField().add((SpellAndTrapInGame) selectedCard);
+                    selectedCard.setState(CardInGameState.IN_DEFENCE_POSITION);
+                    selectedCard = null;
+                    return true;
+                }
             }
         }
         return false;
     }
 
     public static boolean setPosition(String positionToSet) {
+        if (selectedCard == null) {
+            error = "no card is selected yet";
+            return false;
+        } else {
+            boolean isOnMonsterZone = false;
+            for (CardInGame card : currentPlayer.getMonstersOnTheField()) {
+                if (card == selectedCard) {
+                    isOnMonsterZone = true;
+                    break;
+                }
+            }
+            if (!isOnMonsterZone) {
+                error = "you can’t change this card position";
+                return false;
+            } else if (phase!= GamePhase.MainPhase1 && phase!= GamePhase.MainPhase2) {
+                error = "you can’t do this action in this phase";
+                return false;
+            }
+        }
         return false;
     }
 
@@ -201,7 +252,30 @@ public class GameMenu {
     }
 
     public static String directAttack() {
-        return null;
+        if (selectedCard == null) return "no card is selected yet";
+        boolean isOnMonsterZone = false;
+        for (CardInGame card : currentPlayer.getMonstersOnTheField()) {
+            if (card == selectedCard) {
+                isOnMonsterZone = true;
+                break;
+            }
+        }
+        if (!isOnMonsterZone) return "you can’t attack with this card";
+        else if (phase != GamePhase.BattlePhase) return "you can’t do this action in this phase";
+        boolean hasAttacked = false;
+        for (MonsterInGame monster : attackedMonsters) {
+            if (monster == selectedCard) {
+                hasAttacked = true;
+                break;
+            }
+        }
+        if (hasAttacked) return "this card already attacked";
+        if (otherPlayer.getMonstersOnTheField().size() == 0) return "you can’t attack the opponent directly";
+        int lifePointToDecrease = ((MonsterInGame) selectedCard).getAttackPower();
+        otherPlayer.decreaseLifePoint(lifePointToDecrease);
+        attackedMonsters.add((MonsterInGame) selectedCard);
+        selectedCard = null;
+        return "you opponent receives " + lifePointToDecrease + " battle damage";
     }
 
     public static String attackToAMonster(String address) { // to check if address is valid or not
