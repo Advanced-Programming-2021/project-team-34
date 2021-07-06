@@ -107,6 +107,7 @@ public class User {
         return activeDeck;
     }
 
+    public void setActiveDeck(Deck activeDeck) { this.activeDeck = activeDeck; }
 
     public ArrayList<Deck> getDecks() {
         return decks;

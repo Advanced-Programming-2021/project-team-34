@@ -1,10 +1,21 @@
 package Controller.Menus;
 
+import Controller.MenuController;
+import Model.Deck;
+
 public class DeckMenu {
     private static String error;
 
     public static boolean createDeck(String deckName) {
-        return false;
+        if (MenuController.getLoggedInUser().getDeckByName(deckName) != null) {
+            error = "deck with name " + deckName + " already exist";
+            return false;
+        } else {
+            Deck deck = new Deck();
+            deck.setName(deckName);
+            MenuController.getLoggedInUser().getDecks().add(deck);
+            return true;
+        }
     }
 
     public static String getError() {
@@ -12,11 +23,25 @@ public class DeckMenu {
     }
 
     public static boolean deleteDeck(String deckName) {
-        return false;
+        Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
+        if (deck == null) {
+            error = "deck with name " + deckName + " does not exist";
+            return false;
+        } else {
+            MenuController.getLoggedInUser().getDecks().remove(deck);
+            return true;
+        }
     }
 
     public static boolean activateDeck(String deckName) {
-        return false;
+        Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
+        if (deck == null) {
+            error = "deck with name " + deckName + " does not exist";
+            return false;
+        } else {
+            MenuController.getLoggedInUser().setActiveDeck(deck);
+            return true;
+        }
     }
 
     public static boolean addCardToMainDeck(String deckName, String cardName) {
