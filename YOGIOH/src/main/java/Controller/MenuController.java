@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.User;
-import View.Menus.StartMenu;
 
 public class MenuController {
     private static MenuNames menuName = MenuNames.StartMenu;
