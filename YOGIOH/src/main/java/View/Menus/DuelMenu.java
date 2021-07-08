@@ -1,2 +1,4 @@
-package View.Menus;public class DuelMenu {
+package View.Menus;
+
+public class DuelMenu extends ViewMenu{
 }

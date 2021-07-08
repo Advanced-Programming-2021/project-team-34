@@ -6,9 +6,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+            fx:controller="View.Menus.DuelMenu"
+            prefHeight="400.0" prefWidth="600.0">
+    <center>
+        <VBox alignment="CENTER">
+            <HBox>
+                <Button text="بررسی" /> <!-- TODO : action of this button-->
+                <Label text="       "/>
+                <GridPane fx:id="usernameOfOpponentGridPane">
+                    <TextField />
+                </GridPane>
+                <Label text="نـــــام کــــاربــــری رقـیب" styleClass="inputTextTitle"/>
+            </HBox>
+            <Label/>
+            <Label/>
+            <HBox>
+                <Button text="برگشتن" /> <!-- TODO : action of this button-->
+                <Button text="بازی با هوش مصنوعی"/> <!-- TODO : action of this button-->
+            </HBox>
+            <Label/>
+            <Label/>
+            <GridPane fx:id="resultGridPane">
+                <Label text="" styleClass="resultText"/>
+            </GridPane>
+        </VBox>
+    </center>
 
-</AnchorPane>
+    <stylesheets>
+        <URL value="@ButtonStyle.css" />
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</BorderPane>
