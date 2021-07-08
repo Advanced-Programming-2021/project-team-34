@@ -16,7 +16,7 @@
             prefHeight="500.0" prefWidth="800.0">
 
     <center>
-        <VBox alignment="CENTER">
+        <VBox alignment="CENTER" spacing="100">
             <HBox alignment="CENTER">
 
                 <!--برای ورود/for login-->

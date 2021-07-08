@@ -4,6 +4,11 @@
     -fx-fill-color: #c47302;
     -fx-arc-width: 100;
     -fx-arc-height: 100;
+    -fx-font-size: 22pt;
+    -fx-pref-width: 250px;
+    -fx-pref-height:60px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
  }
  .checkBox
  {
