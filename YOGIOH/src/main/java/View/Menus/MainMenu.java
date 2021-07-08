@@ -60,6 +60,67 @@ public class MainMenu extends ViewMenu {
         ImportExportMenu.run();
     }
 
+    public void goToImportExportMenuByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            goToImportExportMenu();
+    }
+
+    public void goToShopMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            goToShopMenu();
+    }
+
+    private void goToShopMenu() {
+        ShopMenu.run();
+    }
+
+    public void goToShopMenuByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            goToShopMenu();
+    }
+
+    public void goToProfileMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            goToProfileMenu();
+    }
+
+    private void goToProfileMenu() {
+        ProfileMenu.run();
+    }
+
+    public void goToProfileMenuByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            goToProfileMenu();
+    }
+
+    public void goToScoreBoardMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            goToScoreBoardMenu();
+    }
+
+    private void goToScoreBoardMenu() {
+        ScoreBoardMenu.run();
+    }
+
+    public void goToScoreBoardMenuByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            goToScoreBoardMenu();
+    }
+
+    public void goToDeckMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            goToDeckMenu();
+    }
+
+    private void goToDeckMenu() {
+        DeckMenu.run();
+    }
+
+    public void goToDeckMenuByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            goToDeckMenu();
+    }
+
 
 //    private static boolean toContinue = true;
 //    public static void run() {
