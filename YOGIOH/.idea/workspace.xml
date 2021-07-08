@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/StartMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ButtonStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ViewMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ViewMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/StartMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/StartMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/SpellAndTrapInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/SpellAndTrapInGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/User$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/StartMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/StartMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/StartMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ViewMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ViewMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +70,7 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests (۱)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="YOGIOH" />
@@ -125,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tests (۱)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Tests (۱)" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CommandType" />
         <item itemvalue="JUnit.Tests.test1Deck" />

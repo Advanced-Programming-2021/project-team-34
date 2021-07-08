@@ -1,0 +1,16 @@
+.modBar
+ {
+     -fx-background-color: white;
+ }
+ .modItem
+ {
+     -fx-color: black;
+ }
+ .ourNames
+ {
+    -fx-background-color: #000000
+ }
+.onButtonTexts
+{
+    -fx-fill-color: #2404d9
+}
