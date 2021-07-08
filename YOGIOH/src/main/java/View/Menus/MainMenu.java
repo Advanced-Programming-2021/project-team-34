@@ -121,6 +121,18 @@ public class MainMenu extends ViewMenu {
             goToDeckMenu();
     }
 
+    public void startByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent)) {
+            DuelMenu.run();
+        }
+    }
+
+    public void startByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent)) {
+            DuelMenu.run();
+        }
+    }
+
 
 //    private static boolean toContinue = true;
 //    public static void run() {

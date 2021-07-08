@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DuelMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/DuelMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DuelMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DuelMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/DuelMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/DuelMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

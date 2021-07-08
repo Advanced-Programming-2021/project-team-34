@@ -16,7 +16,7 @@
         <VBox alignment="CENTER">
             <Label text="منوی اصلی" styleClass="title" />
             <Label/>
-            <Button text="آغازیدن بازی" /> <!-- TODO : action of this button -->
+            <Button text="آغازیدن بازی" onMouseClicked="#startByMouse" onKeyPressed="#startByKey" /> <!-- TODO : action of this button -->
             <Label/>
             <Button text="دک" onMouseClicked="#goToDeckMenuByMouse" onKeyPressed="#goToDeckMenuByKey"/>
             <Label/>

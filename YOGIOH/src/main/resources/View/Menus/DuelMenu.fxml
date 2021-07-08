@@ -10,26 +10,27 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="View.Menus.DuelMenu"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="800.0">
     <center>
         <VBox alignment="CENTER">
-            <HBox>
+            <HBox alignment="CENTER">
                 <Button text="بررسی" /> <!-- TODO : action of this button-->
                 <Label text="       "/>
                 <GridPane fx:id="usernameOfOpponentGridPane">
-                    <TextField />
+                    <TextField prefHeight="60" prefWidth="250" styleClass="inputTextTitle" />
                 </GridPane>
-                <Label text="نـــــام کــــاربــــری رقـیب" styleClass="inputTextTitle"/>
+                <Label text="نـــــام کــــاربــــری رقـیب :  " styleClass="inputTextTitle"/>
             </HBox>
             <Label/>
             <Label/>
-            <HBox>
+            <HBox alignment="CENTER">
                 <Button text="برگشتن" /> <!-- TODO : action of this button-->
-                <Button text="بازی با هوش مصنوعی"/> <!-- TODO : action of this button-->
+                <Label text="              "/>
+                <Button text="هوش مصنوعی" /> <!-- TODO : action of this button-->
             </HBox>
             <Label/>
             <Label/>
-            <GridPane fx:id="resultGridPane">
+            <GridPane fx:id="resultGridPane" alignment="CENTER">
                 <Label text="" styleClass="resultText"/>
             </GridPane>
         </VBox>
