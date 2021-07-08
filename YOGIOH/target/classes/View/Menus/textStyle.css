@@ -10,7 +10,9 @@
  {
     -fx-background-color: #000000
  }
-.onButtonTexts
+.title
 {
-    -fx-fill-color: #2404d9
+    -fx-font-size: 26pt;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
 }

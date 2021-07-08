@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="View.Menus.MainMenu"
+            prefHeight="900.0" prefWidth="600.0">
+
+    <center>
+        <VBox alignment="CENTER">
+            <Label text="منوی اصلی" styleClass="title" />
+            <Label/>
+            <Button text="آغازیدن بازی"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="دک"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="جدول امتیازها"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="نمایه"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="فروشگاه"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="خواندن/ صدور"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="درآمدن از حساب"/> <!-- TODO : action of this button -->
+            <Label/>
+        </VBox>
+    </center>
+
+
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css"/>
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</BorderPane>

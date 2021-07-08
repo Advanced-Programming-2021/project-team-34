@@ -54,7 +54,8 @@ public class StartMenu extends ViewMenu {
         scene = new Scene(pane);
         primaryStage.setScene(scene);
         primaryStage.setTitle("YU_GI_OH!");
-        primaryStage.show();
+        stage = primaryStage;
+        stage.show();
     }
 
 
@@ -95,7 +96,6 @@ public class StartMenu extends ViewMenu {
         boolean success = Controller.Menus.StartMenu.login(username, password);
         if (success) {
             try {
-                this.stop();
                 MainMenu.run();
             } catch (Exception e) {
                 e.printStackTrace();
