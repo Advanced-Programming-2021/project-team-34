@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/ImportExportMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MenuNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MenuNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +178,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="in YOGIOH folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testDeterminingFieldsInCheckIfMatches.ic" NAME="CommandType.testDeterminingFieldsInCheckIfMatches Coverage Results" MODIFIED="1623490566544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testCheckIfMatches.ic" NAME="CommandType.testCheckIfMatches Coverage Results" MODIFIED="1623490505011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -189,16 +187,16 @@
     <SUITE FILE_PATH="coverage/YOGIOH$Tests_testCommand.ic" NAME="Tests.testCommand Coverage Results" MODIFIED="1623493182838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testDeleteWhiteSpace.ic" NAME="CommandType.testDeleteWhiteSpace Coverage Results" MODIFIED="1623479079479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>View.CommandHelper.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testCheckMatch.ic" NAME="CommandType.testCheckMatch Coverage Results" MODIFIED="1623479319189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testDeterminingFieldsInCheckIfMatches.ic" NAME="CommandType.testDeterminingFieldsInCheckIfMatches Coverage Results" MODIFIED="1623490566544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>View.CommandHelper.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_test2CheckIfMatches.ic" NAME="CommandType.test2CheckIfMatches Coverage Results" MODIFIED="1623482789965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>View.CommandHelper.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>View.CommandHelper.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testDeleteWhiteSpace.ic" NAME="CommandType.testDeleteWhiteSpace Coverage Results" MODIFIED="1623479079479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
     </SUITE>
   </component>

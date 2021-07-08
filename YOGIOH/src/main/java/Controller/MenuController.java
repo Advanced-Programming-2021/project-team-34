@@ -34,6 +34,18 @@ public class MenuController {
                 case DuelMenu:
                     View.Menus.GameMenu.run();
                     break;
+                case DeckMenu:
+                    View.Menus.DeckMenu.run();
+                    break;
+                case ScoreBoardMenu:
+                    View.Menus.ScoreBoardMenu.run();
+                    break;
+                case ShopMenu:
+                    View.Menus.ShopMenu.run();
+                    break;
+                default:
+                    System.out.println("There is a problem. Tell Mahdi Teymoori Anar to correct it.");
+                    break;
             }
         }
     }
