@@ -14,7 +14,7 @@
     <center>
         <VBox alignment="CENTER">
             <HBox alignment="CENTER">
-                <Button text="بررسی" /> <!-- TODO : action of this button-->
+                <Button text="بازی" onMouseClicked="#playByMouse" onKeyPressed="#playByKey" /> <!-- TODO : action of this button-->
                 <Label text="       "/>
                 <GridPane fx:id="usernameOfOpponentGridPane">
                     <TextField prefHeight="60" prefWidth="250" styleClass="inputTextTitle" />
@@ -24,9 +24,21 @@
             <Label/>
             <Label/>
             <HBox alignment="CENTER">
-                <Button text="برگشتن" /> <!-- TODO : action of this button-->
+                <Button text="برگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" />
                 <Label text="              "/>
                 <Button text="هوش مصنوعی" /> <!-- TODO : action of this button-->
+            </HBox>
+            <Label/>
+            <Label/>
+            <HBox alignment="CENTER">
+                <VBox alignment="CENTER">
+                    <GridPane fx:id="roundsGridPane">
+                        <Label text="شمار دورهای بازی روی ۱ تنظیم شده است." styleClass="informationTextLarge" ></Label>
+                    </GridPane>
+                    <Label text=" برای ویرایش بزنید روی دکمه" styleClass="informationTextSmall"/>
+
+                </VBox>
+                <Button text="ویراستن ۱/۳" onMouseClicked="#changeRoundsByMouse" onKeyPressed="#changeRoundsByKey" />
             </HBox>
             <Label/>
             <Label/>
