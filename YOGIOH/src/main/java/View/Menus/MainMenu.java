@@ -6,6 +6,8 @@ import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -30,7 +32,33 @@ public class MainMenu extends ViewMenu {
         stage.show();
     }
 
+    public void logoutByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent)) {
+            logout();
+        }
+    }
 
+    private void logout() {
+        MenuController.setLoggedInUser(null);
+        MenuController.setMenuName(MenuNames.StartMenu);
+        StartMenu.run();
+    }
+
+    public void logoutByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent)) {
+            logout();
+        }
+    }
+
+    public void goToImportExportMenuBuMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent)) {
+            goToImportExportMenu();
+        }
+    }
+
+    private void goToImportExportMenu() {
+        ImportExportMenu.run();
+    }
 
 
 //    private static boolean toContinue = true;
