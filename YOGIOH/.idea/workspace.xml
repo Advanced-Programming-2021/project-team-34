@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="in YOGIOH folder">
+    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="تکمیل MainMenu و بازشدن DuelMenu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DuelMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DuelMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/DuelMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/DuelMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +157,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۲" />
       <updated>1623816641550</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎۰۰۰۰۳" summary="تکمیل MainMenu و بازشدن DuelMenu">
+      <created>1625768256579</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۳" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۳" />
+      <updated>1625768256579</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,7 +185,8 @@
     <MESSAGE value="در این جا فایل نو جایگزین فایل‌های دیگر گیت‌هاب می‌شود و در آن کتاب‌خانه‌ی CommandHelper نوشته‌شده و افزوده‌شده و برخی از بخش‌های view نوشته‌شده‌اند." />
     <MESSAGE value="DeckMenu initialization" />
     <MESSAGE value="in YOGIOH folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="in YOGIOH folder" />
+    <MESSAGE value="تکمیل MainMenu و بازشدن DuelMenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="تکمیل MainMenu و بازشدن DuelMenu" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

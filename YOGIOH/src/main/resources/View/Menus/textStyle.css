@@ -26,3 +26,13 @@
     -fx-font-size: 18pt;
     -fx-text-fill: #d90404;
 }
+.informationTextLarge
+{
+    -fx-font-size: 20pt;
+    -fx-text-fill: #0f04d9;
+}
+.informationTextSmall
+{
+    -fx-font-size: 16pt;
+    -fx-text-fill: #0f04d9;
+}
