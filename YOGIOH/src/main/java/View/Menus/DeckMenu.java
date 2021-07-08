@@ -11,6 +11,7 @@ import java.util.Comparator;
 
 public class DeckMenu extends ViewMenu {
     static boolean toContinue = true;
+
     public static void run() {
         initializeMenu();
         doMain();
@@ -26,7 +27,7 @@ public class DeckMenu extends ViewMenu {
             myCommand = new Command(input);
             typeOfMyCommand = myCommand.getType();
             switch (typeOfMyCommand) {
-                case "invalid type" :
+                case "invalid type":
                     print("The command you inputted is not valid in this menu!!!");
                     break;
                 case "exit":
@@ -85,7 +86,7 @@ public class DeckMenu extends ViewMenu {
         });
         for (Card card :
                 user.getCards()) {
-            print(card.getName()+" : "+card.getDescription());
+            print(card.getName() + " : " + card.getDescription());
         }
     }
 
@@ -93,23 +94,23 @@ public class DeckMenu extends ViewMenu {
         String deckName = command.getField("deck-name");
         Deck deck = Controller.MenuController.getLoggedInUser().getDeckByName(deckName);
         if (deck == null) {
-            print("deck with name "+deckName+" does not exist");
+            print("deck with name " + deckName + " does not exist");
         } else {
             deck.sortCards();
-            print("Deck: "+deckName);
+            print("Deck: " + deckName);
             print("Main deck:");
             print("Monsters:");
             for (Card card :
                     deck.getCardsInMainDeck()) {
                 if (card.getTypeOfCard().equals(TypeOfCard.MONSTER)) {
-                    print(card.getName()+" : "+ card.getDescription());
+                    print(card.getName() + " : " + card.getDescription());
                 }
             }
             print("Spell and Traps:");
             for (Card card :
                     deck.getCardsInMainDeck()) {
                 if (card.getTypeOfCard().equals(TypeOfCard.SPELL) || card.getTypeOfCard().equals(TypeOfCard.TRAP)) {
-                    print(card.getName()+" : "+ card.getDescription());
+                    print(card.getName() + " : " + card.getDescription());
                 }
             }
         }
@@ -119,23 +120,23 @@ public class DeckMenu extends ViewMenu {
         String deckName = command.getField("deck-name");
         Deck deck = Controller.MenuController.getLoggedInUser().getDeckByName(deckName);
         if (deck == null) {
-            print("deck with name "+deckName+" does not exist");
+            print("deck with name " + deckName + " does not exist");
         } else {
             deck.sortCards();
-            print("Deck: "+deckName);
+            print("Deck: " + deckName);
             print("Side deck:");
             print("Monsters:");
             for (Card card :
                     deck.getCardsInSideDeck()) {
                 if (card.getTypeOfCard().equals(TypeOfCard.MONSTER)) {
-                    print(card.getName()+" : "+ card.getDescription());
+                    print(card.getName() + " : " + card.getDescription());
                 }
             }
             print("Spell and Traps:");
             for (Card card :
                     deck.getCardsInSideDeck()) {
                 if (card.getTypeOfCard().equals(TypeOfCard.SPELL) || card.getTypeOfCard().equals(TypeOfCard.TRAP)) {
-                    print(card.getName()+" : "+ card.getDescription());
+                    print(card.getName() + " : " + card.getDescription());
                 }
             }
         }
@@ -143,19 +144,25 @@ public class DeckMenu extends ViewMenu {
 
     private static void showAllDecks() {
         User user = MenuController.getLoggedInUser();
-        print("Decks : ");
-        print("Active Deck : ");
+        print("Decks :");
+        print("Active Deck :");
         Deck activeDeck = user.getActiveDeck();
         if (activeDeck != null) {
-            print(activeDeck.getName());
+            print(activeDeck.getName() +
+            ": main deck " + activeDeck.getNumberOfCardsInMainDeck() +
+            ", side deck " + activeDeck.getNumberOfCardsInSideDeck() +
+            ", " + (activeDeck.isValid() ? "valid" : "invalid"));
         }
-        print("Other Decks");
+        print("Other Decks:");
         ArrayList<Deck> allDecks = user.getDecks();
-        if (allDecks.size()>1) {
-            for (Deck deck :
-                    allDecks) {
+        allDecks.sort(Comparator.comparing(Deck::getName));
+        if (allDecks.size() > 1) {
+            for (Deck deck : allDecks) {
                 if (deck != activeDeck) {
-                    print(deck.getName());
+                    print(deck.getName() +
+                    ": main deck " + deck.getNumberOfCardsInMainDeck() +
+                    ", side deck " + deck.getNumberOfCardsInSideDeck() +
+                    ", " + (deck.isValid() ? "valid" : "invalid"));
                 }
             }
         }
@@ -164,7 +171,7 @@ public class DeckMenu extends ViewMenu {
     private static void removeCardFromMainDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
-        boolean success = Controller.Menus.DeckMenu.removeCardFromMainDeck(deckName , cardName);
+        boolean success = Controller.Menus.DeckMenu.removeCardFromMainDeck(deckName, cardName);
         if (success) {
             print("card removed from main deck successfully");
         } else {
@@ -175,7 +182,7 @@ public class DeckMenu extends ViewMenu {
     private static void removeCardFromSideDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
-        boolean success = Controller.Menus.DeckMenu.removeCardFromSideDeck(deckName , cardName);
+        boolean success = Controller.Menus.DeckMenu.removeCardFromSideDeck(deckName, cardName);
         if (success) {
             print("card removed from side deck successfully");
         } else {
@@ -186,7 +193,7 @@ public class DeckMenu extends ViewMenu {
     private static void addCardToSideDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
-        boolean success = Controller.Menus.DeckMenu.addCardToSideDeck(deckName , cardName);
+        boolean success = Controller.Menus.DeckMenu.addCardToSideDeck(deckName, cardName);
         if (success) {
             print("card added to side deck successfully");
         } else {
@@ -197,7 +204,7 @@ public class DeckMenu extends ViewMenu {
     private static void addCardToMainDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
-        boolean success = Controller.Menus.DeckMenu.addCardToMainDeck(deckName , cardName);
+        boolean success = Controller.Menus.DeckMenu.addCardToMainDeck(deckName, cardName);
         if (success) {
             print("card added to deck successfully");
         } else {
@@ -237,9 +244,9 @@ public class DeckMenu extends ViewMenu {
 
     // methods
     public static void showCard(Monster monster) {
-        print("Name : "+ monster.getName());
-        print("Level : "+ monster.getLevel());
-        print("Type : "+ monster.getMonsterType());
+        print("Name : " + monster.getName());
+        print("Level : " + monster.getLevel());
+        print("Type : " + monster.getMonsterType());
         print("ATK : " + monster.getDefAttPower());
         print("DEF : " + monster.getDefDefPower());
         print("Description : " + monster.getDescription());
@@ -249,7 +256,7 @@ public class DeckMenu extends ViewMenu {
         print("Name : " + spellAndTrap.getName());
         print((spellAndTrap.isSpell()) ? ("Spell") : ("Trap"));
         print("Type : " + spellAndTrap.getSpellAndTrapType());
-        print("Description : "+ spellAndTrap.getDescription());
+        print("Description : " + spellAndTrap.getDescription());
     }
 
     // initialize
