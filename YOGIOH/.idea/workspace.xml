@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ImportExportMenu.fxml" afterDir="false" />
+    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment=".حذف‌شد TODO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +190,19 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۸" />
       <updated>1625836372603</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎۰۰۰۰۹" summary="منوی خواندن و صدور ساخته‌شد.">
+      <created>1625838844788</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۹" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۹" />
+      <updated>1625838844788</updated>
+    </task>
+    <task id="LOCAL‎۰۰۰۱۰" summary=".حذف‌شد TODO">
+      <created>1625838869090</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۰" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۰" />
+      <updated>1625838869090</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +230,9 @@
     <MESSAGE value=".کامل‌شد DuelMenu" />
     <MESSAGE value="پاک کردن TODO" />
     <MESSAGE value=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی" />
-    <option name="LAST_COMMIT_MESSAGE" value=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی" />
+    <MESSAGE value="منوی خواندن و صدور ساخته‌شد." />
+    <MESSAGE value=".حذف‌شد TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value=".حذف‌شد TODO" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

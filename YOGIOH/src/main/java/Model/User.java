@@ -9,15 +9,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class User {
     public static ArrayList<User> users;
-
     static {
         users = new ArrayList<>();
     }
 
-    private final String username;
+    private String username;
     private String password;
     private String nickname;
     private int coin;
@@ -25,6 +25,8 @@ public class User {
     private ArrayList<Deck> decks = new ArrayList<Deck>();
     private Deck activeDeck;
     private ArrayList<Card> cards = new ArrayList<Card>();
+    private static final int maximumNumberOfAvatar = 5;
+    private String avatarName; /** address of avatar file */
     {
 //        decks = new ArrayList<>();
     }
@@ -35,6 +37,7 @@ public class User {
         this.nickname = nickname;
         this.coin = 0;
         this.highScore = -1;
+        this.avatarName =  "src/main/resources/Images/Avatars/"+((new Random().nextInt(maximumNumberOfAvatar-1))+1)+".png";
         setHighScore(0);
     }
 
@@ -189,4 +192,11 @@ public class User {
         return null;
     }
 
+    /**
+     * This method gets address of avatar file.
+     * For example : "src/main/resources/Images/Avatars/1.png"
+     * @return String address of file */
+    public String getAvatarName() {
+        return avatarName;
+    }
 }
