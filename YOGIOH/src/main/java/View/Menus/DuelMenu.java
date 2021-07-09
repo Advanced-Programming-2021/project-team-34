@@ -68,6 +68,7 @@ public class DuelMenu extends ViewMenu{
         boolean success = Controller.Menus.DuelMenu.duel(secondPlayer , ""+round);;
         if (success) {
             System.out.println("success");
+            GameMenu.run();
         } else {
             message(Controller.Menus.DuelMenu.getError() , resultGridPane);
         }
@@ -87,6 +88,7 @@ public class DuelMenu extends ViewMenu{
         boolean success = Controller.Menus.DuelMenu.duelWithAI(round+"");;
         if (success) {
             message("success" , resultGridPane);
+            GameMenu.run();
         } else {
             message(Controller.Menus.DuelMenu.getError() , resultGridPane);
         }
