@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="پاک کردن TODO" />
+    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ImportExportMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +185,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۷" />
       <updated>1625835594879</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎۰۰۰۰۸" summary=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی">
+      <created>1625836372603</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۸" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۸" />
+      <updated>1625836372603</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,7 +218,8 @@
     <MESSAGE value="پیشرفت DuelMenu" />
     <MESSAGE value=".کامل‌شد DuelMenu" />
     <MESSAGE value="پاک کردن TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="پاک کردن TODO" />
+    <MESSAGE value=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی" />
+    <option name="LAST_COMMIT_MESSAGE" value=".به روز رسانی شد DuelMenu&#10;&#10;برای ورود به صفحه‌ی بازی" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
