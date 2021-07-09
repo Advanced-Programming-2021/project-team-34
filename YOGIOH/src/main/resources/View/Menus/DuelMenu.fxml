@@ -14,7 +14,7 @@
     <center>
         <VBox alignment="CENTER">
             <HBox alignment="CENTER">
-                <Button text="بازی" onMouseClicked="#playByMouse" onKeyPressed="#playByKey" /> <!-- TODO : action of this button-->
+                <Button text="بازی" onMouseClicked="#playByMouse" onKeyPressed="#playByKey" />
                 <Label text="       "/>
                 <GridPane fx:id="usernameOfOpponentGridPane">
                     <TextField prefHeight="60" prefWidth="250" styleClass="inputTextTitle" />
@@ -26,7 +26,7 @@
             <HBox alignment="CENTER">
                 <Button text="برگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" />
                 <Label text="              "/>
-                <Button text="هوش مصنوعی" /> <!-- TODO : action of this button-->
+                <Button text="هوش مصنوعی" onMouseClicked="#aiByMouse"/>
             </HBox>
             <Label/>
             <Label/>

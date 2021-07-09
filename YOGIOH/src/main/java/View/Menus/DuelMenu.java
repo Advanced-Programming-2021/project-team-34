@@ -77,4 +77,18 @@ public class DuelMenu extends ViewMenu{
         if (isChoiceKey(keyEvent))
                 play();
     }
+
+    public void aiByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            ai();
+    }
+
+    private void ai() {
+        boolean success = Controller.Menus.DuelMenu.duelWithAI(round+"");;
+        if (success) {
+            message("success" , resultGridPane);
+        } else {
+            message(Controller.Menus.DuelMenu.getError() , resultGridPane);
+        }
+    }
 }
