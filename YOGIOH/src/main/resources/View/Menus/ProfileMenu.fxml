@@ -6,9 +6,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<?import java.net.URL?>
+<?import javafx.scene.shape.Circle?>
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+            fx:controller="View.Menus.ProfileMenu"
+            prefHeight="800.0" prefWidth="600.0">
 
-</AnchorPane>
+    <center>
+        <VBox alignment="CENTER">
+            <Label text="نمایه" styleClass="title"/>
+            <Label/>
+            <HBox alignment="CENTER">
+                <GridPane fx:id="moneyGridPane">
+                    <Label text="" styleClass="informationTextSmall"/>
+                </GridPane>
+                <Label text="پول : " styleClass="informationTextSmall"/>
+                <Label text="                      "/>
+                <GridPane fx:id="scoreGridPane">
+                    <Label text="" styleClass="informationTextSmall"/>
+                </GridPane>
+                <Label text="امتیاز : " styleClass="informationTextSmall"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Circle /> <!-- TODO : Profile image and on click change profile -->
+
+            </HBox>
+        </VBox>
+    </center>
+
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css"/>
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</BorderPane>
