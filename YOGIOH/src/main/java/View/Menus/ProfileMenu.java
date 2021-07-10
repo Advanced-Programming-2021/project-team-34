@@ -9,16 +9,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class ProfileMenu extends ViewMenu {
     static ProfileMenu profileMenu = new ProfileMenu();
     Scene scene;
     public GridPane usernameGridPane, scoreGridPane, moneyGridPane, nicknameGridPane, resultGridPane;
+    @FXML
+    public Circle profileImageCircle;
     public static void run() {
         try {
             profileMenu.start(stage);
@@ -44,7 +50,7 @@ public class ProfileMenu extends ViewMenu {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        BorderPane pane = FXMLLoader.load(getClass().getResource("ProfileMenu.fxml"));
+        Pane pane = FXMLLoader.load(getClass().getResource("ProfileMenu.fxml"));
         scene = new Scene(pane);
         primaryStage.setScene(scene);
         primaryStage.setTitle("YU_GI_OH!");
@@ -59,6 +65,11 @@ public class ProfileMenu extends ViewMenu {
         TextField textFieldOfNickname = (TextField) children[0];
         textFieldOfNickname.setText(MenuController.getLoggedInUser().getNickname());
         textFieldOfNickname.deselect();
+        ImagePattern shape = new ImagePattern(
+                new Image(getClass().getResource(MenuController.getLoggedInUser().getAvatarName()).toExternalForm()));
+        profileImageCircle.setFill(shape);
+        message(MenuController.getLoggedInUser().getHighScore()+"" , scoreGridPane);
+        message(MenuController.getLoggedInUser().getCoin()+"" , moneyGridPane);
     }
 
     public void backByMouse(MouseEvent mouseEvent) {
@@ -110,6 +121,23 @@ public class ProfileMenu extends ViewMenu {
     public void changePasswordByKey(KeyEvent keyEvent) {
         if (isChoiceKey(keyEvent))
             ChangePasswordMenu.run();
+    }
+
+    public void changeAvatarByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            changeAvatar();
+    }
+
+    private void changeAvatar() {
+        MenuController.getLoggedInUser().changeAvatar();
+        ImagePattern shape = new ImagePattern(
+                new Image(getClass().getResource(MenuController.getLoggedInUser().getAvatarName()).toExternalForm()));
+        profileImageCircle.setFill(shape);
+    }
+
+    public void changeAvatarByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            changeAvatar();
     }
 
     //

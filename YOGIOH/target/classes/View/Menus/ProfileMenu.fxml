@@ -9,13 +9,13 @@
 <?import java.net.URL?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns="http://javafx.com/javafx"
+<Pane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="View.Menus.ProfileMenu"
             prefHeight="800.0" prefWidth="600.0">
 
-    <center>
-        <VBox alignment="CENTER" >
+
+        <VBox alignment="CENTER" prefWidth="500" layoutX="50" layoutY="100">
             <Label text="نمایه" styleClass="title"/>
             <Label/>
             <HBox alignment="CENTER">
@@ -30,7 +30,6 @@
                 <Label text="امتیاز : " styleClass="informationTextSmall"/>
             </HBox>
             <HBox alignment="CENTER">
-                <Circle /> <!-- TODO : Profile image and on click change profile -->
                 <GridPane fx:id="nicknameGridPane">
                      <TextField text="" styleClass="inputTextTitle" onKeyTyped="#keyTyped" />
                 </GridPane>
@@ -51,11 +50,13 @@
             <Label/>
             <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey"/>
         </VBox>
-    </center>
 
+
+    <Circle radius="50" fill="blue" centerY="230" centerX="70" fx:id="profileImageCircle"
+            onMouseClicked="#changeAvatarByMouse" onKeyPressed="#changeAvatarByKey"/>
 
     <stylesheets>
         <URL value="@ButtonStyle.css"/>
         <URL value="@textStyle.css"/>
     </stylesheets>
-</BorderPane>
+</Pane>

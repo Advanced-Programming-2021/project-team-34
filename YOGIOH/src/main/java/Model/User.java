@@ -27,6 +27,7 @@ public class User {
     private ArrayList<Card> cards = new ArrayList<Card>();
     private static final int maximumNumberOfAvatar = 5;
     private String avatarName; /** address of avatar file */
+    private int avatarInt;
     {
 //        decks = new ArrayList<>();
     }
@@ -37,7 +38,8 @@ public class User {
         this.nickname = nickname;
         this.coin = 0;
         this.highScore = -1;
-        this.avatarName =  "src/main/resources/Images/Avatars/"+((new Random().nextInt(maximumNumberOfAvatar-1))+1)+".png";
+        this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar-1))+1;
+        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
         setHighScore(0);
     }
 
@@ -198,5 +200,13 @@ public class User {
      * @return String address of file */
     public String getAvatarName() {
         return avatarName;
+    }
+    /**
+     * This method changes avatar address to the next one !
+     * */
+    public void changeAvatar() {
+        this.avatarInt = (avatarInt+1);
+        if (avatarInt == maximumNumberOfAvatar+1) avatarInt = 1;
+        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
     }
 }
