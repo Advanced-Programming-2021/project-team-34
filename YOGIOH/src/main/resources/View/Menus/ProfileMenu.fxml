@@ -47,7 +47,7 @@
             <Button text="ویراستن نام مستعار" styleClass="buttonLongText"
                     onMouseClicked="#changeNicknameByMouse" onKeyPressed="#changeNicknameByKey" />
             <Label/>
-            <Button text="ویراستن گذرواژه"/> <!-- TODO : action of this button -->
+            <Button text="ویراستن گذرواژه" onMouseClicked="#changePasswordByMouse" onKeyPressed="#changePasswordByKey"/> <!-- TODO : action of this button -->
             <Label/>
             <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey"/>
         </VBox>

@@ -102,6 +102,16 @@ public class ProfileMenu extends ViewMenu {
             changeNickname();
     }
 
+    public void changePasswordByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            ChangePasswordMenu.run();
+    }
+
+    public void changePasswordByKey(KeyEvent keyEvent) {
+        if (isChoiceKey(keyEvent))
+            ChangePasswordMenu.run();
+    }
+
     //
 //    private static boolean toContinue = true;
 //    public static void run() {
