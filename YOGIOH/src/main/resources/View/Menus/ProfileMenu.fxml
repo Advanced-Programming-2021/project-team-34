@@ -8,13 +8,14 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="View.Menus.ProfileMenu"
             prefHeight="800.0" prefWidth="600.0">
 
     <center>
-        <VBox alignment="CENTER">
+        <VBox alignment="CENTER" >
             <Label text="نمایه" styleClass="title"/>
             <Label/>
             <HBox alignment="CENTER">
@@ -30,8 +31,25 @@
             </HBox>
             <HBox alignment="CENTER">
                 <Circle /> <!-- TODO : Profile image and on click change profile -->
-
+                <GridPane fx:id="nicknameGridPane">
+                     <TextField text="" styleClass="inputTextTitle" onKeyTyped="#keyTyped" />
+                </GridPane>
             </HBox>
+            <GridPane fx:id="usernameGridPane" alignment="CENTER" >
+                <Label text="" styleClass="informationTextSmall"/>
+            </GridPane>
+            <Label/>
+            <GridPane fx:id="resultGridPane" alignment="CENTER">
+                <Label text="" styleClass="resultText"/>
+            </GridPane>
+            <Label/>
+            <Label/>
+            <Button text="ویراستن نام مستعار" styleClass="buttonLongText"
+                    onMouseClicked="#changeNicknameByMouse" onKeyPressed="#changeNicknameByKey" />
+            <Label/>
+            <Button text="ویراستن گذرواژه"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey"/>
         </VBox>
     </center>
 

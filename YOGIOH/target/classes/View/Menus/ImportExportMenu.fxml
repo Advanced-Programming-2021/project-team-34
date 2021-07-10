@@ -24,8 +24,8 @@
             </HBox>
             <Label/>
             <HBox alignment="CENTER">
-                <Button text="خواندن" onMouseClicked="#importByMouse" onKeyPressed="#importByKey" /> <!-- TODO : action of this button -->
-                <Button text="صدور" onMouseClicked="#exportByMouse" onKeyPressed="#exportByKey"/> <!-- TODO : action of this button -->
+                <Button text="خواندن" onMouseClicked="#importByMouse" onKeyPressed="#importByKey" />
+                <Button text="صدور" onMouseClicked="#exportByMouse" onKeyPressed="#exportByKey"/>
             </HBox>
             <Label/>
             <GridPane fx:id="resultGridPane">

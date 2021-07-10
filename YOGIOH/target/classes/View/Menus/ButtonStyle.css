@@ -17,3 +17,15 @@
         -fx-arc-width: 100;
         -fx-arc-height: 100;
  }
+ .buttonLongText
+  {
+     -fx-background-color: #c47302;
+     -fx-fill-color: #c47302;
+     -fx-arc-width: 100;
+     -fx-arc-height: 100;
+     -fx-font-size: 18pt;
+     -fx-pref-width: 250px;
+     -fx-pref-height:60px;
+     -fx-text-fill: #ffffff;
+     -fx-font-weight: bold;
+  }
