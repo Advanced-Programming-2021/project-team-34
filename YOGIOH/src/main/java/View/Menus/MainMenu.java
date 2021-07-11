@@ -36,22 +36,6 @@ public class MainMenu extends ViewMenu {
                     MenuController.setMenuName(MenuNames.ProfileMenu);
                     toContinue = false;
                     break;
-                case "enterImportExportMenu":
-                    MenuController.setMenuName(MenuNames.ImportExport);
-                    toContinue = false;
-                    break;
-                case "enterScoreBoardMenu":
-                    MenuController.setMenuName(MenuNames.ScoreBoardMenu);
-                    toContinue = false;
-                    break;
-                case "enterDeckMenu":
-                    MenuController.setMenuName(MenuNames.DeckMenu);
-                    toContinue = false;
-                    break;
-                case "enterShopMenu":
-                    MenuController.setMenuName(MenuNames.ShopMenu);
-                    toContinue = false;
-                    break;
                 case "duel":
                     duel(myCommand);
                     break;
@@ -131,38 +115,6 @@ public class MainMenu extends ViewMenu {
     private static void initializeMenuEnterCommandTypes() {
         initializeProfileMenuEnterCommand();
         initializeDuelMenuEnterCommand();
-        initializeImportExportMenuEnterCommandType();
-        initializeScoreBoardMenuEnterCommandType();
-        initializeDeckMenuEnterCommandType();
-        initializeShopMenuEnterCommandType();
-    }
-
-    private static void initializeShopMenuEnterCommandType() {
-        CommandType commandType = new CommandType();
-        commandType.setName("enterShopMenu");
-        commandType.setMainPart("menu enter shop");
-        Command.addCommandType(commandType);
-    }
-
-    private static void initializeDeckMenuEnterCommandType() {
-        CommandType commandType = new CommandType();
-        commandType.setName("enterDeckMenu");
-        commandType.setMainPart("menu enter deck");
-        Command.addCommandType(commandType);
-    }
-
-    private static void initializeScoreBoardMenuEnterCommandType() {
-        CommandType commandType = new CommandType();
-        commandType.setName("enterScoreBoardMenu");
-        commandType.setMainPart("menu enter scoreBoard");
-        Command.addCommandType(commandType);
-    }
-
-    private static void initializeImportExportMenuEnterCommandType() {
-        CommandType commandType = new CommandType();
-        commandType.setName("enterImportExportMenu");
-        commandType.setMainPart("menu enter importExport");
-        Command.addCommandType(commandType);
     }
 
     private static void initializeDuelMenuEnterCommand() {

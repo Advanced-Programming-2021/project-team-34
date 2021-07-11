@@ -28,7 +28,7 @@ public class ScoreBoardMenu extends ViewMenu {
                     print("The command you inputted is not valid in this menu!!!");
                     break;
                 case "exit":
-                    MenuController.setMenuName(MenuNames.MainMenu);
+                    MenuController.setMenuName(MenuNames.Exit);
                     toContinue = false;
                     break;
                 case "show current menu":

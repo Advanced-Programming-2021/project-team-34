@@ -1,5 +1,5 @@
 package Controller;
 
 public enum MenuNames {
-    StartMenu, MainMenu, DuelMenu, DeckMenu, ScoreBoardMenu, ProfileMenu, ShopMenu, Exit, ImportExport;
+    StartMenu, MainMenu, DuelMenu, DeckMenu, ScoreBoardMenu, ProfileMenu, ShopMenu, Exit;
 }

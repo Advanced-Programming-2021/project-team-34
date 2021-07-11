@@ -33,7 +33,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
-        this.coin = 100000;
+        this.coin = 0;
         this.highScore = -1;
         setHighScore(0);
     }
@@ -71,7 +71,6 @@ public class User {
                 users.add(this);
                 return;
             }
-
             sortUsers();
         }
     }
@@ -107,8 +106,6 @@ public class User {
     public Deck getActiveDeck() {
         return activeDeck;
     }
-
-
 
     public void setActiveDeck(Deck activeDeck) { this.activeDeck = activeDeck; }
 
@@ -169,41 +166,22 @@ public class User {
         } return null;
     }
 
-    public static void loadAllUsers() {
-        try {
-            Gson gson = new Gson();
-            users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
-                    new TypeToken<List<User>>() {
-                    }.getType());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void loadAllUsers() throws IOException {
+        Gson gson = new Gson();
+        users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
+                new TypeToken<List<User>>() {
+        }.getType());
     }
 
-    public static void saveAllUsers() {
-        try {
-            FileWriter allUsersWriter = new FileWriter("src/main/resources/allUsers.json");
-            allUsersWriter.write(new Gson().toJson(users));
-            allUsersWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+    public static void saveAllUsers() throws IOException {
+        Gson gson = new Gson();
+        FileWriter allUsersWriter = new FileWriter("src/main/resources/allUsers.json");
+        allUsersWriter.write(gson.toJson(users));
+        allUsersWriter.close();
     }
-//method save to save every change in user
-//and being able to get its info back
-    public void save() {
-        try {
-            FileWriter userFile = new FileWriter("src/main/resources/users/" + username + ".json");
-            userFile.write(new Gson().toJson(this));
-            userFile.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public Deck getDeckByName(String deckName) {
-        for (Deck deck : decks) {
+        for (Deck deck :
+                decks) {
             if (deck.getName().equals(deckName)) {
                 return deck;
             }
