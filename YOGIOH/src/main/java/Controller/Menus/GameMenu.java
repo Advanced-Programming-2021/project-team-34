@@ -163,8 +163,80 @@ public class GameMenu {
             hasSetOrSummonMonster = true;
             selectedCard = null;
             return true;
+        } else if (((MonsterInGame) selectedCard).getMonster().getLevel() <= 6) {
+            boolean isAnyMonster = false;
+            for (MonsterInGame monster : currentPlayer.getMonstersOnTheField()) {
+                if (monster != null) {
+                    isAnyMonster = true;
+                    break;
+                }
+            }
+            if (!isAnyMonster) {
+                error = "there are not enough cards for tribute";
+                return false;
+            } else {
+                int monsterNumber = View.Menus.GameMenu.askWhichCardToSacrifice();
+                if (monsterNumber == 0) {
+                    error = "The performance canceled by user";
+                    return false;
+                } else if (currentPlayer.getMonstersOnTheField().get(monsterNumber - 1) == null) {
+                    error = "there no monsters one this address";
+                    return false;
+                } else {
+                    currentPlayer.getGraveyard().add(currentPlayer.getMonstersOnTheField().get(monsterNumber - 1));
+                    currentPlayer.getMonstersOnTheField().remove(monsterNumber - 1);
+                    currentPlayer.getMonstersOnTheField().add((MonsterInGame) selectedCard);
+                    selectedCard.setState(CardInGameState.IN_FIELD);
+                    hasSetOrSummonMonster = true;
+                    selectedCard = null;
+                    return true;
+                }
+            }
+        } else {
+            int counter = 0;
+            boolean areEnoughMonsters = false;
+            for (MonsterInGame monster : currentPlayer.getMonstersOnTheField()) {
+                if (monster != null) {
+                    counter++;
+                    if (counter == 2) {
+                        areEnoughMonsters = true;
+                        break;
+                    }
+                }
+            }
+            if (!areEnoughMonsters) {
+                error = "there are not enough cards for tribute";
+                return false;
+            } else {
+                int number1 = View.Menus.GameMenu.askWhichCardToSacrifice();
+                if (number1 == 0) {
+                    error = "The performance canceled by user";
+                    return false;
+                }
+                int number2 = View.Menus.GameMenu.askWhichCardToSacrifice();
+                if (number2 == 0) {
+                    error = "The performance canceled by user";
+                    return false;
+                } else if (number1 == number2) {
+                    error = "The performance canceled by user";
+                    return false;
+                } else if (currentPlayer.getMonstersOnTheField().get(number1 - 1) == null ||
+                        currentPlayer.getMonstersOnTheField().get(number2 - 1) == null) {
+                    error = "there no monsters one this address";
+                    return false;
+                } else {
+                    currentPlayer.getGraveyard().add(currentPlayer.getMonstersOnTheField().get(number1 - 1));
+                    currentPlayer.getGraveyard().add(currentPlayer.getMonstersOnTheField().get(number2 - 1));
+                    currentPlayer.getMonstersOnTheField().remove(number1 - 1);
+                    currentPlayer.getMonstersOnTheField().remove(number2 - 1);
+                    currentPlayer.getMonstersOnTheField().add((MonsterInGame) selectedCard);
+                    selectedCard.setState(CardInGameState.IN_FIELD);
+                    hasSetOrSummonMonster = true;
+                    selectedCard = null;
+                    return true;
+                }
+            }
         }
-        return false;
     }
 
     public static String nextPhase() {
