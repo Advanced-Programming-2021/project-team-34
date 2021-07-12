@@ -5,14 +5,16 @@ import Controller.MenuNames;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
+import java.io.IOException;
+
 public class StartMenu extends ViewMenu {
     static boolean toContinue = true;
-    public static void run() {
+    public static void run() throws IOException {
         initializeMenu();
         doMain();
     }
 
-    protected static void doMain() {
+    protected static void doMain() throws IOException {
         String input;
         Command myCommand;
         String typeOfMyCommand;
@@ -55,7 +57,7 @@ public class StartMenu extends ViewMenu {
         }
     }
 
-    private static void createUser(Command myCommand) {
+    private static void createUser(Command myCommand) throws IOException {
         boolean success = Controller.Menus.StartMenu.register(myCommand.getField("username"),
                 myCommand.getField("nickname"),
                 myCommand.getField("password"));
