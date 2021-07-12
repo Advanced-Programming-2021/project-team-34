@@ -39,6 +39,9 @@ public class User {
     }
 
     public static User getUserByUsername(String username) {
+        if (users == null || users.size() == 0) {
+            return null;
+        }
         for (User user : users) {
             if (user.getUsername().equals(username)) return user;
         }
@@ -158,6 +161,9 @@ public class User {
     }
 
     public static User getUserByNickname(String nickname) {
+        if (users == null || users.size() == 0) {
+            return null;
+        }
         for (User user :
                 users) {
             if (user.getNickname().equals(nickname)) {

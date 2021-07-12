@@ -149,9 +149,9 @@ public class DeckMenu extends ViewMenu {
         if (activeDeck != null) {
             print(activeDeck.getName());
         }
-        print("Other Decks");
+        print("Other Decks : ");
         ArrayList<Deck> allDecks = user.getDecks();
-        if (allDecks.size()>1) {
+        if (allDecks.size()>=1) {
             for (Deck deck :
                     allDecks) {
                 if (deck != activeDeck) {

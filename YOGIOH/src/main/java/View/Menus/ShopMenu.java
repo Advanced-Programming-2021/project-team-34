@@ -70,9 +70,11 @@ public class ShopMenu extends ViewMenu {
                     Card.getNameOfAllCardsInAlphabeticalOrder()) {
                 try {
                     Monster monster = new Monster(cardName);
+                    DeckMenu.showCard(monster);
                 } catch (NoMonsterWithThisNameException e) {
                     try {
                         SpellAndTrap spellAndTrap = new SpellAndTrap(cardName);
+                        DeckMenu.showCard(spellAndTrap);
                     } catch (IOException ioException) {
                         print("ERROR!");
                     }
