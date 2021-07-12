@@ -6,17 +6,18 @@ import Model.*;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
 public class DeckMenu extends ViewMenu {
     static boolean toContinue = true;
-    public static void run() {
+    public static void run() throws IOException {
         initializeMenu();
         doMain();
     }
 
-    private static void doMain() {
+    private static void doMain() throws IOException {
         String input;
         Command myCommand;
         String typeOfMyCommand;
@@ -30,7 +31,7 @@ public class DeckMenu extends ViewMenu {
                     print("The command you inputted is not valid in this menu!!!");
                     break;
                 case "exit":
-                    MenuController.setMenuName(MenuNames.MainMenu);
+                    MenuController.setMenuName(MenuNames.Exit);
                     toContinue = false;
                     break;
                 case "show current menu":
@@ -149,9 +150,9 @@ public class DeckMenu extends ViewMenu {
         if (activeDeck != null) {
             print(activeDeck.getName());
         }
-        print("Other Decks : ");
+        print("Other Decks");
         ArrayList<Deck> allDecks = user.getDecks();
-        if (allDecks.size()>=1) {
+        if (allDecks.size()>1) {
             for (Deck deck :
                     allDecks) {
                 if (deck != activeDeck) {
@@ -183,7 +184,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void addCardToSideDeck(Command command) {
+    private static void addCardToSideDeck(Command command) throws IOException {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
         boolean success = Controller.Menus.DeckMenu.addCardToSideDeck(deckName , cardName);
@@ -194,7 +195,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void addCardToMainDeck(Command command) {
+    private static void addCardToMainDeck(Command command) throws IOException {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
         boolean success = Controller.Menus.DeckMenu.addCardToMainDeck(deckName , cardName);
@@ -225,7 +226,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void createDeck(Command command) {
+    private static void createDeck(Command command) throws IOException {
         String deckName = command.getField("create");
         boolean success = Controller.Menus.DeckMenu.createDeck(deckName);
         if (success) {
