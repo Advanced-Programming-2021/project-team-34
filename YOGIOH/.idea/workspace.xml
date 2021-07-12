@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ImportExportMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
-    </list>
+    <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
