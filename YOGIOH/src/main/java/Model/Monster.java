@@ -35,7 +35,7 @@ public class Monster extends Card {
         boolean found = false;
         while (scanner.hasNextLine()) {
             text = scanner.nextLine();
-            Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(\\S+?),(\\S+?),(\\S+?),(\\d+),(\\d+),(.+?)," +
+            Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(.+?),(.+?),(.+?),(\\d+),(\\d+),(.+?)," +
                     "(\\d+)");
             Matcher matcher = pattern.matcher(text);
             if (matcher.find()) {
