@@ -19,7 +19,7 @@ public class MenuController {
         MenuController.loggedInUser = loggedInUser;
     }
 
-    public static void run() {
+    public static void run() throws IOException {
         while (toContinue) {
             switch (menuName) {
                 case StartMenu:
