@@ -291,6 +291,33 @@ public class GameMenu extends ViewMenu {
         print(player.getUser().getNickname()+":"+player.getLifePoint());
     }
 
+    /**
+     * This method gives a message to user and ask him/her to select a monster card to sacrifice
+     *      then if inputted text was empty or "cancel" returns null and performance should be canceled by controller
+     *      else it returns inputted value
+     * @param messageToUser is the message will be shown to the user , if you put it empty , it has default value :
+     *      "To summon this monster you should sacrifice another monster card!" */
+    public static String askWhichCardToSacrifice(String messageToUser) {
+        print(messageToUser);
+        print("input just name of a monster OR input nothing and just press ENTER to cancel :");
+        String input = input();
+        if (input.equals("") || input.equals("cancel")) {
+            return null;
+        }
+        return input;
+    }
+    /**
+     * This method gives a message to user and ask him/her to select a monster card to sacrifice
+     *      then if inputted text was empty or "cancel" returns null and performance should be canceled by controller
+     *      else it returns inputted value.
+     * This is actually public static String askWhichCardToSacrifice(String messageToUser) where messageToUser
+     *      is the default value .
+     * */
+    public static String askWhichCardToSacrifice() {
+        return askWhichCardToSacrifice("To summon this monster you should sacrifice another monster card!");
+    }
+
+
     // initialize
     private static void initializeMenu() {
         toContinue = true;
