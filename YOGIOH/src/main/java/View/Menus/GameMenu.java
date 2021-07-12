@@ -299,7 +299,7 @@ public class GameMenu extends ViewMenu {
      *      "To summon this monster you should sacrifice another monster card!" */
     public static String askWhichCardToSacrifice(String messageToUser) {
         print(messageToUser);
-        print("input just name of a monster OR input nothing and just press ENTER to cancel :");
+        print("input just place of a monster card on you zone OR input nothing and just press ENTER to cancel :");
         String input = input();
         if (input.equals("") || input.equals("cancel")) {
             return null;
