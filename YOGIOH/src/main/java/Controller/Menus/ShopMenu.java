@@ -4,6 +4,8 @@ package Controller.Menus;
 import Model.Card;
 import Model.User;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Objects;
 
 
@@ -20,7 +22,7 @@ public class ShopMenu {
     }
 
     // TODO : probably to delete the method below
-    public String buyCard(String cardName, String username) {
+    public String buyCard(String cardName, String username) throws IOException {
         if (!Card.getAllCards().containsKey(cardName)) {
             return "there is no card with this name";
         }
@@ -30,6 +32,9 @@ public class ShopMenu {
         }
         Objects.requireNonNull(User.getUserByUsername(username)).increaseCoin(-card.getPrice());
         Objects.requireNonNull(User.getUserByUsername(username)).addCard(card);
+        FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + username + "cards.txt");
+        writer.append(cardName).append("\n");
+        writer.close();
         return "shop completed";
     }
 
