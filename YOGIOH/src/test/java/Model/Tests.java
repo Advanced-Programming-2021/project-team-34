@@ -178,4 +178,18 @@ public class Tests {
         }
         assertFalse(found);
     }
+    @Test
+    public void testSpellTrap() {
+        try {
+            SpellAndTrap spellAndTrap1 = new SpellAndTrap("Trap Hole");
+            assertEquals("Trap",spellAndTrap1.spellAndTrapType);
+            assertEquals("Normal" , spellAndTrap1.icon);
+            assertEquals("When your opponent Normal or Flip Summons 1 monster with 1000 or more ATK: Target that monster; destroy that target.",spellAndTrap1.description);
+            assertEquals("Unlimited" , spellAndTrap1.getStatus());
+            assertEquals(2000 , spellAndTrap1.getPrice());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
