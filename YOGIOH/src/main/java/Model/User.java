@@ -188,5 +188,13 @@ public class User {
         }
         return null;
     }
+    public Card getACardWithName(String name) {
+        for (Card card :
+                cards) {
+            if (card.getName().equals(name)) {
+                return card;
+            }
+        }return null;
+    }
 
 }

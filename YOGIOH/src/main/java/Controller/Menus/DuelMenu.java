@@ -1,5 +1,6 @@
 package Controller.Menus;
 
+import Controller.MenuController;
 import Model.Player;
 import Model.User;
 
@@ -10,13 +11,20 @@ public class DuelMenu {
         if (User.getUserByUsername(secondPlayer) == null) {
             error = "there is no player with this username";
             return false;
-        } else if (MainMenu.getUser().getActiveDeck() == null) {
-            error = MainMenu.getUser().getUsername() + " has no active deck";
+        } else if (MenuController.getLoggedInUser().getActiveDeck() == null) {
+            error = MenuController.getLoggedInUser().getUsername() + " has no active deck";
             return false;
         } else if (User.getUserByUsername(secondPlayer).getActiveDeck() == null) {
             error = secondPlayer + " has no active deck";
             return false;
-        } //*To Do: invalid active deck
+        }
+        else if (!MenuController.getLoggedInUser().getActiveDeck().isValid()) {
+            error = MenuController.getLoggedInUser().getUsername()+"'s deck is invalid";
+            return false;
+        } else if (!User.getUserByUsername(secondPlayer).getActiveDeck().isValid()) {
+            error = secondPlayer+"'s deck is invalid";
+            return false;
+        }
         else if (!rounds.equals("1") && !rounds.equals("3")) {
             error = "number of rounds is not supported";
             return false;
@@ -30,10 +38,13 @@ public class DuelMenu {
     }
 
     public static boolean duelWithAI(String rounds) {
-        if (MainMenu.getUser().getActiveDeck() == null) {
-            error = MainMenu.getUser().getUsername() + " has no active deck";
+        if (MenuController.getLoggedInUser().getActiveDeck() == null) {
+            error = MenuController.getLoggedInUser().getUsername() + " has no active deck";
             return false;
-        } //*To Do: invalid active deck
+        } else if (!MenuController.getLoggedInUser().getActiveDeck().isValid()) {
+            error = "your deck is invalid";
+            return false;
+        }
         else if (!rounds.equals("1") && !rounds.equals("3")) {
             error = "number of rounds is not supported";
             return false;

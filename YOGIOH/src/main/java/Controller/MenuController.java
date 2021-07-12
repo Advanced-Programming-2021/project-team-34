@@ -3,6 +3,8 @@ package Controller;
 import Model.User;
 import View.Menus.StartMenu;
 
+import java.io.IOException;
+
 public class MenuController {
     private static MenuNames menuName = MenuNames.StartMenu;
     private static boolean toContinue = true;
@@ -35,6 +37,12 @@ public class MenuController {
                 case DuelMenu:
                     View.Menus.GameMenu.run();
                     break;
+            }
+            try {
+                User.saveAllUsers();
+            } catch (IOException e) {
+                System.out.println("There is a problem in saving users");
+                e.printStackTrace();
             }
         }
     }

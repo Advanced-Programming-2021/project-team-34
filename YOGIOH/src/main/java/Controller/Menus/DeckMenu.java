@@ -47,53 +47,62 @@ public class DeckMenu {
         }
     }
 
+    /**
+     * @author : mahditeymoorianar
+     * This method is called by view and adds a card with name to a main deck of current user by name
+     *      same as DOC page 14
+     * */
     public static boolean addCardToMainDeck(String deckName, String cardName) {
-        User user = MenuController.getLoggedInUser();
-
-        if (!user.getCards().contains(Card.getAllCards().get(cardName))) {
-            error = "card with name " + cardName + " does not exist";
+        Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
+        Card card = MenuController.getLoggedInUser().getACardWithName(cardName);
+        if (card == null) {
+            error = "card with name "+cardName+" does not exist";
+        }
+        if (deck == null) {
+            error = "deck with name "+deckName+" does not exist";
             return false;
         }
-        if (user.getDeckByName(deckName) == null) {
-            error = "deck with name " + deckName + " does not exist";
-            return false;
-        }
-        if (user.getActiveDeck().getCardsInMainDeck().size() == 60) {
+        if ((deck.getCardsInMainDeck().size()>=60)) {
             error = "main deck is full";
             return false;
         }
-        if (Deck.getCardFrequency(cardName, user) == 3) {
-            error = "there are already three cards with name " + cardName + " in deck " + deckName;
+        if (deck.numberOfCardsInDeckWithName(cardName) >= 3) {
+            error = "there are already three cards with name "+cardName+" in deck "+deckName;
             return false;
         }
-        MenuController.getLoggedInUser().getActiveDeck().addCardToMainDeck(Card.getAllCards().get(cardName));
+        deck.addCardToMainDeck(card);
         return true;
     }
-
+    /**
+     * @author : mahditeymoorianar
+     * This method is called by view and adds a card with name to a side deck of current user by name
+     *      same as DOC page 14
+     * */
     public static boolean addCardToSideDeck(String deckName, String cardName) {
-        User user = MenuController.getLoggedInUser();
-
-        if (!user.getCards().contains(Card.getAllCards().get(cardName))) {
-            error = "card with name " + cardName + " does not exist";
+        Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
+        Card card = MenuController.getLoggedInUser().getACardWithName(cardName);
+        if (card == null) {
+            error = "card with name "+cardName+" does not exist";
+        }
+        if (deck == null) {
+            error = "deck with name "+deckName+" does not exist";
             return false;
         }
-        if (user.getDeckByName(deckName) == null) {
-            error = "deck with name " + deckName + " does not exist";
-            return false;
-        }
-        if (user.getActiveDeck().getCardsInSideDeck().size() == 15) {
+        if (deck.getCardsInSideDeck().size()>=15) {
             error = "side deck is full";
             return false;
         }
-        if (Deck.getCardFrequency(cardName, user) == 3) {
-            error = "there are already three cards with name " + cardName + " in deck " + deckName;
+        if (deck.numberOfCardsInDeckWithName(cardName) >= 3) {
+            error = "there are already three cards with name "+cardName+" in deck "+deckName;
             return false;
         }
-        MenuController.getLoggedInUser().getActiveDeck().addCardToSideDeck(Card.getAllCards().get(cardName));
+        deck.addCardToSideDeck(card);
         return true;
-
     }
 
+    /**
+     * modified by mahditeymoorianar
+     * */
     public static boolean removeCardFromSideDeck(String deckName, String cardName) {
         User user = MenuController.getLoggedInUser();
         Deck deck = user.getDeckByName(deckName);
@@ -105,10 +114,13 @@ public class DeckMenu {
             error = "card with name " + cardName + " does not exist in side deck";
             return false;
         }
-        deck.getCardsInSideDeck().remove(Card.getAllCards().remove(cardName));
+        deck.deleteCardFromSideDeck(cardName);
         return true;
     }
 
+    /**
+     * modified by mahditeymoorianar
+     * */
     public static boolean removeCardFromMainDeck(String deckName, String cardName) {
         User user = MenuController.getLoggedInUser();
         Deck deck = user.getDeckByName(deckName);
@@ -120,7 +132,7 @@ public class DeckMenu {
             error = "card with name " + cardName + " does not exist in main deck";
             return false;
         }
-        deck.getCardsInMainDeck().remove(Card.getAllCards().remove(cardName));
+        deck.deleteCardFromMainDeck(cardName);
         return true;
     }
 

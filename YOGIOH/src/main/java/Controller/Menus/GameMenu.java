@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class GameMenu {
     private static String error;
 
-    private static final Player player1 = new Player(MenuController.getLoggedInUser());
+    private static Player player1 = new Player(MenuController.getLoggedInUser());
     private static Player player2;
     private static Player currentPlayer = player1;
     private static Player otherPlayer = player2;

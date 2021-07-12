@@ -7,7 +7,7 @@ public class ProfileMenu {
     static String error = "there is no error yet";
     public static boolean changeNickname(String nickname) {
         if (User.getUserByNickname(nickname) == null) {
-            error = "user with nickname "+nickname+"already exists!";
+            error = "user with nickname "+nickname+" already exists!";
             return false;
         }
         MenuController.getLoggedInUser().setNickname(nickname);

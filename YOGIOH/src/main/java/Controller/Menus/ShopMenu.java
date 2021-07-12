@@ -14,12 +14,9 @@ public class ShopMenu {
         return error;
     }
 
-    public static void setError(String error) {
-        ShopMenu.error = error;
-    }
 
     public static boolean buyCard(String nameOfCardToBuy) {
-        return false;
+        return false;// TODO : ...
     }
 
     // TODO : probably to delete the method below
