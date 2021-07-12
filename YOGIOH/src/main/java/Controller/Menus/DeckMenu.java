@@ -5,17 +5,28 @@ import Model.Card;
 import Model.Deck;
 import Model.User;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class DeckMenu {
     private static String error;
 
-    public static boolean createDeck(String deckName) {
+    public static boolean createDeck(String deckName) throws IOException {
         if (MenuController.getLoggedInUser().getDeckByName(deckName) != null) {
             error = "deck with name " + deckName + " already exist";
             return false;
         } else {
             Deck deck = new Deck();
             deck.setName(deckName);
+            FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + MenuController.getLoggedInUser().getUsername() + "decks.txt");
+            writer.append(deckName).append("\n");
+            writer.close();
+            File file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + MenuController.getLoggedInUser().getUsername() + "\\" + deckName + "Main.txt");
+            file.createNewFile();
+            File file1 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + MenuController.getLoggedInUser().getUsername() + "\\" + deckName + "Side.txt");
+            file1.createNewFile();
             MenuController.getLoggedInUser().getDecks().add(deck);
             return true;
         }
@@ -52,7 +63,7 @@ public class DeckMenu {
      * This method is called by view and adds a card with name to a main deck of current user by name
      *      same as DOC page 14
      * */
-    public static boolean addCardToMainDeck(String deckName, String cardName) {
+    public static boolean addCardToMainDeck(String deckName, String cardName) throws IOException {
         Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
         Card card = MenuController.getLoggedInUser().getACardWithName(cardName);
         if (card == null) {
@@ -71,6 +82,9 @@ public class DeckMenu {
             return false;
         }
         deck.addCardToMainDeck(card);
+        FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + MenuController.getLoggedInUser().getUsername() + "\\" + deckName + "Main.txt");
+        writer.append(cardName).append("\n");
+        writer.close();
         return true;
     }
     /**
@@ -78,7 +92,7 @@ public class DeckMenu {
      * This method is called by view and adds a card with name to a side deck of current user by name
      *      same as DOC page 14
      * */
-    public static boolean addCardToSideDeck(String deckName, String cardName) {
+    public static boolean addCardToSideDeck(String deckName, String cardName) throws IOException {
         Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
         Card card = MenuController.getLoggedInUser().getACardWithName(cardName);
         if (card == null) {
@@ -97,6 +111,9 @@ public class DeckMenu {
             return false;
         }
         deck.addCardToSideDeck(card);
+        FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + MenuController.getLoggedInUser().getUsername() + "\\" + deckName + "Side.txt");
+        writer.append(cardName).append("\n");
+        writer.close();
         return true;
     }
 
