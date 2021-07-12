@@ -2,9 +2,17 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
+import Exceptions.NoMonsterWithThisNameException;
+import Exceptions.NoSpellTrapWithThisNameException;
+import Model.Card;
+import Model.Monster;
+import Model.SpellAndTrap;
+import Model.TypeOfCard;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShopMenu extends ViewMenu {
@@ -57,7 +65,25 @@ public class ShopMenu extends ViewMenu {
     }
 
     private static void showAll() {
-        // TODO : @aliagha do this
+        try {
+            for (String cardName :
+                    Card.getNameOfAllCardsInAlphabeticalOrder()) {
+                try {
+                    Monster monster = new Monster(cardName);
+                } catch (NoMonsterWithThisNameException e) {
+                    try {
+                        SpellAndTrap spellAndTrap = new SpellAndTrap(cardName);
+                    } catch (IOException ioException) {
+                        print("ERROR!");
+                    }
+                } catch (IOException exception) {
+                    print("ERROR");
+                }
+
+            }
+        } catch (FileNotFoundException e) {
+            print("There is a problem in showing cards!\nThis is a FileNotFoundException!");
+        }
     }
 
     private static void initializeMenu() {

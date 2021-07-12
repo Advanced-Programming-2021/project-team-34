@@ -1,6 +1,10 @@
 package Model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public abstract class Card {
     protected String name;
@@ -60,6 +64,38 @@ public abstract class Card {
 
     public TypeOfCard getTypeOfCard() {
         return typeOfCard;
+    }
+
+    public static ArrayList<String> getNameOfAllMonsters() throws FileNotFoundException {
+        File file = new File("src/main/resources/Monster.csv");
+        Scanner scanner = new Scanner(file);
+        scanner.nextLine();
+        String name;
+        ArrayList<String> answer = new ArrayList<String>();
+        while (scanner.hasNextLine()) {
+            answer.add(scanner.nextLine().split("\\s*,")[0]);
+        }
+        return answer;
+    }
+
+    public static ArrayList<String> getNameOfAllSpellsAndTraps() throws FileNotFoundException {
+        File file = new File("src/main/resources/SpellTrap.csv");
+        Scanner scanner = new Scanner(file);
+        scanner.nextLine();
+        String name;
+        ArrayList<String> answer = new ArrayList<String>();
+        while (scanner.hasNextLine()) {
+            answer.add(scanner.nextLine().split("\\s*,")[0]);
+        }
+        return answer;
+    }
+
+    public static ArrayList<String> getNameOfAllCardsInAlphabeticalOrder() throws FileNotFoundException {
+        ArrayList<String> answer = new ArrayList<String>();
+        answer.addAll(getNameOfAllSpellsAndTraps());
+        answer.addAll(getNameOfAllMonsters());
+        answer.sort(String::compareToIgnoreCase);
+        return answer;
     }
 }
 

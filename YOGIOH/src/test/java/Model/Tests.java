@@ -1,5 +1,6 @@
 package Model;
 
+import Exceptions.NoMonsterWithThisNameException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -161,5 +162,20 @@ public class Tests {
         assertTrue(deck.isValid());
         deck.deleteCardFromMainDeck(monsterArrayList.get(0));
         assertTrue(deck.isValid());
+    }
+
+    @Test
+    public void testLoadingInvalidMonster() {
+        boolean found = true;
+        try {
+            Monster monster = new Monster("hayulayetarsnakekhafan");
+            found = true;
+        } catch (NoMonsterWithThisNameException e) {
+            found = false;
+            e.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        assertFalse(found);
     }
 }

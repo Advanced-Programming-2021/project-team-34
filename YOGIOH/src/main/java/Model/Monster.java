@@ -1,6 +1,9 @@
 package Model;
 
+import Exceptions.NoMonsterWithThisNameException;
+
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,12 +32,14 @@ public class Monster extends Card {
         String text = "";
         File file = new File("src/main/resources/Monster.csv");
         Scanner scanner = new Scanner(file);
+        boolean found = false;
         while (scanner.hasNextLine()) {
             text = scanner.nextLine();
             Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(\\S+?),(\\S+?),(\\S+?),(\\d+),(\\d+),(.+?)," +
                     "(\\d+)");
             Matcher matcher = pattern.matcher(text);
             if (matcher.find()) {
+                found = true;
                 setLevel(Integer.parseInt(matcher.group(1)));
                 attribute = matcher.group(2);
                 setMonsterType(matcher.group(3));
@@ -44,6 +49,9 @@ public class Monster extends Card {
                 setDescription(matcher.group(7));
                 setPrice(Integer.parseInt(matcher.group(8)));
             }
+        }
+        if (!found) {
+            throw new NoMonsterWithThisNameException(monsterName);
         }
     }
 

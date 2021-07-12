@@ -5,38 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/NoMonsterWithThisNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/NoSpellTrapWithThisNameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YOGIOH.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/DuelMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/DuelMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/ShopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DuelMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/DuelMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/ProfileMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/StartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/CardInGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/MonsterInGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/GameObjects/SpellAndTrapInGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/GameObjects/SpellAndTrapInGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/GameMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SpellAndTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SpellAndTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Monster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/SpellAndTrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/SpellAndTrap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +64,7 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.Tests.testLoadingInvalidMonster">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -138,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.test1Deck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.testLoadingInvalidMonster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +129,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test1Deck" />
+      <option name="METHOD_NAME" value="testLoadingInvalidMonster" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,16 +139,16 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CommandType" />
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.Tests.test1Deck" />
       <item itemvalue="JUnit.Tests (۱)" />
+      <item itemvalue="JUnit.Tests.testLoadingInvalidMonster" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.testLoadingInvalidMonster" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CommandType" />
         <item itemvalue="JUnit.Tests (۱)" />
-        <item itemvalue="JUnit.Tests.test1Deck" />
       </list>
     </recent_temporary>
   </component>
