@@ -17,7 +17,7 @@ public class DeckMenu extends ViewMenu {
         doMain();
     }
 
-    private static void doMain() throws IOException {
+    private static void doMain() {
         String input;
         Command myCommand;
         String typeOfMyCommand;
@@ -184,7 +184,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void addCardToSideDeck(Command command) throws IOException {
+    private static void addCardToSideDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
         boolean success = Controller.Menus.DeckMenu.addCardToSideDeck(deckName , cardName);
@@ -195,7 +195,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void addCardToMainDeck(Command command) throws IOException {
+    private static void addCardToMainDeck(Command command) {
         String cardName = command.getField("card");
         String deckName = command.getField("deck");
         boolean success = Controller.Menus.DeckMenu.addCardToMainDeck(deckName , cardName);
@@ -226,7 +226,7 @@ public class DeckMenu extends ViewMenu {
         }
     }
 
-    private static void createDeck(Command command) throws IOException {
+    private static void createDeck(Command command) {
         String deckName = command.getField("create");
         boolean success = Controller.Menus.DeckMenu.createDeck(deckName);
         if (success) {
