@@ -5,16 +5,14 @@ import Controller.MenuNames;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
-import java.io.IOException;
-
 public class StartMenu extends ViewMenu {
     static boolean toContinue = true;
-    public static void run() throws IOException {
+    public static void run() {
         initializeMenu();
         doMain();
     }
 
-    protected static void doMain() throws IOException {
+    protected static void doMain() {
         String input;
         Command myCommand;
         String typeOfMyCommand;
