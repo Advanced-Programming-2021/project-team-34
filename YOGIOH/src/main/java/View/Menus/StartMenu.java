@@ -57,7 +57,7 @@ public class StartMenu extends ViewMenu {
         }
     }
 
-    private static void createUser(Command myCommand) throws IOException {
+    private static void createUser(Command myCommand) {
         boolean success = Controller.Menus.StartMenu.register(myCommand.getField("username"),
                 myCommand.getField("nickname"),
                 myCommand.getField("password"));
