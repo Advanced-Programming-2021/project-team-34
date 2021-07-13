@@ -28,7 +28,7 @@ public class StartMenu {
         }
     }
 
-    public static boolean register(String username, String nickname, String password) throws IOException {
+    public static boolean register(String username, String nickname, String password) {
         if (User.getUserByUsername(username) != null) {
             error = "user with username @" + username + " already exists";
             return false;
@@ -38,12 +38,17 @@ public class StartMenu {
             return false;
         }
         new User(username, password, nickname);
-        File file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username);
-        file.mkdir();
-        File file1 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\cards.txt");
-        file1.createNewFile();
-        File file2 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\decks.txt");
-        file2.createNewFile();
+        try {
+            File file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username);
+            file.mkdir();
+            File file1 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\cards.txt");
+            file1.createNewFile();
+            File file2 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\decks.txt");
+            file2.createNewFile();
+        } catch (Exception e) {
+            System.out.println("could not save user");
+            e.printStackTrace();
+        }
         return true;
     }
 }
