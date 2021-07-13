@@ -22,7 +22,7 @@ public class ShopMenu {
     }
 
     // TODO : probably to delete the method below
-    public String buyCard(String cardName, String username) throws IOException {
+    public String buyCard(String cardName, String username) {
         if (!Card.getAllCards().containsKey(cardName)) {
             return "there is no card with this name";
         }
@@ -32,9 +32,14 @@ public class ShopMenu {
         }
         Objects.requireNonNull(User.getUserByUsername(username)).increaseCoin(-card.getPrice());
         Objects.requireNonNull(User.getUserByUsername(username)).addCard(card);
-        FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + username + "cards.txt");
-        writer.append(cardName).append("\n");
-        writer.close();
+        try {
+            FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + username + "cards.txt");
+            writer.append(cardName).append("\n");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("could not save bought card");
+            e.printStackTrace();
+        }
         return "shop completed";
     }
 
