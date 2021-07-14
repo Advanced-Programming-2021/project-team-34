@@ -7,12 +7,13 @@
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allUsers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Monster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

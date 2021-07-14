@@ -35,11 +35,12 @@ public class Monster extends Card {
         boolean found = false;
         while (scanner.hasNextLine()) {
             text = scanner.nextLine();
-            Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(.+?),(.+?),(.+?),(\\d+),(\\d+),(.+?)," +
-                    "(\\d+)");
+            //Battle OX,4,EARHT,Beast-Warrior,Normal,1700,1000,"A monster with tremendous power, it destroys enemies with a swing of its axe.",2900
+            Pattern pattern = Pattern.compile(monsterName + ",(\\d+),(.+),(.+),(.+),(\\d+),(\\d+),(.+),(\\d+)");
             Matcher matcher = pattern.matcher(text);
-            if (matcher.find()) {
+            if (matcher.matches()) {
                 found = true;
+                matcher.groupCount();
                 setLevel(Integer.parseInt(matcher.group(1)));
                 attribute = matcher.group(2);
                 setMonsterType(matcher.group(3));
@@ -47,7 +48,7 @@ public class Monster extends Card {
                 setDefAttPower(Integer.parseInt(matcher.group(5)));
                 setDefDefPower(Integer.parseInt(matcher.group(6)));
                 setDescription(matcher.group(7));
-                setPrice(Integer.parseInt(matcher.group(8)));
+                price = (Integer.parseInt(matcher.group(8)));
             }
         }
         if (!found) {
@@ -110,5 +111,18 @@ public class Monster extends Card {
 
     public String getAttribute() {
         return attribute;
+    }
+
+    public int getDefaultAttPower() {
+        return defaultAttPower;
+    }
+
+    public int getDefaultDefPower() {
+        return defaultDefPower;
+    }
+
+    @Override
+    public int getPrice() {
+        return price;
     }
 }

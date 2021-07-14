@@ -102,7 +102,7 @@ public class DeckMenu {
      * This method is called by view and adds a card with name to a side deck of current user by name
      *      same as DOC page 14
      * */
-    public static boolean addCardToSideDeck(String deckName, String cardName) throws IOException {
+    public static boolean addCardToSideDeck(String deckName, String cardName){
         Deck deck = MenuController.getLoggedInUser().getDeckByName(deckName);
         Card card = MenuController.getLoggedInUser().getACardWithName(cardName);
         if (card == null) {
