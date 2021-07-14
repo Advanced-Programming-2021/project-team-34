@@ -123,7 +123,7 @@ public class ShopMenu extends ViewMenu {
         CommandType commandType = new CommandType();
         commandType.setName("buy card");
         commandType.setMainPart("shop");
-        commandType.getField("buy");
+        commandType.addField("buy");
         Command.addCommandType(commandType);
     }
 
