@@ -2,12 +2,8 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
-import View.CommandHelper.Command;
-import View.CommandHelper.CommandType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -15,7 +11,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class StartMenu extends ViewMenu {
-    static boolean toContinue = true;
     static Scene scene;
     static StartMenu startMenu = new StartMenu();
     public GridPane usernameToLoginGridPane, passwordToLoginGridPane, stayInGridPane, resultLoginGridPane,

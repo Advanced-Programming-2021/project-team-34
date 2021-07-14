@@ -1,9 +1,5 @@
 package View.Menus;
 
-import Controller.MenuController;
-import Controller.MenuNames;
-import View.CommandHelper.Command;
-import View.CommandHelper.CommandType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
