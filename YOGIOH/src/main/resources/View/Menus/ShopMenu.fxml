@@ -39,7 +39,7 @@
             </GridPane>
             <Button text="خریدن" /> <!-- TODO : action of this button -->
             <Label/>
-            <Button text="بازگشتن"/> <!-- TODO : action of this button -->
+            <Button text="بازگشتن" /> <!-- TODO : action of this button -->
         </VBox>
     </HBox>
 
