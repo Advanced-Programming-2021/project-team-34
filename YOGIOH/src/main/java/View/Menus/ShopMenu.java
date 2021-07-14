@@ -2,8 +2,13 @@ package View.Menus;
 
 import Controller.MenuController;
 import Controller.MenuNames;
+import Exceptions.NoMonsterWithThisNameException;
+import Model.Card;
+import Model.Monster;
+import Model.SpellAndTrap;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,11 +22,15 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShopMenu extends ViewMenu {
     static ShopMenu shopMenu = new ShopMenu();
     Scene scene;
+    ArrayList<String> nameOfCards = null , nameOfCards2 = null;
+    static String selectedCardName = "";
     @FXML
     GridPane monsterCardsGridPane, spellTrapCardsGridPane, resultGridPane, moneyGridPane, propertiesGridPane;
     @FXML
@@ -45,28 +54,100 @@ public class ShopMenu extends ViewMenu {
     @FXML
     private void initialize() {
         message("پول : "+MenuController.getLoggedInUser().getCoin() , moneyGridPane);
-        ArrayList<String> nameOfCards = new ArrayList<>(); // TODO : replace it by Card.getNameOfAllCardsInAlphabeticalOrder()
-        nameOfCards.add("Battle OX");nameOfCards.add("Axe Raider");
-        nameOfCards.add("YomiShip");nameOfCards.add("Horn Imp");
-
-        nameOfCards = getArrayWithoutSpace(nameOfCards);
+        // drawing monsters
+        try {
+            nameOfCards = Card.getNameOfAllMonsters();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         int lenOfAll = nameOfCards.size();
-        int rows = lenOfAll/20+1;
+        int rows = lenOfAll/15+1;
         for (int j = 0; j < rows; j++) {
-            for (int i = 0; i < 20; i++) {
-                int index = 20*j+i;
+            for (int i = 0; i < 15; i++) {
+                int index = 15*j+i;
                 if (index >= lenOfAll) break;
                 Rectangle rectangle = new Rectangle();
-                rectangle.setWidth(60);
-                rectangle.setHeight(80);
+                rectangle.setWidth(80);
+                rectangle.setHeight(100);
+                rectangle.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        if (isPrimary(event)){
+                            clickHandlerOnCards((nameOfCards.get(index)));
+                        }
+                    }
+                });
                 try {
                     ImagePattern shape = new ImagePattern(new Image(getClass().getResource(
-                            "/Images/Cards/Monsters/" + nameOfCards.get(index) + ".jpg").toExternalForm()));
+                            "/Images/Cards/Monsters/" + getStringWithoutSpace(nameOfCards.get(index)) + ".jpg").toExternalForm()));
                     rectangle.setFill(shape);
                 } catch (Exception e) {
-                    print("Here is an error!");
+                    print("Here is an error! --> cardName : "+nameOfCards.get(index));
                 }
                 monsterCardsGridPane.add(rectangle, i, j);
+            }
+        }
+
+        // drawing spells and traps
+        try {
+            nameOfCards2 = Card.getNameOfAllSpellsAndTraps();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        int lenOfAll2 = nameOfCards2.size();
+        int rows2 = lenOfAll2/15+1;
+        for (int j = 0; j < rows2; j++) {
+            for (int i = 0; i < 15; i++) {
+                int index = 15*j+i;
+                if (index >= lenOfAll2) break;
+                Rectangle rectangle = new Rectangle();
+                rectangle.setWidth(80);
+                rectangle.setHeight(100);
+                rectangle.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        if (isPrimary(event)){
+                            clickHandlerOnCards((nameOfCards2.get(index)));
+                        }
+                    }
+                });
+                try {
+                    ImagePattern shape = new ImagePattern(new Image(getClass().getResource(
+                            "/Images/Cards/SpellTrap/" + getStringWithoutSpace(nameOfCards2.get(index)) + ".jpg").toExternalForm()));
+                    rectangle.setFill(shape);
+                } catch (Exception e) {
+                    print("Here is an error! --> cardName : "+nameOfCards2.get(index));
+                }
+                spellTrapCardsGridPane.add(rectangle, i, j);
+            }
+        }
+
+    }
+
+    private void clickHandlerOnCards(String s) {
+        selectedCardName = s;
+        try {
+            message(new Monster(s).getPrice()+"" , propertiesGridPane);
+        } catch (NoMonsterWithThisNameException e) {
+            try {
+                message(new SpellAndTrap(s).getPrice()+"" , propertiesGridPane);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            ImagePattern shape = new ImagePattern(new Image(getClass().getResource(
+                    "/Images/Cards/Monsters/" + getStringWithoutSpace(s)+ ".jpg").toExternalForm()));
+            selectedCardRectangle.setFill(shape);
+        } catch (Exception e) {
+            try {
+                ImagePattern shape = new ImagePattern(new Image(getClass().getResource(
+                        "/Images/Cards/SpellTrap/" + getStringWithoutSpace(s)+ ".jpg").toExternalForm()));
+                selectedCardRectangle.setFill(shape);
+            } catch (Exception e1) {
+                print("Here is an error! --> cardName : "+getStringWithoutSpace(s));
             }
         }
     }
@@ -102,6 +183,19 @@ public class ShopMenu extends ViewMenu {
         }return answer;
     }
 
+    public void buyByMouse(MouseEvent mouseEvent) {
+        buy();
+    }
+
+    private void buy() {
+        boolean success = Controller.Menus.ShopMenu.buyCard(selectedCardName);;
+        if (success) {
+            message("کارت پیروزمندانه خریده شد" , resultGridPane);
+            message("پول : "+MenuController.getLoggedInUser().getCoin() , moneyGridPane);
+        } else {
+            message(Controller.Menus.ShopMenu.getError() , resultGridPane);
+        }
+    }
 
 
 //    static boolean toContinue = true;

@@ -443,4 +443,8 @@ public class GameMenu extends ViewMenu {
         currentPlayer = opponentPlayer;
         opponentPlayer = currentPlayer;
     }
+
+    public static int askWhichCardToSacrifice() {
+        return 0;
+    }
 }

@@ -154,7 +154,7 @@ public class Deck {
             return false;
         } return sendCardFromMainDeckToSideDeck(card);
     }
-    private int numberOfCardsInDeckWithName(String name) {
+    public int numberOfCardsInDeckWithName(String name) {
         int number = 0;
         for (Card card :
                 cardsInMainDeck) {
@@ -243,4 +243,7 @@ public class Deck {
         });
     }
 
+    public boolean isFull() {
+        return (cardsInMainDeck.size()>=60 || cardsInSideDeck.size() >= 15);
+    }
 }

@@ -31,6 +31,7 @@ public class Tests {
         assertEquals(3, user3.getRank());
         assertTrue(user3.changePassword("333" , "4444"));
         assertTrue(User.checkPassword(user3.getUsername() , "4444"));
+        assertTrue(user1.doesHaveEnoughCoin(3500));
     }
 
     @Test

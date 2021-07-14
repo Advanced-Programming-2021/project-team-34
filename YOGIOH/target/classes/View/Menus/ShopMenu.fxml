@@ -12,8 +12,8 @@
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="View.Menus.ShopMenu"
-      prefHeight="800.0" prefWidth="1400.0">
-    <HBox alignment="CENTER" prefWidth="1000">
+      prefHeight="1200.0" prefWidth="1600.0">
+    <HBox alignment="CENTER" prefWidth="1400">
         <VBox alignment="CENTER">
             <Label text="کارت‌های هیولا" styleClass="title"/>
             <GridPane fx:id="monsterCardsGridPane" alignment="CENTER">
@@ -33,11 +33,11 @@
             <GridPane fx:id="moneyGridPane">
                 <Label text="" styleClass="informationTextLarge"/>
             </GridPane>
-            <Rectangle fx:id="selectedCardRectangle" width="100"  />
+            <Rectangle fx:id="selectedCardRectangle" width="300" height="500" />
             <GridPane fx:id="propertiesGridPane">
-                <Label text="" styleClass="informationTextSmall"/>
+                <Label text="" styleClass="informationTextSmall" prefHeight="100"/>
             </GridPane>
-            <Button text="خریدن" /> <!-- TODO : action of this button -->
+            <Button text="خریدن" onMouseClicked="#buyByMouse" /> <!-- TODO : action of this button -->
             <Label/>
             <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" /> <!-- TODO : action of this button -->
         </VBox>
