@@ -7,21 +7,12 @@
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/StartMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allUsers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/DeckMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/GameMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/StartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/DeckMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +59,7 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -149,10 +140,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Tests.testSpellTrap" />
         <item itemvalue="JUnit.Tests.testLoadingInvalidMonster" />
-        <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CommandType" />
       </list>
     </recent_temporary>
