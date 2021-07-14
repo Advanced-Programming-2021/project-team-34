@@ -6,13 +6,12 @@ import Model.*;
 import View.CommandHelper.Command;
 import View.CommandHelper.CommandType;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
 public class DeckMenu extends ViewMenu {
     static boolean toContinue = true;
-    public static void run() throws IOException {
+    public static void run() {
         initializeMenu();
         doMain();
     }
@@ -31,7 +30,7 @@ public class DeckMenu extends ViewMenu {
                     print("The command you inputted is not valid in this menu!!!");
                     break;
                 case "exit":
-                    MenuController.setMenuName(MenuNames.Exit);
+                    MenuController.setMenuName(MenuNames.MainMenu);
                     toContinue = false;
                     break;
                 case "show current menu":

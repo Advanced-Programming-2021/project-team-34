@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.User;
+import View.Menus.StartMenu;
 
 import java.io.IOException;
 
@@ -35,6 +36,18 @@ public class MenuController {
                     break;
                 case DuelMenu:
                     View.Menus.GameMenu.run();
+                    break;
+                case ImportExport:
+                    View.Menus.ImportExportMenu.run();
+                    break;
+                case DeckMenu:
+                    View.Menus.DeckMenu.run();
+                    break;
+                case ScoreBoardMenu:
+                    View.Menus.ScoreBoardMenu.run();
+                    break;
+                case ShopMenu:
+                    View.Menus.ShopMenu.run();
                     break;
             }
             try {

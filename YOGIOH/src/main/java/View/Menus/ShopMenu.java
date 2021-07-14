@@ -70,13 +70,11 @@ public class ShopMenu extends ViewMenu {
                     Card.getNameOfAllCardsInAlphabeticalOrder()) {
                 try {
                     Monster monster = new Monster(cardName);
-                    print(cardName+" : "+monster.getPrice());
                 } catch (NoMonsterWithThisNameException e) {
                     try {
                         SpellAndTrap spellAndTrap = new SpellAndTrap(cardName);
-                        print(cardName+" : "+spellAndTrap.getPrice());
                     } catch (IOException ioException) {
-                        print("ERROR! with loading card \""+cardName+"\"");
+                        print("ERROR!");
                     }
                 } catch (IOException exception) {
                     print("ERROR");
