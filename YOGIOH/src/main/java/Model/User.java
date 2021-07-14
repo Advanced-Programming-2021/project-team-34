@@ -209,4 +209,8 @@ public class User {
         if (avatarInt == maximumNumberOfAvatar+1) avatarInt = 1;
         this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
     }
+
+    public static ArrayList<User> getUsers() {
+        return users;
+    }
 }
