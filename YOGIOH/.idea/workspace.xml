@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/ShopMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ShopMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +67,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShopMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="View.Menus.ShopMenu" />
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="View.Menus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommandType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
@@ -108,36 +125,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.test1Deck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="test1Deck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CommandType" />
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.Tests.test1Deck" />
       <item itemvalue="JUnit.Tests (۱)" />
+      <item itemvalue="Application.ShopMenu" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ShopMenu" />
         <item itemvalue="JUnit.Tests (۱)" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CommandType" />
-        <item itemvalue="JUnit.Tests.test1Deck" />
       </list>
     </recent_temporary>
   </component>

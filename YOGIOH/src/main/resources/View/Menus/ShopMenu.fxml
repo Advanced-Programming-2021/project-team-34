@@ -12,8 +12,8 @@
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="View.Menus.ShopMenu"
-      prefHeight="800.0" prefWidth="700.0">
-    <HBox alignment="CENTER">
+      prefHeight="800.0" prefWidth="1400.0">
+    <HBox alignment="CENTER" prefWidth="1000">
         <VBox alignment="CENTER">
             <Label text="کارت‌های هیولا" styleClass="title"/>
             <GridPane fx:id="monsterCardsGridPane" alignment="CENTER">
@@ -28,8 +28,8 @@
                 <Label text="نتیجه‌ی کنش‌ها در این جا نوشته‌خواهند شد" styleClass="resultText" />
             </GridPane>
         </VBox>
-
-        <VBox alignment="CENTER">
+        <Label text="                "/>
+        <VBox alignment="CENTER" layoutX="1200">
             <GridPane fx:id="moneyGridPane">
                 <Label text="" styleClass="informationTextLarge"/>
             </GridPane>
@@ -39,7 +39,7 @@
             </GridPane>
             <Button text="خریدن" /> <!-- TODO : action of this button -->
             <Label/>
-            <Button text="بازگشتن" /> <!-- TODO : action of this button -->
+            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" /> <!-- TODO : action of this button -->
         </VBox>
     </HBox>
 
