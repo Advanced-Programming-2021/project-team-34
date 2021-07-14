@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Monster.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Monster.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SpellTrap.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SpellTrap.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.CommandType" />
+      <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.Tests.test1Deck" />
+      <item itemvalue="JUnit.Tests (۱)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
