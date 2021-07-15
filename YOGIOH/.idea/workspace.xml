@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SpellTrap.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SpellTrap.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allUsers.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
       <recent name="Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CommandType">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -78,6 +79,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests (۱)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YOGIOH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="View.CommandHelper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="View.CommandHelper" />
+      <option name="MAIN_CLASS_NAME" value="View.CommandHelper.Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YOGIOH" />
       <extension name="coverage">
@@ -89,22 +105,6 @@
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.testLoadingInvalidMonster" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YOGIOH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="testLoadingInvalidMonster" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,18 +127,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CommandType" />
       <item itemvalue="JUnit.Tests" />
-      <item itemvalue="JUnit.Tests.testLoadingInvalidMonster" />
       <item itemvalue="JUnit.Tests.testSpellTrap" />
+      <item itemvalue="JUnit.Tests (۱)" />
+      <item itemvalue="JUnit.CommandType" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Tests" />
-        <item itemvalue="JUnit.Tests.testSpellTrap" />
-        <item itemvalue="JUnit.Tests.testLoadingInvalidMonster" />
         <item itemvalue="JUnit.CommandType" />
+        <item itemvalue="JUnit.Tests (۱)" />
+        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Tests.testSpellTrap" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +188,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="in YOGIOH folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/YOGIOH$CommandType.ic" NAME="CommandType Coverage Results" MODIFIED="1626333846935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>View.CommandHelper.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$Command_testCommand.ic" NAME="Command.testCommand Coverage Results" MODIFIED="1623492998322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>View.CommandHelper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/YOGIOH$Tests___.ic" NAME="Tests (۱) Coverage Results" MODIFIED="1626333831496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testCheckIfMatches.ic" NAME="CommandType.testCheckIfMatches Coverage Results" MODIFIED="1623490505011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -199,6 +205,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testDeleteWhiteSpace.ic" NAME="CommandType.testDeleteWhiteSpace Coverage Results" MODIFIED="1623479079479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/YOGIOH$Tests.ic" NAME="Tests Coverage Results" MODIFIED="1626333816442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/YOGIOH$CommandType_testCheckMatch.ic" NAME="CommandType.testCheckMatch Coverage Results" MODIFIED="1623479319189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>View.CommandHelper.*</FILTER>
