@@ -203,6 +203,16 @@ public class CommandType {
         this.canHaveMoreThanOneSpaceBetweenFields = canHaveMoreThanOneSpaceBetweenFields;
     }
 
+    @Override
+    public String toString() {
+        String answer = "CommandType name : "+name+"\nsyntax : \n" + mainPart;
+        for (Field field :
+                fields) {
+            answer += " --" + ((field.doesHaveArgument) ? (field.getName() + " <" + field.getName() + ">") : (field.getName()));
+        }
+        return answer;
+    }
+
     @Test
     public void testDeterminingFieldsInCheckIfMatches() {
         CommandType commandType = new CommandType();
@@ -303,6 +313,17 @@ public class CommandType {
         for (int i = 0; i < correctAnswers.length; i++) {
             assertEquals(correctAnswers[i] , ans1[i]);
         }
+    }
+    @Test
+    public void testToString() {
+        CommandType commandType = new CommandType();
+        commandType.setName("login command");
+        commandType.setMainPart("login");
+        commandType.addField("username");
+        commandType.addField("password");
+        commandType.addField("secureMode" , false);
+        assertEquals("CommandType name : login command\nsyntax : \nlogin --username <username>" +
+                " --password <password> --secureMode" , commandType+"");
     }
 
 }
