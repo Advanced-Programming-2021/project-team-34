@@ -291,35 +291,6 @@ public class GameMenu extends ViewMenu {
         print(player.getUser().getNickname()+":"+player.getLifePoint());
     }
 
-    /**
-     * This method gives a message to user and ask him/her to select a monster card to sacrifice
-     *      then if inputted text was empty or "cancel" returns 0 and performance should be canceled by controller
-     *      else it returns Integer.parseInt(inputtedValue)
-     * @param messageToUser is the message will be shown to the user , if you put it empty , it has default value :
-     *      "To summon this monster you should sacrifice another monster card!" */
-    public static int askWhichCardToSacrifice(String messageToUser) {
-        print(messageToUser);
-        while (true) {
-            print("input just place of a monster card on your zone (1,2,3,4,5)" +
-                    " OR input nothing and just press ENTER to cancel :");
-            String input = input();
-            if (input.equals("") || input.equals("cancel")) {
-                return 0;
-            } else if (input.matches("[12345]")) return Integer.parseInt(input);
-        }
-    }
-    /**
-     * This method gives a message to user and ask him/her to select a monster card to sacrifice
-     *      then if inputted text was empty or "cancel" returns 0 and performance should be canceled by controller
-     *      else it returns Integer.parseInt(inputtedValue)
-     * This is actually public static String askWhichCardToSacrifice(String messageToUser) where messageToUser
-     *      is the default value .
-     * */
-    public static int askWhichCardToSacrifice() {
-        return askWhichCardToSacrifice("To summon this monster you should sacrifice another monster card!");
-    }
-
-
     // initialize
     private static void initializeMenu() {
         toContinue = true;
@@ -471,5 +442,9 @@ public class GameMenu extends ViewMenu {
         Player player = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = currentPlayer;
+    }
+
+    public static int askWhichCardToSacrifice() {
+        return 0;
     }
 }

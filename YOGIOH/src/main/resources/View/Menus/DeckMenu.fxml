@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<Pane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="View.Menus.DeckMenu"
+      prefHeight="1000.0" prefWidth="1600.0">
+
+    <HBox alignment="CENTER">
+        <VBox alignment="CENTER" fx:id="leftPartVBox">
+            <HBox alignment="CENTER">
+                <TextField fx:id="deckNameToCreateTextField" styleClass="title" prefWidth="300"/>
+                <Label text="نام دک نو : " styleClass="informationTextSmall"/>
+            </HBox>
+            <Label/>
+            <Button text="دک نو" /> <!-- TODO : action of this button!-->
+        </VBox>
+        <VBox alignment="CENTER">
+            <GridPane fx:id="deckNameGridPane" alignment="CENTER">
+                <Label text="نام دک" styleClass="title" />
+            </GridPane>
+            <Label text="دک اصلی" styleClass="title"/>
+            <GridPane fx:id="mainDeckGridPane" >
+
+            </GridPane>
+            <Label text="دک فرعی" styleClass="title"/>
+            <GridPane fx:id="sideDeckGridPane" >
+
+            </GridPane>
+            <HBox alignment="CENTER">
+                <Button text="فعّال‌کردن"/> <!-- TODO : action of this button!-->
+                <Button text="حذفیدن"/> <!-- TODO : action of this button!-->
+                <Button text="برگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey"/>
+            </HBox>
+        </VBox>
+    </HBox>
+    <stylesheets>
+        <URL value="@ButtonStyle.css" />
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</Pane>

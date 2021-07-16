@@ -16,7 +16,7 @@ public class Monster extends Card {
     private int defaultAttPower;//default attack power
     private int defaultDefPower;//default defence power
     public String Ritual;
-    private int price;
+    //private int price;
     private ArrayList<Monster> monsters;
     private String monsterName;
     private String attribute;
@@ -49,6 +49,7 @@ public class Monster extends Card {
                 setDefDefPower(Integer.parseInt(matcher.group(6)));
                 setDescription(matcher.group(7));
                 price = (Integer.parseInt(matcher.group(8)));
+                super.price = (Integer.parseInt(matcher.group(8)));
             }
         }
         if (!found) {
@@ -124,5 +125,23 @@ public class Monster extends Card {
     @Override
     public int getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", typeOfCard=" + typeOfCard +
+                ", description='" + description + '\'' +
+                ", level=" + level +
+                ", monsterType='" + monsterType + '\'' +
+                ", AttPower=" + defaultAttPower +
+                ", DefPower=" + defaultDefPower +
+                ", Ritual='" + Ritual + '\'' +
+                ", price=" + price +
+                ", monsterName='" + monsterName + '\'' +
+                ", attribute='" + attribute + '\'' +
+                '}';
     }
 }

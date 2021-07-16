@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.Color?>
+<?import com.sun.javafx.scene.control.skin.CustomColorDialog.ColorRectPane?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="View.Menus.StartMenu"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <center>
+        <VBox alignment="CENTER">
+            <HBox alignment="CENTER">
+
+                <!--برای ورود/for login-->
+                <VBox>
+                    <Label text="ورود">
+                        <font>
+                            <Font size="24"/>
+                        </font>
+                    </Label>
+                    <HBox>
+                        <GridPane fx:id="usernameToLoginGridPane">
+                            <TextField/>
+                        </GridPane>
+                        <Label text="نـام کاربری :  ">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Label>
+                    </HBox>
+                    <HBox>
+                        <GridPane fx:id="passwordToLoginGridPane">
+                            <PasswordField/>
+                        </GridPane>
+                        <Label text="گــــذرواژه :  ">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Label>
+                    </HBox>
+                    <Label/>
+                    <GridPane fx:id="stayInGridPane">
+                        <CheckBox text="ماندن در حساب کاربری">
+                            <font>
+                                <Font size="16"/>
+                            </font>
+                            <textFill>
+                                <Color fx:value="#12c402"/>
+                            </textFill>
+                        </CheckBox>
+                    </GridPane>
+                    <Label/>
+                    <GridPane fx:id="resultLoginGridPane">
+                        <Label text="">
+                            <textFill>
+                                <Color fx:value="#fc0000"/>
+                            </textFill>
+                        </Label>
+                    </GridPane>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <Button text="ورود" onMouseClicked="#loginByMouse" onKeyPressed="#loginByKey"/>
+                </VBox>
+
+                <Label text="               "/>
+
+                <!--برای نام نگاری/for register-->
+                <VBox alignment="CENTER">
+                    <Label text="نام نگاری">
+                        <font>
+                            <Font size="24"/>
+                        </font>
+                    </Label>
+
+                    <HBox>
+                        <GridPane fx:id="usernameToRegisterGridPane">
+                            <TextField/>
+                        </GridPane>
+                        <Label text="نــــــــام کــاربــری :    ">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Label>
+                    </HBox>
+
+                    <HBox>
+                        <GridPane fx:id="passwordToRegisterGridPane">
+                            <PasswordField/>
+                        </GridPane>
+                        <Label text="گــــــــــــــــــذرواژه :    ">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Label>
+                    </HBox>
+
+                    <HBox>
+                        <GridPane fx:id="nicknameToRegisterGridPane">
+                            <TextField/>
+                        </GridPane>
+                        <Label text="نــــام مســتـعــار :    ">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Label>
+                    </HBox>
+                    <Label/>
+                    <Label text="!!!نام کاربری ویراستنی نیست!!!">
+                        <textFill>
+                            <Color fx:value="#fc0000"/>
+                        </textFill>
+                        <font>
+                            <Font size="16"/>
+                        </font>
+                    </Label>
+                    <Label/>
+                    <GridPane fx:id="resultOfRegisteringGridPane">
+                        <Label text="">
+                            <textFill>
+                                <Color fx:value="#fc0000"/>
+                            </textFill>
+                        </Label>
+                    </GridPane>
+                    <Label/>
+                    <Button text="نام نگاری" onMouseClicked="#registerByMouse" onKeyPressed="#registerByKey" />
+                </VBox>
+
+            </HBox>
+            <Label/>
+            <HBox alignment="CENTER">
+                <Label text="مهدی تیموری انار          و           علی رحمی‌زاد" >
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                    <textFill>
+                        <Color fx:value="#2200fc"/>
+                    </textFill>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css"/>
+    </stylesheets>
+</BorderPane>

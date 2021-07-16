@@ -39,11 +39,11 @@ public class StartMenu {
         }
         new User(username, password, nickname);
         try {
-            File file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username);
+            File file = new File("src\\main\\resources\\data\\" + username);
             file.mkdir();
-            File file1 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\cards.txt");
+            File file1 = new File("src\\main\\resources\\data\\" + username + "\\cards.txt");
             file1.createNewFile();
-            File file2 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\decks.txt");
+            File file2 = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
             file2.createNewFile();
         } catch (Exception e) {
             System.out.println("could not save user");

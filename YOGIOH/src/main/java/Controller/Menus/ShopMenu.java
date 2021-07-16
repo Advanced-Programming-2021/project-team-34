@@ -1,9 +1,14 @@
 package Controller.Menus;
 
 
+import Controller.MenuController;
+import Exceptions.NoMonsterWithThisNameException;
 import Model.Card;
+import Model.Monster;
+import Model.SpellAndTrap;
 import Model.User;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
@@ -18,17 +23,41 @@ public class ShopMenu {
 
 
     public static boolean buyCard(String nameOfCardToBuy) {
-        return false;// TODO : ...
+        String result = buyCard(nameOfCardToBuy , MenuController.getLoggedInUser().getUsername());
+        if (result.equals("shop completed")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
     }
 
-    // TODO : probably to delete the method below
-    public String buyCard(String cardName, String username) {
-        if (!Card.getAllCards().containsKey(cardName)) {
-            return "there is no card with this name";
+    public static String buyCard(String cardName, String username) {
+        try {
+            if (!Card.getNameOfAllCardsInAlphabeticalOrder().contains(cardName)) {
+                return "there is no card with this name";
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-        Card card = Card.getAllCards().get(cardName);
-        if (Objects.requireNonNull(User.getUserByUsername(username)).doesHaveEnoughCoin(card.getPrice())) {
+        Card card = null;
+        try {
+            card = new Monster(cardName);
+        } catch (NoMonsterWithThisNameException e) {
+            try {
+                card = new SpellAndTrap(cardName);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!(User.getUserByUsername(username)).doesHaveEnoughCoin(card.getPrice())) {
+            //System.out.println("card price : "+card.getPrice()+" , but you have only "+User.getUserByUsername(username).getCoin());
             return "not enough money";
+        }
+        if ((User.getUserByUsername(username).getACardWithName(cardName)) != null) {
+            return "you already have this card";
         }
         Objects.requireNonNull(User.getUserByUsername(username)).increaseCoin(-card.getPrice());
         Objects.requireNonNull(User.getUserByUsername(username)).addCard(card);

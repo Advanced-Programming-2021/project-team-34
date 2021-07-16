@@ -1,6 +1,5 @@
 package Model;
 
-import Exceptions.NoMonsterWithThisNameException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -32,6 +31,7 @@ public class Tests {
         assertEquals(3, user3.getRank());
         assertTrue(user3.changePassword("333" , "4444"));
         assertTrue(User.checkPassword(user3.getUsername() , "4444"));
+        assertTrue(user1.doesHaveEnoughCoin(3500));
     }
 
     @Test
@@ -80,52 +80,6 @@ public class Tests {
             assertNotNull(monster6);assertNotNull(monster7);assertNotNull(monster8);assertNotNull(monster9);
             assertNotNull(monster10);assertNotNull(monster11);assertNotNull(monster12);
             assertNotNull(monster13);assertNotNull(monster14);
-
-            assertEquals(4 , monster1.getLevel());
-            assertEquals(4 , monster2.getLevel());
-            assertEquals(3 , monster3.getLevel());
-            assertEquals(4 , monster4.getLevel());
-
-            assertEquals("EARHT" , monster1.getAttribute());
-            assertEquals("EARHT" , monster2.getAttribute());
-            assertEquals("WATER" , monster3.getAttribute());
-            assertEquals("DARK" , monster4.getAttribute());
-
-            assertEquals("Beast-Warrior" , monster1.getMonsterType());
-            assertEquals("Warrior" , monster2.getMonsterType());
-            assertEquals("Aqua" , monster3.getMonsterType());
-            assertEquals("Fiend" , monster4.getMonsterType());
-            assertEquals("Beast" , monster5.getMonsterType());
-
-            assertEquals("Normal" , monster1.getType());
-            assertEquals("Normal" , monster2.getType());
-            assertEquals("Effect" , monster3.getType());
-            assertEquals("Normal" , monster4.getType());
-
-            assertEquals(1700 , monster1.getDefAttPower());
-            assertEquals(1700 , monster2.getDefAttPower());
-            assertEquals(800 , monster3.getDefAttPower());
-            assertEquals(1300 , monster4.getDefAttPower());
-
-            assertEquals(1000 , monster1.getDefDefPower());
-            assertEquals(1150 , monster2.getDefDefPower());
-            assertEquals(1400 , monster3.getDefDefPower());
-            assertEquals(1000 , monster4.getDefDefPower());
-
-            assertEquals("\"A monster with tremendous power, it destroys enemies with a swing of its axe.\"",
-                    monster1.getDescription());
-            assertEquals("An axe-wielding monster of tremendous strength and agility.",
-                    monster2.getDescription());
-            assertEquals("If this card is destroyed by battle and sent to the GY: Destroy the monster that destroyed this card.",
-                    monster3.getDescription());
-            assertEquals("\"A small fiend that dwells in the dark, its single horn makes it a formidable opponent.\"",
-                    monster4.getDescription());
-
-            assertEquals(2900 , monster1.getPrice());
-            assertEquals(3100 , monster2.getPrice());
-            assertEquals(1700 , monster3.getPrice());
-            assertEquals(2500 , monster4.getPrice());
-            assertEquals(1700 , monster5.getPrice());
 
             Deck deck = new Deck();
             deck.addCardToMainDeck(monster1);
@@ -208,34 +162,5 @@ public class Tests {
         assertTrue(deck.isValid());
         deck.deleteCardFromMainDeck(monsterArrayList.get(0));
         assertTrue(deck.isValid());
-    }
-
-    @Test
-    public void testLoadingInvalidMonster() {
-        boolean found = true;
-        try {
-            Monster monster = new Monster("hayulayetarsnakekhafan");
-            found = true;
-        } catch (NoMonsterWithThisNameException e) {
-            found = false;
-            e.printStackTrace();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        assertFalse(found);
-    }
-    @Test
-    public void testSpellTrap() {
-        try {
-            SpellAndTrap spellAndTrap1 = new SpellAndTrap("Trap Hole");
-            assertEquals("Trap",spellAndTrap1.spellAndTrapType);
-            assertEquals("Normal" , spellAndTrap1.icon);
-            assertEquals("When your opponent Normal or Flip Summons 1 monster with 1000 or more ATK: Target that monster; destroy that target.",spellAndTrap1.description);
-            assertEquals("Unlimited" , spellAndTrap1.getStatus());
-            assertEquals(2000 , spellAndTrap1.getPrice());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

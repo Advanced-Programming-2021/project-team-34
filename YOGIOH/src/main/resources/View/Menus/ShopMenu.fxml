@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Line?>
+<?import java.net.URL?>
+<?import javafx.scene.shape.Rectangle?>
+<Pane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="View.Menus.ShopMenu"
+      prefHeight="1200.0" prefWidth="1600.0">
+    <HBox alignment="CENTER" prefWidth="1400">
+        <VBox alignment="CENTER">
+            <Label text="کارت‌های هیولا" styleClass="title"/>
+            <GridPane fx:id="monsterCardsGridPane" alignment="CENTER">
+
+            </GridPane>
+            <Label text="کارت‌های افسون و تله" styleClass="title" />
+            <GridPane fx:id="spellTrapCardsGridPane" alignment="CENTER">
+
+            </GridPane>
+            <Line />
+            <GridPane fx:id="resultGridPane" alignment="CENTER">
+                <Label text="نتیجه‌ی کنش‌ها در این جا نوشته‌خواهند شد" styleClass="resultText" />
+            </GridPane>
+        </VBox>
+        <Label text="                "/>
+        <VBox alignment="CENTER" layoutX="1200">
+            <GridPane fx:id="moneyGridPane">
+                <Label text="" styleClass="informationTextLarge"/>
+            </GridPane>
+            <Rectangle fx:id="selectedCardRectangle" width="300" height="500" />
+            <GridPane fx:id="propertiesGridPane">
+                <Label text="" styleClass="informationTextSmall" prefHeight="100"/>
+            </GridPane>
+            <Button text="خریدن" onMouseClicked="#buyByMouse" /> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" /> <!-- TODO : action of this button -->
+        </VBox>
+    </HBox>
+
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css" />
+        <URL value="@textStyle.css" />
+    </stylesheets>
+
+</Pane>

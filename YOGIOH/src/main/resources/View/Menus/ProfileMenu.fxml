@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="View.Menus.ProfileMenu"
+            prefHeight="800.0" prefWidth="600.0">
+
+
+        <VBox alignment="CENTER" prefWidth="500" layoutX="50" layoutY="100">
+            <Label text="نمایه" styleClass="title"/>
+            <Label/>
+            <HBox alignment="CENTER">
+                <GridPane fx:id="moneyGridPane">
+                    <Label text="" styleClass="informationTextSmall"/>
+                </GridPane>
+                <Label text="پول : " styleClass="informationTextSmall"/>
+                <Label text="                      "/>
+                <GridPane fx:id="scoreGridPane">
+                    <Label text="" styleClass="informationTextSmall"/>
+                </GridPane>
+                <Label text="امتیاز : " styleClass="informationTextSmall"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <GridPane fx:id="nicknameGridPane">
+                     <TextField text="" styleClass="inputTextTitle" onKeyTyped="#keyTyped" />
+                </GridPane>
+            </HBox>
+            <GridPane fx:id="usernameGridPane" alignment="CENTER" >
+                <Label text="" styleClass="informationTextSmall"/>
+            </GridPane>
+            <Label/>
+            <GridPane fx:id="resultGridPane" alignment="CENTER">
+                <Label text="" styleClass="resultText"/>
+            </GridPane>
+            <Label/>
+            <Label/>
+            <Button text="ویراستن نام مستعار" styleClass="buttonLongText"
+                    onMouseClicked="#changeNicknameByMouse" onKeyPressed="#changeNicknameByKey" />
+            <Label/>
+            <Button text="ویراستن گذرواژه" onMouseClicked="#changePasswordByMouse" onKeyPressed="#changePasswordByKey"/> <!-- TODO : action of this button -->
+            <Label/>
+            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey"/>
+        </VBox>
+
+
+    <Circle radius="50" fill="blue" centerY="230" centerX="70" fx:id="profileImageCircle"
+            onMouseClicked="#changeAvatarByMouse" onKeyPressed="#changeAvatarByKey"/>
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css"/>
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</Pane>

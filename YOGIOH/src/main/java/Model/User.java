@@ -10,16 +10,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class User {
     public static ArrayList<User> users;
-
     static {
         users = new ArrayList<>();
     }
 
-    private final String username;
+    private String username;
     private String password;
     private String nickname;
     private int coin;
@@ -27,6 +27,9 @@ public class User {
     private ArrayList<Deck> decks = new ArrayList<Deck>();
     private Deck activeDeck;
     private ArrayList<Card> cards = new ArrayList<Card>();
+    private static final int maximumNumberOfAvatar = 5;
+    private String avatarName; /** address of avatar file */
+    private int avatarInt;
     {
 //        decks = new ArrayList<>();
     }
@@ -35,8 +38,10 @@ public class User {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
-        this.coin = 0;
+        this.coin = 40000;
         this.highScore = -1;
+        this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar-1))+1;
+        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
         setHighScore(0);
     }
 
@@ -172,28 +177,28 @@ public class User {
         Gson gson = new Gson();
         users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
                 new TypeToken<List<User>>() {
-        }.getType());
+                }.getType());
         for (User user : users) {
             String username = user.getUsername();
-            File file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\cards.txt" );
+            File file = new File("src\\main\\resources\\data\\" + username + "\\cards.txt" );
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String name = scanner.nextLine();
                 if (Card.allCards.containsKey(name)) user.getCards().add(Card.allCards.get(name));
             }
-            file = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\decks.txt");
+            file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
             scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String name = scanner.nextLine();
                 Deck deck = new Deck();
                 deck.setName(name);
-                File file1 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
+                File file1 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
                 Scanner scanner1 = new Scanner(file1);
                 while (scanner1.hasNextLine()) {
                     String name1 = scanner1.nextLine();
                     if (Card.allCards.containsKey(name1)) deck.addCardToMainDeck(Card.getAllCards().get(name1));
                 }
-                File file2 = new File("C:\\Users\\MSI\\Desktop\\mnop\\project-team-34-master\\YOGIOH\\src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
+                File file2 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
                 Scanner scanner2 = new Scanner(file2);
                 while (scanner2.hasNextLine()) {
                     String name2 = scanner2.nextLine();
@@ -219,6 +224,26 @@ public class User {
         }
         return null;
     }
+
+    /**
+     * This method gets address of avatar file.
+     * For example : "src/main/resources/Images/Avatars/1.png"
+     * @return String address of file */
+    public String getAvatarName() {
+        return avatarName;
+    }
+    /**
+     * This method changes avatar address to the next one !
+     * */
+    public void changeAvatar() {
+        this.avatarInt = (avatarInt+1);
+        if (avatarInt == maximumNumberOfAvatar+1) avatarInt = 1;
+        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
+    }
+
+    public static ArrayList<User> getUsers() {
+        return users;
+    }
     public Card getACardWithName(String name) {
         for (Card card :
                 cards) {
@@ -227,5 +252,4 @@ public class User {
             }
         }return null;
     }
-
 }

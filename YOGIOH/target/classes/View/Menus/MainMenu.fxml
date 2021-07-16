@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="View.Menus.MainMenu"
+            prefHeight="900.0" prefWidth="600.0">
+
+    <center>
+        <VBox alignment="CENTER">
+            <Label text="منوی اصلی" styleClass="title" />
+            <Label/>
+            <Button text="آغازیدن بازی" onMouseClicked="#startByMouse" onKeyPressed="#startByKey" />
+            <Label/>
+            <Button text="دک" onMouseClicked="#goToDeckMenuByMouse" onKeyPressed="#goToDeckMenuByKey"/>
+            <Label/>
+            <Button text="جدول امتیازها" onMouseClicked="#goToScoreBoardMenuByMouse" onKeyPressed="#goToScoreBoardMenuByKey"/>
+            <Label/>
+            <Button text="نمایه" onMouseClicked="#goToProfileMenuByMouse" onKeyPressed="#goToProfileMenuByKey"/>
+            <Label/>
+            <Button text="فروشگاه" onMouseClicked="#goToShopMenuByMouse" onKeyPressed="#goToShopMenuByKey"/>
+            <Label/>
+            <Button text="خواندن/ صدور" onMouseClicked="#goToImportExportMenuBuMouse" onKeyPressed="#goToImportExportMenuByKey"/>
+            <Label/>
+            <Button text="درآمدن از حساب" onMouseClicked="#logoutByMouse" onKeyPressed="#logoutByKey"/>
+            <Label/>
+        </VBox>
+    </center>
+
+
+
+    <stylesheets>
+        <URL value="@ButtonStyle.css"/>
+        <URL value="@textStyle.css"/>
+    </stylesheets>
+</BorderPane>

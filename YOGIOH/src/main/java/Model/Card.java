@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public abstract class Card {
+public class Card {
     protected String name;
     protected String type;
     TypeOfCard typeOfCard = TypeOfCard.NOT_DETERMINED;
     protected String description;
     //    protected Player owner;
     protected static HashMap<String, Card> allCards;
-    private int price;
+    protected int price;
 
     static {
         allCards = new HashMap<>();
@@ -59,7 +59,7 @@ public abstract class Card {
 //    }
 
     public int getPrice() {
-        return this.price;
+        return price;
     }
 
     public TypeOfCard getTypeOfCard() {
