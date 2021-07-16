@@ -16,6 +16,10 @@ public class CommandType {
         Field field = new Field(name);
         fields.add(field);
     }
+    public void addField(String name , boolean doesHaveArgument) {
+        this.addField(name);
+        this.getField(name).setDoesHaveArgument(doesHaveArgument);
+    }
     public Field getField(String name) {
         for (Field field :
                 fields) {
@@ -29,8 +33,11 @@ public class CommandType {
 //
 //    }
     public boolean checkIfMatches(String input) {
+        if (input.equals("")) {
+            return false;
+        }
         input = deleteWhiteSpaces(input);
-        String[] words = input.split(" ");
+        String[] words = splitWithSpaceNotContainBetweenQuotations(input);
         String[] mainPartWords = mainPart.split(" ");
         int currentIndex = 0;
         if (!mainPart.equals("") && !checkMatch(words, mainPartWords, 0)) {
@@ -76,9 +83,13 @@ public class CommandType {
     private static String deleteWhiteSpaces(String str){
         char[] chars = str.toCharArray();
         char[] ansch = new char[str.length()];
+        boolean quoted = false;
         int i = 0, j = 0;
         for (i = 0; i < chars.length; i++) {
-            if (chars[i] != ' ' || (i > 0 && chars[i-1] != ' ')) {
+            if (chars[i] == '\"') {
+                quoted = !quoted;
+            }
+            if (quoted || chars[i] != ' ' || (i > 0 && chars[i-1] != ' ')) {
                 ansch [j] = chars[i];
                 j++;
             }
@@ -112,6 +123,42 @@ public class CommandType {
             }
         }
         return true;
+    }
+
+    private String[] splitWithSpaceNotContainBetweenQuotations(String string) {
+        ArrayList<String> stringArrayList = new ArrayList<String>();
+        String stringToAdd = "";
+        string = deleteWhiteSpaces(string);
+        char[] chars = string.toCharArray();
+        boolean quoted = false;
+        for (int i = 0 ; i < chars.length-1 ; i++) {
+            char ch = chars[i];
+            if (!quoted && ch == ' ') {
+                stringArrayList.add(stringToAdd);
+                stringToAdd = "";
+                continue;
+            }
+            if (ch == '\"') {
+                quoted = !quoted;
+                stringToAdd += ch;
+                continue;
+            }
+            if (quoted || (ch != ' ')) {
+                stringToAdd += ch;
+                continue;
+            }
+        }
+        char ch = chars[chars.length-1];
+        stringToAdd += ch;
+        stringArrayList.add(stringToAdd);
+        String[] ans = new String[stringArrayList.size()];
+        int i = 0;
+        for (String str :
+                stringArrayList) {
+            ans[i] = str;
+            i++;
+        }
+        return ans;
     }
 
     public String getName() {
@@ -236,4 +283,26 @@ public class CommandType {
         assertEquals("chetori joooone del!" , ans2);
         assertEquals("login user with username mahdi" , ans3);
     }
+
+    @Test
+    public void test2DeleteWhiteSpace() {
+        String ans1 = deleteWhiteSpaces("send  --username  mahdi    --message \" sfa    sgjsl  sgs \"");
+        assertEquals("send --username mahdi --message \" sfa    sgjsl  sgs \"" , ans1);
+    }
+
+    @Test
+    public void testSplit() {
+        String[] ans1 =
+                splitWithSpaceNotContainBetweenQuotations(deleteWhiteSpaces("send  --username  mahdi    --message \" sfa" +
+                        "    sgjsl  sgs \" --port 1234"));
+        for (String string :
+                ans1) {
+            System.out.println(string);
+        }
+        String[] correctAnswers = new String[]{"send" , "--username", "mahdi", "--message", "\" sfa    sgjsl  sgs \"" , "--port","1234"};
+        for (int i = 0; i < correctAnswers.length; i++) {
+            assertEquals(correctAnswers[i] , ans1[i]);
+        }
+    }
+
 }

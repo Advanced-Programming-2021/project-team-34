@@ -45,4 +45,5 @@ public class Tests {
         Command command = new Command("select 12");
         assertEquals("select Card" , command.getType());
     }
+
 }
