@@ -9,13 +9,9 @@
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandTypeInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandTypeInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Exceptions/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeMainParts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeMainParts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypesFieldNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypesFieldNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/Results.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/SpellAndTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/SpellAndTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

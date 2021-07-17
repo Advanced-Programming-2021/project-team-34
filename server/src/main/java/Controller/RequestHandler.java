@@ -20,9 +20,15 @@ public class RequestHandler {
                 return sendMessage(command);
             case CommandTypeNames.REPLY_MESSAGE:
                 return replyMessage(command);
+            case CommandTypeNames.GET_MESSAGES:
+                return getMessages();
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    private static String getMessages() {
+        return Doer.getMessages();
     }
 
     /**

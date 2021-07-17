@@ -21,6 +21,14 @@ public class CommandTypeInitializer {
         sendMessage();// send message --token <token> --message <message> // DON'T FORGET '"' BEFORE AND AFTER THE MESSAGE!
         replyMessage();// send message --token <token> --message <message> --replyOn <repliedMessageID>
         increaseCoin();// increase coin --token <token> --value <value>
+        getMessages(); // get messages
+    }
+
+    private static void getMessages() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.GET_MESSAGES);
+        commandType.setMainPart(CommandTypeMainParts.GET_MESSAGES);
+        Command.addCommandType(commandType);
     }
 
     private static void replyMessage() {

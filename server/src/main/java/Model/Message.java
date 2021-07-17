@@ -70,7 +70,7 @@ public class Message {
         Message messageToEdit = getMessageById(messageToEditID);
         messageToEdit.edit(newText);
     }
-    
+
     /**
      * This method takes id of a Message and edits its text. If the id be invalid it throws a NoSuchIDException.
      * @param messageToDeleteID int : ID of Message to delete.
@@ -80,7 +80,7 @@ public class Message {
         Message messageToDelete = getMessageById(messageToDeleteID);
         messageToDelete.delete();
     }
-    
+
     /**
      * This method takes ID of a Message and returns the Message with that id and if id be invalid it throws a NoSuchIDException.
      * @param id int : ID of the message to get.
@@ -93,5 +93,40 @@ public class Message {
                 return message;
             }
         } throw new NoSuchIDException("Message",id);
+    }
+
+    /**
+     * This method returns the String which should be sent to the client.
+     */
+    public static String getAllMessagesString() {
+        StringBuilder answer = new StringBuilder();
+        for (int i = 0; i < messages.size() - 1; i++) {
+            answer.append(messages.get(i)).append(";nextMessage:");
+        }
+        answer.append(messages.get(messages.size() - 1));
+        return answer.toString();
+    }
+
+    /**
+     * This toString method can be used to creating the String which should be sent to the client.
+     * <br>
+     * e.g It returns a String like this :
+     * <br>
+     * message id < id> text \"salam salam\" usernameOfSender mahdi replyOnMessage < id> replies \"1,3,8,14\"
+     * <br> Which means : <br>
+     * message id < id> text "salam salam" usernameOfSender mahdi replyOnMessage < id> replies "1,3,8,14"
+     * <br> So the syntax is :<br>
+     * message --id < id> --text < text> --usernameOfSender < username> --replyOnMessage < id> --replies < ids>
+     */
+    @Override
+    public String toString() {
+        String answer = "message id "+id+" text \""+messageText+"\" usernameOfSender "+usernameOfSender+" replyOnMessage "+
+                replyOnMessage+" replies \"";
+        int i;
+        for (i = 0; i < replies.size()-1; i++) {
+            answer += replies.get(i) + ",";
+        }
+        answer += replies.get(replies.size()) + "\"";
+        return answer;
     }
 }

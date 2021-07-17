@@ -47,4 +47,8 @@ public class Doer {
             return Results.INVALID_INT_ID;
         }
     }
+
+    public static String getMessages() {
+        return Message.getAllMessagesString();
+    }
 }
