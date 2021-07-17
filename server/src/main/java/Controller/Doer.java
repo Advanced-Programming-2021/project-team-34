@@ -28,10 +28,10 @@ public class Doer {
                 throw new WrongPasswordException();
             } else {
                 new Session(new Token(), username);
-                return "success";
+                    return Results.SUCCESS;
             }
         } catch (WrongPasswordException e) {
-            return e.getMessage();
+            return Results.USERNAME_AND_PASSWORD_DO_NOT_MATCH;
         }
     }
 
@@ -40,9 +40,9 @@ public class Doer {
             String username = Session.getUsernameOfToken(tokenName);
             if (username == null) throw new NoSuchTokenException();
             Session.deleteSessionOfUsername(username);
-            return "success";
+            return Results.SUCCESS;
         } catch (NoSuchTokenException e) {
-            return e.getMessage();
+            return Results.INVALID_TOKEN;
         }
     }
 
@@ -52,9 +52,9 @@ public class Doer {
             if (username == null) throw new NoSuchTokenException();
             User user = User.getUserByUsername(username);
             user.setNickname(newNickname);
-            return "success";
+            return Results.SUCCESS;
         } catch (NoSuchTokenException e) {
-            return e.getMessage();
+            return Results.INVALID_TOKEN;
         }
     }
 
@@ -63,10 +63,12 @@ public class Doer {
             String username = Session.getUsernameOfToken(tokenName);
             if (username == null) throw new NoSuchTokenException();
             User user = User.getUserByUsername(username);
-            if (user.changePassword(currentPassword, newPassword)) return "success";
+            if (user.changePassword(currentPassword, newPassword)) return Results.SUCCESS;
             else throw new WrongPasswordException();
-        } catch (NoSuchTokenException | WrongPasswordException e) {
-            return e.getMessage();
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        } catch (WrongPasswordException e) {
+            return Results.USERNAME_AND_PASSWORD_DO_NOT_MATCH;
         }
     }
 
