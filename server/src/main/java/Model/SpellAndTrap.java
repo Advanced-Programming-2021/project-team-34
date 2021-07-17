@@ -1,6 +1,6 @@
 package Model;
 
-import Exceptions.NoSpellTrapWithThisNameException;
+import Exceptions.*;
 
 import java.io.File;
 import java.io.IOException;

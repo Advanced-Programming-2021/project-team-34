@@ -19,7 +19,18 @@ public class CommandTypeInitializer {
         changePassword();// change password --token <token> --currentPassword <currentPassword> --newPassword <newPassword>
         changeAvatar();// change avatar --token <token> --newAvatar <newAvatar> // newAvatar is a number!
         sendMessage();// send message --token <token> --message <message> // DON'T FORGET '"' BEFORE AND AFTER THE MESSAGE!
+        replyMessage();// send message --token <token> --message <message> --replyOn <repliedMessageID>
         increaseCoin();// increase coin --token <token> --value <value>
+    }
+
+    private static void replyMessage() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.REPLY_MESSAGE);
+        commandType.setMainPart(CommandTypeMainParts.SEND_MESSAGE);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        commandType.addField(CommandTypesFieldNames.MESSAGE);
+        commandType.addField(CommandTypesFieldNames.REPLY_ON);
+        Command.addCommandType(commandType);
     }
 
     private static void increaseCoin() {

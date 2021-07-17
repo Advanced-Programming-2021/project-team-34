@@ -11,4 +11,5 @@ public class CommandTypesFieldNames {
     public static final String NEW_AVATAR = "newAvatar";
     public static final String MESSAGE = "message";
     public static final String VALUE = "value";
+    public static final String REPLY_ON = "replyOn";
 }

@@ -10,4 +10,5 @@ public class CommandTypeNames {
     public static final String CHANGE_AVATAR = "change avatar";
     public static final String NEW_GAME = "new game";
     public static final String INCREASE_COIN = "increase coin";
+    public static final String REPLY_MESSAGE = "reply message";
 }

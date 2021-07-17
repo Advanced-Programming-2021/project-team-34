@@ -55,4 +55,14 @@ public class Session {
             sessions.remove(session);
         }
     }
+
+    // getters and setters
+
+    public Token getToken() {
+        return token;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
