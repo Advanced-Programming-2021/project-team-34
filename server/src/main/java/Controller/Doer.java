@@ -1,14 +1,9 @@
 package Controller;
 
-import Exceptions.DuplicateNicknameException;
-import Exceptions.DuplicateUsernameException;
-import Exceptions.NoSuchIDException;
-import Exceptions.NoSuchTokenException;
+import Exceptions.*;
 import FinalStrings.Results;
-import Model.GameRequest;
-import Model.Message;
-import Model.Session;
-import Model.User;
+import Model.*;
+
 
 /**
  * This class does functions of commands.
@@ -19,8 +14,58 @@ public class Doer {
         try {
             User user = new User(username, password, nickname);
             Session session = new Session(username);
-            return "success token "+session.getToken();
+            return "success token " + session.getToken();
         } catch (DuplicateUsernameException | DuplicateNicknameException e) {
+            return e.getMessage();
+        }
+    }
+
+    public static synchronized String login(String username, String password) {
+        try {
+            if (User.getUserByUsername(username) == null) {
+                throw new WrongPasswordException();
+            } else if (!User.checkPassword(username, password)) {
+                throw new WrongPasswordException();
+            } else {
+                new Session(new Token(), username);
+                return "success";
+            }
+        } catch (WrongPasswordException e) {
+            return e.getMessage();
+        }
+    }
+
+    public static synchronized String logout(String tokenName) {
+        try {
+            String username = Session.getUsernameOfToken(tokenName);
+            if (username == null) throw new NoSuchTokenException();
+            Session.deleteSessionOfUsername(username);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return e.getMessage();
+        }
+    }
+
+    public static String changeNickname(String tokenName, String newNickname) {
+        try {
+            String username = Session.getUsernameOfToken(tokenName);
+            if (username == null) throw new NoSuchTokenException();
+            User user = User.getUserByUsername(username);
+            user.setNickname(newNickname);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return e.getMessage();
+        }
+    }
+
+    public static String changePassword(String tokenName, String currentPassword, String newPassword) {
+        try {
+            String username = Session.getUsernameOfToken(tokenName);
+            if (username == null) throw new NoSuchTokenException();
+            User user = User.getUserByUsername(username);
+            if (user.changePassword(currentPassword, newPassword)) return "success";
+            else throw new WrongPasswordException();
+        } catch (NoSuchTokenException | WrongPasswordException e) {
             return e.getMessage();
         }
     }
