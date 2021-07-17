@@ -62,4 +62,11 @@ public class Command {
     public static void clearValidCommandTypes() {
         validCommandTypes.clear();
     }
+    public static String help() {
+        String answer = "";
+        for (CommandType commandType :
+                validCommandTypes) {
+            answer += commandType.toString()+"\n-----------------------------------------------\n";
+        } return answer;
+    }
 }

@@ -25,6 +25,9 @@ What's new in this version :
 
     It can be used to give help for syntax of command Types for example you can show for all CommandTypes you  have defined
         to the user so hi or she can realize the correct format of commands
+
+    * In Command now we have public static String help() method witch gets a String which can be shown to the user
+    and contains toString of all its CommandTypes.
 }
 What was new in version 2 :
 {

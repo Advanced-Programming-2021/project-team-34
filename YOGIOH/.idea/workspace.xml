@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
-      <change afterPath="$PROJECT_DIR$/../server/src/main/java/Exceptions/NoSuchIDException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/Exceptions/DuplicateNicknameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/Exceptions/DuplicateUsernameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/Results.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandHelper/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandHelper/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandHelper/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandHelper/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

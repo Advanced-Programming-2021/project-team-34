@@ -1,5 +1,7 @@
 package Model;
 
+import Exceptions.DuplicateNicknameException;
+import Exceptions.DuplicateUsernameException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -34,15 +36,21 @@ public class User {
 //        decks = new ArrayList<>();
     }
 
-    public User(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-        this.coin = 40000;
-        this.highScore = -1;
-        this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar-1))+1;
-        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
-        setHighScore(0);
+    public User(String username, String password, String nickname) throws DuplicateUsernameException, DuplicateNicknameException {
+        if (getUserByUsername(username) != null) {
+            throw new DuplicateUsernameException(username);
+        } else if (getUserByNickname(nickname) != null) {
+            throw new DuplicateNicknameException(nickname);
+        } else {
+            this.username = username;
+            this.password = password;
+            this.nickname = nickname;
+            this.coin = 40000;
+            this.highScore = -1;
+            this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar - 1)) + 1;
+            this.avatarName = "/Images/Avatars/" + (avatarInt) + ".png";
+            setHighScore(0);
+        }
     }
 
     public static User getUserByUsername(String username) {

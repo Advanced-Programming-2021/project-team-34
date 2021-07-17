@@ -59,7 +59,7 @@ public class Message {
             replyOnMessage.replies.remove(this);
         }
     }
-
+    
     /**
      * This method takes id of a Message and edits its text. If the id be invalid it throws a NoSuchIDException.
      * @param messageToEditID int : ID of message to edit.
@@ -70,7 +70,7 @@ public class Message {
         Message messageToEdit = getMessageById(messageToEditID);
         messageToEdit.edit(newText);
     }
-
+    
     /**
      * This method takes id of a Message and edits its text. If the id be invalid it throws a NoSuchIDException.
      * @param messageToDeleteID int : ID of Message to delete.
