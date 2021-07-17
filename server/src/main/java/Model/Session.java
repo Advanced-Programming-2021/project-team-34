@@ -51,7 +51,7 @@ public class Session {
         return null;
     }
 
-    private static void deleteSessionOfUsername(String username) {
+    public static void deleteSessionOfUsername(String username) {
         Session session = getSessionOfUsername(username);
         if (session != null) {
             sessions.remove(session);
