@@ -133,6 +133,11 @@ public class MainMenu extends ViewMenu {
         }
     }
 
+    public void goToMessagesMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            ChatroomMenu.run();
+    }
+
 
 //    private static boolean toContinue = true;
 //    public static void run() {

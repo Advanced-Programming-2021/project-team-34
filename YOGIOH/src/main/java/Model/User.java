@@ -178,33 +178,35 @@ public class User {
         users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
                 new TypeToken<List<User>>() {
                 }.getType());
-        for (User user : users) {
-            String username = user.getUsername();
-            File file = new File("src\\main\\resources\\data\\" + username + "\\cards.txt" );
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String name = scanner.nextLine();
-                if (Card.allCards.containsKey(name)) user.getCards().add(Card.allCards.get(name));
-            }
-            file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
-            scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String name = scanner.nextLine();
-                Deck deck = new Deck();
-                deck.setName(name);
-                File file1 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
-                Scanner scanner1 = new Scanner(file1);
-                while (scanner1.hasNextLine()) {
-                    String name1 = scanner1.nextLine();
-                    if (Card.allCards.containsKey(name1)) deck.addCardToMainDeck(Card.getAllCards().get(name1));
+        if (users != null) {
+            for (User user : users) {
+                String username = user.getUsername();
+                File file = new File("src\\main\\resources\\data\\" + username + "\\cards.txt");
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String name = scanner.nextLine();
+                    if (Card.allCards.containsKey(name)) user.getCards().add(Card.allCards.get(name));
                 }
-                File file2 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
-                Scanner scanner2 = new Scanner(file2);
-                while (scanner2.hasNextLine()) {
-                    String name2 = scanner2.nextLine();
-                    if (Card.allCards.containsKey(name2)) deck.addCardToSideDeck(Card.getAllCards().get(name2));
+                file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
+                scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String name = scanner.nextLine();
+                    Deck deck = new Deck();
+                    deck.setName(name);
+                    File file1 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
+                    Scanner scanner1 = new Scanner(file1);
+                    while (scanner1.hasNextLine()) {
+                        String name1 = scanner1.nextLine();
+                        if (Card.allCards.containsKey(name1)) deck.addCardToMainDeck(Card.getAllCards().get(name1));
+                    }
+                    File file2 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
+                    Scanner scanner2 = new Scanner(file2);
+                    while (scanner2.hasNextLine()) {
+                        String name2 = scanner2.nextLine();
+                        if (Card.allCards.containsKey(name2)) deck.addCardToSideDeck(Card.getAllCards().get(name2));
+                    }
+                    user.decks.add(deck);
                 }
-                user.decks.add(deck);
             }
         }
     }
