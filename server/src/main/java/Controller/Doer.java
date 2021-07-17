@@ -15,8 +15,10 @@ public class Doer {
             User user = new User(username, password, nickname);
             Session session = new Session(username);
             return "success token " + session.getToken();
-        } catch (DuplicateUsernameException | DuplicateNicknameException e) {
-            return e.getMessage();
+        } catch (DuplicateUsernameException e) {
+            return Results.USERNAME_IS_ALREADY_REGISTERED;
+        } catch (DuplicateNicknameException e) {
+            return Results.NICKNAME_IS_ALREADY_REGISTERED;
         }
     }
 

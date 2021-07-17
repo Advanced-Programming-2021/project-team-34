@@ -10,4 +10,6 @@ public class Results {
     public static final String HAS_ALREADY_REQUESTED = "has already requested";
     public static final String HAS_NO_REQUEST = "has no request";
     public static final String USERNAME_AND_PASSWORD_DO_NOT_MATCH = "username and password don't match";
+    public static final String USERNAME_IS_ALREADY_REGISTERED = "username is already registered";
+    public static final String NICKNAME_IS_ALREADY_REGISTERED = "nickname is already registered";
 }
