@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.CommandHelper.Command;
 import Exceptions.NoSuchIDException;
+import Exceptions.NoSuchTokenException;
 import FinalStrings.CommandTypeMainParts;
 import FinalStrings.CommandTypeNames;
 import FinalStrings.CommandTypesFieldNames;
@@ -22,11 +23,40 @@ public class RequestHandler {
                 return replyMessage(command);
             case CommandTypeNames.GET_MESSAGES:
                 return getMessages();
+            case CommandTypeNames.NEW_GAME_REQUEST:
+                return newGameRequest(command);
+            case CommandTypeNames.DELETE_GAME_REQUEST:
+                return deleteGameRequest(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
     }
 
+    /**
+     * This method deletes the game request of the user related to the given token.
+     */
+    private static String deleteGameRequest(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.deleteGameRequest(tokenCode);
+    }
+
+    /**
+     * This method is for requesting a new game request.
+     */
+    private static String newGameRequest(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        String roundString = command.getField(CommandTypesFieldNames.ROUND);
+        if (roundString.matches("[13]")) {
+            int round = Integer.parseInt(roundString);
+            return Doer.newGameRequest(tokenCode , round);
+        } else {
+            return Results.INVALID_INT_FORMAT;
+        }
+    }
+
+    /**
+     * This method is for sending all Messages to the client in form of a String.
+     */
     private static String getMessages() {
         return Doer.getMessages();
     }
@@ -42,7 +72,12 @@ public class RequestHandler {
     private static String replyMessage(Command command) {
         String messageText = command.getField(CommandTypesFieldNames.MESSAGE);
         String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
-        String username = Session.getUsernameOfToken(tokenCode);
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(tokenCode);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
         String idOfMessageToReplyString = command.getField(CommandTypesFieldNames.REPLY_ON);
         return Doer.replyMessage(messageText , username , idOfMessageToReplyString);
     }

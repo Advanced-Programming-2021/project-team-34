@@ -12,4 +12,6 @@ public class CommandTypesFieldNames {
     public static final String MESSAGE = "message";
     public static final String VALUE = "value";
     public static final String REPLY_ON = "replyOn";
+    public static final String DELETE = "delete";
+    public static final String ROUND = "round";
 }

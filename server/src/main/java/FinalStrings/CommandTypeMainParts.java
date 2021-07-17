@@ -10,4 +10,5 @@ public class CommandTypeMainParts {
     public static final String SEND_MESSAGE = "send message";
     public static final String INCREASE_COIN = "increase coin";
     public static final String GET_MESSAGES = "get messages";
+    public static final String REQUEST_GAME = "request game";
 }

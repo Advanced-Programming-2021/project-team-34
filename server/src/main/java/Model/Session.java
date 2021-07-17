@@ -1,5 +1,7 @@
 package Model;
 
+import Exceptions.NoSuchTokenException;
+
 import java.util.ArrayList;
 
 public class Session {
@@ -21,22 +23,22 @@ public class Session {
         sessions.add(this);
     }
 
-    public static String getUsernameOfToken(Token token) {
+    public static String getUsernameOfToken(Token token) throws NoSuchTokenException {
         for (Session session :
                 sessions) {
             if (session.token.equals(token)) {
                 return session.username;
             }
-        } return null;
+        } throw new NoSuchTokenException();
     }
 
-    public static String getUsernameOfToken(String token) {
+    public static String getUsernameOfToken(String token) throws NoSuchTokenException {
         for (Session session :
                 sessions) {
             if (session.token.equals(token)) {
                 return session.username;
             }
-        } return null;
+        } throw new NoSuchTokenException();
     }
 
     private static Session getSessionOfUsername(String username) {

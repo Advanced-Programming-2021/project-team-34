@@ -22,6 +22,25 @@ public class CommandTypeInitializer {
         replyMessage();// send message --token <token> --message <message> --replyOn <repliedMessageID>
         increaseCoin();// increase coin --token <token> --value <value>
         getMessages(); // get messages
+        requestGame(); // request game --round <1/3> --token <token>
+        deleteRequestGame(); // request game --delete --token <token>
+    }
+
+    private static void deleteRequestGame() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.DELETE_GAME_REQUEST);
+        commandType.setMainPart(CommandTypeMainParts.REQUEST_GAME);
+        commandType.addField(CommandTypesFieldNames.DELETE , false);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
+    }
+
+    private static void requestGame() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.NEW_GAME_REQUEST);
+        commandType.setMainPart(CommandTypeMainParts.REQUEST_GAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
     }
 
     private static void getMessages() {

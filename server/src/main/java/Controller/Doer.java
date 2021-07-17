@@ -1,10 +1,11 @@
 package Controller;
 
-import Controller.CommandHelper.Command;
 import Exceptions.DuplicateNicknameException;
 import Exceptions.DuplicateUsernameException;
 import Exceptions.NoSuchIDException;
+import Exceptions.NoSuchTokenException;
 import FinalStrings.Results;
+import Model.GameRequest;
 import Model.Message;
 import Model.Session;
 import Model.User;
@@ -25,7 +26,12 @@ public class Doer {
     }
 
     public static String sendMessage(String tokenCode, String messageText) {
-        String username = Session.getUsernameOfToken(tokenCode);
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(tokenCode);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
         User user = User.getUserByUsername(username);
         if (user == null) {
             return (Results.ERROR);
@@ -44,11 +50,51 @@ public class Doer {
                 return Results.INVALID_ID;
             }
         } else {
-            return Results.INVALID_INT_ID;
+            return Results.INVALID_INT_FORMAT;
         }
     }
 
     public static String getMessages() {
         return Message.getAllMessagesString();
+    }
+
+    public static String newGameRequest(String tokenCode, int round) {
+        String username;
+        try {
+            username = Session.getUsernameOfToken(tokenCode);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.ERROR;
+        }
+
+        GameRequest gameRequest = ((round == 1) ? (GameRequest.ONE_ROUND) : (GameRequest.THREE_ROUND));
+        if (user.getGameRequest().equals(GameRequest.NO)) {
+            user.setGameRequest(gameRequest);
+            return Results.SUCCESS;
+        } else {
+            return Results.HAS_ALREADY_REQUESTED;
+        }
+    }
+
+    public static String deleteGameRequest(String tokenCode) {
+        String username;
+        try {
+            username = Session.getUsernameOfToken(tokenCode);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.ERROR;
+        }
+        if (!user.getGameRequest().equals(GameRequest.NO)) {
+            return Results.HAS_NO_REQUEST;
+        } else {
+            user.setGameRequest(GameRequest.NO);
+            return Results.SUCCESS;
+        }
     }
 }
