@@ -1,13 +1,10 @@
 package Controller;
 
 import Controller.CommandHelper.Command;
-import Exceptions.NoSuchIDException;
 import Exceptions.NoSuchTokenException;
-import FinalStrings.CommandTypeMainParts;
 import FinalStrings.CommandTypeNames;
 import FinalStrings.CommandTypesFieldNames;
 import FinalStrings.Results;
-import Model.Message;
 import Model.Session;
 
 public class RequestHandler {
@@ -17,6 +14,14 @@ public class RequestHandler {
         switch (typeOfCommand) {
             case CommandTypeNames.SIGN_UP:
                 return signUp(command);
+            case CommandTypeNames.LOGIN:
+                return login(command);
+            case CommandTypeNames.LOGOUT:
+                return logout(command);
+            case CommandTypeNames.CHANGE_NICKNAME:
+                return changeNickname(command);
+            case CommandTypeNames.CHANGE_PASSWORD:
+                return changePassword(command);
             case CommandTypeNames.SEND_MESSAGE:
                 return sendMessage(command);
             case CommandTypeNames.REPLY_MESSAGE:
@@ -32,33 +37,48 @@ public class RequestHandler {
         }
     }
 
-    /**
-     * This method deletes the game request of the user related to the given token.
-     */
-    private static String deleteGameRequest(Command command) {
-        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
-        return Doer.deleteGameRequest(tokenCode);
+    private static String login(Command command) {
+        String username = command.getField(CommandTypesFieldNames.USERNAME);
+        String password = command.getField(CommandTypesFieldNames.PASSWORD);
+        return Doer.login(username, password);
+    }
+
+    private static String signUp(Command command) {
+        String username = command.getField(CommandTypesFieldNames.USERNAME);
+        String nickname = command.getField(CommandTypesFieldNames.NICKNAME);
+        String password = command.getField(CommandTypesFieldNames.PASSWORD);
+        return Doer.signUp(username, password, nickname);
+    }
+
+    private static String logout(Command command) {
+        String tokenName = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.logout(tokenName);
+    }
+
+    private static String changeNickname(Command command) {
+        String tokenName = command.getField(CommandTypesFieldNames.TOKEN);
+        String newNickname = command.getField(CommandTypesFieldNames.NEW_NICKNAME);
+        return Doer.changeNickname(tokenName, newNickname);
+    }
+
+    private static String changePassword(Command command) {
+        String tokenName = command.getField(CommandTypesFieldNames.TOKEN);
+        String currentPassword = command.getField(CommandTypesFieldNames.PASSWORD);
+        String newPassword = command.getField(CommandTypesFieldNames.NEW_PASSWORD);
+        return Doer.changePassword(tokenName, currentPassword, newPassword);
     }
 
     /**
-     * This method is for requesting a new game request.
-     */
-    private static String newGameRequest(Command command) {
+     * This method is for sending a Message and the CommandType is :
+     * <p>
+     *     CommandType name : send message
+     *     syntax :
+     *     send message --token < token> --message < message>
+     * </p>*/
+    private static String sendMessage(Command command) {
+        String messageText = command.getField(CommandTypesFieldNames.MESSAGE);
         String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
-        String roundString = command.getField(CommandTypesFieldNames.ROUND);
-        if (roundString.matches("[13]")) {
-            int round = Integer.parseInt(roundString);
-            return Doer.newGameRequest(tokenCode , round);
-        } else {
-            return Results.INVALID_INT_FORMAT;
-        }
-    }
-
-    /**
-     * This method is for sending all Messages to the client in form of a String.
-     */
-    private static String getMessages() {
-        return Doer.getMessages();
+        return Doer.sendMessage(tokenCode , messageText);
     }
 
     /**
@@ -83,31 +103,31 @@ public class RequestHandler {
     }
 
     /**
-     * This method is for sending a Message and the CommandType is :
-     * <p>
-     *     CommandType name : send message
-     *     syntax :
-     *     send message --token < token> --message < message>
-     * </p>*/
-    private static String sendMessage(Command command) {
-        String messageText = command.getField(CommandTypesFieldNames.MESSAGE);
-        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
-        return Doer.sendMessage(tokenCode , messageText);
+     * This method is for sending all Messages to the client in form of a String.
+     */
+    private static String getMessages() {
+        return Doer.getMessages();
     }
 
     /**
-     * This method is for signing up and creating new account and CommandType is :
-     * <p>
-     *     CommandType name : sign up
-     *     syntax :
-     *     signup --username < username> --nickname < nickname> --password < password>
-     * </p>
+     * This method is for requesting a new game request.
      */
-    private static String signUp(Command command) {
-        String username = command.getField(CommandTypesFieldNames.USERNAME);
-        String nickname = command.getField(CommandTypesFieldNames.NICKNAME);
-        String password = command.getField(CommandTypesFieldNames.PASSWORD);
-        String result = Doer.signUp(username , password , nickname);
-        return result;
+    private static String newGameRequest(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        String roundString = command.getField(CommandTypesFieldNames.ROUND);
+        if (roundString.matches("[13]")) {
+            int round = Integer.parseInt(roundString);
+            return Doer.newGameRequest(tokenCode , round);
+        } else {
+            return Results.INVALID_INT_FORMAT;
+        }
+    }
+
+    /**
+     * This method deletes the game request of the user related to the given token.
+     */
+    private static String deleteGameRequest(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.deleteGameRequest(tokenCode);
     }
 }
