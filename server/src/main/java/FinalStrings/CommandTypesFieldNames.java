@@ -14,4 +14,5 @@ public class CommandTypesFieldNames {
     public static final String REPLY_ON = "replyOn";
     public static final String DELETE = "delete";
     public static final String ROUND = "round";
+    public static final String CARD_NAME = "cardName";
 }
