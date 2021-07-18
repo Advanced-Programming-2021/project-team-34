@@ -146,4 +146,19 @@ public class Doer {
             return Results.SUCCESS;
         }
     }
+
+    public static String showScoreboard(String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            StringBuilder answer = null;
+            for (User aUser : User.users) {
+                answer.append(aUser.getNickname()).append(" ").append(aUser.getHighScore()).append("\n");
+            }
+            return answer.toString();
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
 }
