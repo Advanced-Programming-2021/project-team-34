@@ -13,4 +13,5 @@ public class CommandTypeNames {
     public static final String REPLY_MESSAGE = "reply message";
     public static final String GET_MESSAGES = "get messages";
     public static final String DELETE_GAME_REQUEST = "delete game request";
+    public static final String SHOW_SCOREBOARD = "show scoreboard";
 }
