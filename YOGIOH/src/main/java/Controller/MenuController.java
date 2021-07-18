@@ -5,6 +5,7 @@ import View.Menus.StartMenu;
 
 public class MenuController {
     private static MenuNames menuName = MenuNames.StartMenu;
+    private static String token = "";
     private static boolean toContinue = true;
     private static User loggedInUser = null;
     public static void setMenuName(MenuNames menuName) {
@@ -15,6 +16,14 @@ public class MenuController {
     }
     public static void setLoggedInUser(User loggedInUser) {
         MenuController.loggedInUser = loggedInUser;
+    }
+
+    public static String getToken() {
+        return token;
+    }
+
+    public static void setToken(String token) {
+        MenuController.token = token;
     }
 
     public static void run() {

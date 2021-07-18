@@ -18,14 +18,14 @@ public class StartMenu {
     }
 
     public static boolean login(String username, String password) {
-        boolean success = User.checkPassword(username, password);
-        if (success) {
-            error = "There is no Error";
-            MenuController.setMenuName(MenuNames.MainMenu);
-            MenuController.setLoggedInUser(User.getUserByUsername(username));
+        String result = Connection.sendMessageToTheServer("login username "+username+
+                " password "+password);
+        Command command = new Command(result);
+        if (command.getType().equals("signup or login successfully")) {
+            MenuController.setToken(command.getField("token"));
             return true;
         } else {
-            error = "Username and password didn't match";
+            error = result;
             return false;
         }
     }
@@ -34,7 +34,7 @@ public class StartMenu {
         String result = Connection.sendMessageToTheServer("signup username "+username+
                 " nickname "+nickname+" password "+password);
         Command command = new Command(result);
-        if (command.getType().equals("signup successfully")) {
+        if (command.getType().equals("signup or login successfully")) {
             return true;
         } else {
             error = result;

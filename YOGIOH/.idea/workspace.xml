@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandHelper/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandTypeInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CommandTypeInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandTypeInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menus/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menus/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/CommandHelper/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandHelper/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/CommandHelper/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandHelper/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/CommandHelper/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandHelper/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/CommandHelper/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommandHelper/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/CheatMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/CheatMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/DeckMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ProfileMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ShopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +275,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/View/Menus/StartMenu.java</url>
-          <line>98</line>
+          <line>100</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

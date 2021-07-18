@@ -12,7 +12,7 @@ public class CommandTypeInitializer {
 
     private static void signupResult() {
         CommandType commandType = new CommandType();
-        commandType.setName("signup successfully");
+        commandType.setName("signup or login successfully");
         commandType.setMainPart("success");
         commandType.addField("token");
         Command.addCommandType(commandType);
