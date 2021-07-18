@@ -25,6 +25,56 @@ public class CommandTypeInitializer {
         requestGame(); // request game --round <1/3> --token <token>
         deleteRequestGame(); // request game --delete --token <token>
         showScoreboard(); // show scoreboard --token <token>
+        buyCard(); // buy card --cardName <cardName> --token <token>
+        sellCard(); // sell card --cardName <cardName> --token <token>
+        addCard(); // add card --cardName <cardName> --token <token>
+        removeCard(); // remove card --cardName <cardName> --token <token>
+        forbidCard(); // forbid card --cardName <cardName> --token <token>
+    }
+
+    private static void forbidCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.FORBID_CARD);
+        commandType.setMainPart(CommandTypeMainParts.FORBID_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
+    }
+
+    private static void removeCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.REMOVE_CARD);
+        commandType.setMainPart(CommandTypeMainParts.REMOVE_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
+    }
+
+    private static void addCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.ADD_CARD);
+        commandType.setMainPart(CommandTypeMainParts.ADD_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
+    }
+
+    private static void sellCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.SELL_CARD);
+        commandType.setMainPart(CommandTypeMainParts.SELL_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
+    }
+
+    private static void buyCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.BUY_CARD);
+        commandType.setMainPart(CommandTypeMainParts.BUY_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
     }
 
     private static void showScoreboard() {
