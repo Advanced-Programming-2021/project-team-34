@@ -5,6 +5,7 @@ import Exceptions.NoSuchTokenException;
 import FinalStrings.CommandTypeNames;
 import FinalStrings.CommandTypesFieldNames;
 import FinalStrings.Results;
+import Model.Card;
 import Model.Session;
 
 public class RequestHandler {
@@ -34,6 +35,18 @@ public class RequestHandler {
                 return deleteGameRequest(command);
             case CommandTypeNames.SHOW_SCOREBOARD:
                 return showScoreboard(command);
+            case CommandTypeNames.BUY_CARD:
+                return buyCard(command);
+            case CommandTypeNames.SELL_CARD:
+                return sellCard(command);
+            case CommandTypeNames.ADD_CARD:
+                return addCard(command);
+            case CommandTypeNames.REMOVE_CARD:
+                return removeCard(command);
+            case CommandTypeNames.FORBID_CARD:
+                return forbidCard(command);
+            case CommandTypeNames.UN_FORBID_CARD:
+                return unForbidCard(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
@@ -139,5 +152,44 @@ public class RequestHandler {
     private static String showScoreboard(Command command) {
         String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
         return Doer.showScoreboard(tokenCode);
+    }
+
+    /**
+     * This method buys a card for a player
+     */
+    private static String buyCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.buyCard(cardName, tokenCode);
+    }
+
+    private static String sellCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.sellCard(cardName, tokenCode);
+    }
+
+    private static String addCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.addCard(cardName, tokenCode);
+    }
+
+    private static String removeCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.removeCard(cardName, tokenCode);
+    }
+
+    private static String forbidCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.forbidCard(cardName, tokenCode);
+    }
+
+    private static String unForbidCard(Command command) {
+        String cardName = command.getField(CommandTypesFieldNames.CARD_NAME);
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.unForbidCard(cardName, tokenCode);
     }
 }
