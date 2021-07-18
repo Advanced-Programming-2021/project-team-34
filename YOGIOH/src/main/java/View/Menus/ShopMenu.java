@@ -7,8 +7,6 @@ import Model.Card;
 import Model.Monster;
 import Model.SpellAndTrap;
 import Model.User;
-import View.CommandHelper.Command;
-import View.CommandHelper.CommandType;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

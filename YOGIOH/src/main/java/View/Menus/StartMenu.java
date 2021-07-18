@@ -1,5 +1,6 @@
 package View.Menus;
 
+import Controller.CommandTypeInitializer;
 import Controller.MenuController;
 import Controller.MenuNames;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ public class StartMenu extends ViewMenu {
              usernameToRegisterGridPane, passwordToRegisterGridPane, nicknameToRegisterGridPane,
              resultOfRegisteringGridPane;
     public static void run() {
+        CommandTypeInitializer.run();
         try {
             launch();
         } catch (Exception e) {

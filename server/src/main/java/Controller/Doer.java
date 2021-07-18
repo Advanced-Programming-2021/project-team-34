@@ -29,8 +29,8 @@ public class Doer {
             } else if (!User.checkPassword(username, password)) {
                 throw new WrongPasswordException();
             } else {
-                new Session(new Token(), username);
-                    return Results.SUCCESS;
+                Session session = new Session(new Token(), username);
+                    return Results.SUCCESS+" token "+session.getToken();
             }
         } catch (WrongPasswordException e) {
             return Results.USERNAME_AND_PASSWORD_DO_NOT_MATCH;

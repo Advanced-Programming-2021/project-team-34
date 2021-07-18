@@ -1,5 +1,7 @@
 package View.Menus;
 
+import Controller.CommandHelper.Command;
+import Controller.CommandHelper.CommandType;
 import Controller.MenuController;
 import Controller.MenuNames;
 import Model.GameObjects.CardInGame;
@@ -7,8 +9,6 @@ import Model.GameObjects.CardInGameState;
 import Model.GameObjects.MonsterInGame;
 import Model.GameObjects.SpellAndTrapInGame;
 import Model.Player;
-import View.CommandHelper.Command;
-import View.CommandHelper.CommandType;
 
 public class GameMenu extends ViewMenu {
     static boolean toContinue = true;

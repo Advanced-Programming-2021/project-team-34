@@ -1,5 +1,7 @@
 package Controller.Menus;
 
+import Controller.CommandHelper.Command;
+import Controller.Connection;
 import Controller.MenuController;
 import Controller.MenuNames;
 import Model.User;
@@ -28,27 +30,39 @@ public class StartMenu {
         }
     }
 
-    public static boolean register(String username, String nickname, String password) {
-        if (User.getUserByUsername(username) != null) {
-            error = "user with username @" + username + " already exists";
+    public static boolean register(String username , String nickname , String password) {
+        String result = Connection.sendMessageToTheServer("signup username "+username+
+                " nickname "+nickname+" password "+password);
+        Command command = new Command(result);
+        if (command.getType().equals("signup successfully")) {
+            return true;
+        } else {
+            error = result;
             return false;
         }
-        if (User.getUserByNickname(nickname) != null) {
-            error = "user with nickname " + nickname + " already exists";
-            return false;
-        }
-        new User(username, password, nickname);
-        try {
-            File file = new File("src\\main\\resources\\data\\" + username);
-            file.mkdir();
-            File file1 = new File("src\\main\\resources\\data\\" + username + "\\cards.txt");
-            file1.createNewFile();
-            File file2 = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
-            file2.createNewFile();
-        } catch (Exception e) {
-            System.out.println("could not save user");
-            e.printStackTrace();
-        }
-        return true;
     }
+
+//    public static boolean register(String username, String nickname, String password) {
+//        if (User.getUserByUsername(username) != null) {
+//            error = "user with username @" + username + " already exists";
+//            return false;
+//        }
+//        if (User.getUserByNickname(nickname) != null) {
+//            error = "user with nickname " + nickname + " already exists";
+//            return false;
+//        }
+//        new User(username, password, nickname);
+//        try {
+//            File file = new File("src\\main\\resources\\data\\" + username);
+//            file.mkdir();
+//            File file1 = new File("src\\main\\resources\\data\\" + username + "\\cards.txt");
+//            file1.createNewFile();
+//            File file2 = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
+//            file2.createNewFile();
+//        } catch (Exception e) {
+//            System.out.println("could not save user");
+//            e.printStackTrace();
+//        }
+//        return true;
+//    }
 }

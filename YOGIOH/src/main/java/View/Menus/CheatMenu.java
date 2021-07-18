@@ -1,12 +1,12 @@
 package View.Menus;
 
+import Controller.CommandHelper.Command;
+import Controller.CommandHelper.CommandType;
 import Controller.MenuController;
 import Model.Card;
 import Model.Monster;
 import Model.SpellAndTrap;
 import Model.User;
-import View.CommandHelper.Command;
-import View.CommandHelper.CommandType;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
