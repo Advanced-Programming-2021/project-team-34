@@ -32,6 +32,8 @@ public class RequestHandler {
                 return newGameRequest(command);
             case CommandTypeNames.DELETE_GAME_REQUEST:
                 return deleteGameRequest(command);
+            case CommandTypeNames.SHOW_SCOREBOARD:
+                return showScoreboard(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
@@ -129,5 +131,13 @@ public class RequestHandler {
     private static String deleteGameRequest(Command command) {
         String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
         return Doer.deleteGameRequest(tokenCode);
+    }
+
+    /**
+     * This method shows the scoreboard of users
+     */
+    private static String showScoreboard(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.showScoreboard(tokenCode);
     }
 }
