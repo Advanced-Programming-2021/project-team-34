@@ -24,6 +24,15 @@ public class CommandTypeInitializer {
         getMessages(); // get messages
         requestGame(); // request game --round <1/3> --token <token>
         deleteRequestGame(); // request game --delete --token <token>
+        showScoreboard(); // show scoreboard --token <token>
+    }
+
+    private static void showScoreboard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.SHOW_SCOREBOARD);
+        commandType.setMainPart(CommandTypeMainParts.SHOW_SCOREBOARD);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
     }
 
     private static void deleteRequestGame() {
