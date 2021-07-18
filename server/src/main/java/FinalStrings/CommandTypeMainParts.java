@@ -17,4 +17,5 @@ public class CommandTypeMainParts {
     public static final String ADD_CARD = "add card";
     public static final String REMOVE_CARD = "remove card";
     public static final String FORBID_CARD = "forbid card";
+    public static final String UN_FORBID_CARD = "un forbid card";
 }
