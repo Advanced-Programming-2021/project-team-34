@@ -10,10 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class User {
     public static ArrayList<User> users;
@@ -28,7 +25,7 @@ public class User {
     private int highScore;
     private ArrayList<Deck> decks = new ArrayList<Deck>();
     private Deck activeDeck;
-    private ArrayList<Card> cards = new ArrayList<Card>();
+    private HashMap<Card, Integer> cards = new HashMap<>();
     private static final int maximumNumberOfAvatar = 5;
     private String avatarName; /** address of avatar file */
     private int avatarInt;
@@ -97,12 +94,8 @@ public class User {
             if (users.get(i).getHighScore() < this.getHighScore()) {
                 users.add(users.get(users.size() - 1));
                 for (int j = users.size() - 2; j >= i; j--) {
-                    if (j != i) {
-                        users.add(j, users.get(j - 1));
-                    }
-                    else {
-                        users.add(j, this);
-                    }
+                    if (j != i) users.add(j, users.get(j - 1));
+                    else users.add(j, this);
                     users.remove(users.get(j + 1));
                 }
                 return;
@@ -165,11 +158,7 @@ public class User {
         return ans;
     }
 
-    public void addCard(Card card) {
-        cards.add(card);
-    }
-
-    public ArrayList<Card> getCards() {
+    public HashMap<Card, Integer> getCards() {
         return cards;
     }
 
@@ -193,7 +182,7 @@ public class User {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String name = scanner.nextLine();
-                if (Card.allCards.containsKey(name)) user.getCards().add(Card.allCards.get(name));
+                if (Card.allCards.containsKey(name)) user.getCards().put(Card.allCards.get(name), 1);
             }
             file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
             scanner = new Scanner(file);
@@ -254,10 +243,9 @@ public class User {
         return users;
     }
     public Card getACardWithName(String name) {
-        for (Card card :
-                cards) {
-            if (card.getName().equals(name)) {
-                return card;
+        for (Map.Entry<Card, Integer> card : cards.entrySet()) {
+            if (card.getKey().getName().equals(name)) {
+                return card.getKey();
             }
         }return null;
     }
