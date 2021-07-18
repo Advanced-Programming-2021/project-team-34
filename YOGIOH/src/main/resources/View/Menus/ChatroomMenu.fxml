@@ -6,9 +6,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.net.URL?>
 <Pane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.Menus.ChatroomMenu"
-            prefHeight="400.0" prefWidth="600.0">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="View.Menus.ChatroomMenu"
+      prefHeight="400.0" prefWidth="600.0">
 
+    <VBox alignment="CENTER">
+        <TextField styleClass="message" fx:id="messageInputTextField"/>
+    </VBox>
+    <stylesheets>
+        <URL value="@textStyle.css"/>
+        <URL value="@ButtonStyle.css"/>
+    </stylesheets>
 </Pane>

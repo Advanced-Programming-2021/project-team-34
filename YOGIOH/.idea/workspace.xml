@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ChatroomMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ChatroomMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/ChatroomMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ChatroomMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/textStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ChatroomMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ChatroomMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ChatroomMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ChatroomMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/textStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/GameRequestsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/GameRequestsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +56,7 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/View/Menus" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Controller" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
