@@ -1,17 +1,18 @@
 package FinalStrings;
 
-public class CommandTypeNames {
-    public static final String SIGN_UP = "sign up";
-    public static final String LOGIN = "login";
-    public static final String LOGOUT = "logout";
-    public static final String CHANGE_PASSWORD = "change password";
-    public static final String CHANGE_NICKNAME = "change nickname";
-    public static final String SEND_MESSAGE = "send message";
-    public static final String CHANGE_AVATAR = "change avatar";
-    public static final String NEW_GAME_REQUEST = "new game request";
-    public static final String INCREASE_COIN = "increase coin";
-    public static final String REPLY_MESSAGE = "reply message";
-    public static final String GET_MESSAGES = "get messages";
-    public static final String DELETE_GAME_REQUEST = "delete game request";
-    public static final String SHOW_SCOREBOARD = "show scoreboard";
+public class CommandTypesFieldNames {
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+    public static final String NICKNAME = "nickname";
+    public static final String TOKEN = "token";
+    public static final String NEW_NICKNAME = "newNickname";
+    public static final String NEW_PASSWORD = "newPassword";
+    public static final String CURRENT_PASSWORD = "currentPassword";
+    public static final String NEW_AVATAR = "newAvatar";
+    public static final String MESSAGE = "message";
+    public static final String VALUE = "value";
+    public static final String REPLY_ON = "replyOn";
+    public static final String DELETE = "delete";
+    public static final String ROUND = "round";
+    public static final String CARD_NAME = "cardName";
 }
