@@ -14,4 +14,9 @@ public class CommandTypeNames {
     public static final String GET_MESSAGES = "get messages";
     public static final String DELETE_GAME_REQUEST = "delete game request";
     public static final String SHOW_SCOREBOARD = "show scoreboard";
+    public static final String BUY_CARD = "buy card";
+    public static final String SELL_CARD = "sell card";
+    public static final String ADD_CARD = "add card";
+    public static final String REMOVE_CARD = "remove card";
+    public static final String FORBID_CARD = "forbid card";
 }
