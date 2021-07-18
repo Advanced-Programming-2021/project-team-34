@@ -29,8 +29,8 @@ public class Doer {
             } else if (!User.checkPassword(username, password)) {
                 throw new WrongPasswordException();
             } else {
-                Session session = new Session(new Token(), username);
-                    return Results.SUCCESS+" token "+session.getToken();
+                new Session(new Token(), username);
+                    return Results.SUCCESS;
             }
         } catch (WrongPasswordException e) {
             return Results.USERNAME_AND_PASSWORD_DO_NOT_MATCH;
@@ -157,6 +157,93 @@ public class Doer {
                 answer.append(aUser.getNickname()).append(" ").append(aUser.getHighScore()).append("\n");
             }
             return answer.toString();
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String buyCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            if (Shop.getForbidden().contains(cardName)) return Results.FORBIDDEN_CARD;
+            if (user.getCoin() < Shop.getPrices().get(cardName)) return Results.NOT_ENOUGH_MONEY;
+            if (Shop.getAmount().get(cardName) < 1) return Results.THERE_IS_NO_CARD;
+            Shop.buyCard(cardName, user);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String sellCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            if (!user.getCards().containsKey(Card.getAllCards().get(cardName)) ||
+                    user.getCards().get(Card.getAllCards().get(cardName)) < 1) return Results.THERE_IS_NO_CARD;
+            Shop.sellCard(cardName, user);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String addCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!username.equals(Shop.getAdminUsername())) return Results.NO_ACCESS;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            Shop.increaseCard(cardName, 1);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String removeCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!username.equals(Shop.getAdminUsername())) return Results.NO_ACCESS;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            Shop.decreaseCard(cardName, 1);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String forbidCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!username.equals(Shop.getAdminUsername())) return Results.NO_ACCESS;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            Shop.getForbidden().add(cardName);
+            return "success";
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+    }
+
+    public static String unForbidCard(String cardName, String tokenCode) {
+        try {
+            String username = Session.getUsernameOfToken(tokenCode);
+            User user = User.getUserByUsername(username);
+            if (user == null) return Results.ERROR;
+            if (!username.equals(Shop.getAdminUsername())) return Results.NO_ACCESS;
+            if (!Shop.getPrices().containsKey(cardName)) return Results.NO_SUCH_CARD_EXISTS;
+            Shop.getForbidden().remove(cardName);
+            return "success";
         } catch (NoSuchTokenException e) {
             return Results.INVALID_TOKEN;
         }
