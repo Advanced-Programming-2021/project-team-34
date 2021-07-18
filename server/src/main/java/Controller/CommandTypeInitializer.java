@@ -30,6 +30,16 @@ public class CommandTypeInitializer {
         addCard(); // add card --cardName <cardName> --token <token>
         removeCard(); // remove card --cardName <cardName> --token <token>
         forbidCard(); // forbid card --cardName <cardName> --token <token>
+        unForbidCard(); // un forbid card --cardName <cardName> --token <token>
+    }
+
+    private static void unForbidCard() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.UN_FORBID_CARD);
+        commandType.setMainPart(CommandTypeMainParts.UN_FORBID_CARD);
+        commandType.addField(CommandTypesFieldNames.CARD_NAME);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        Command.addCommandType(commandType);
     }
 
     private static void forbidCard() {
