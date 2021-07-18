@@ -1,6 +1,8 @@
 .gitignore
 .idea
 /
+.idea
+YOGIOH/.idea
 YOGIOH/.idea/
 YOGIOH/.idea/workspace.xml
 YOGIOH/.idea/.
