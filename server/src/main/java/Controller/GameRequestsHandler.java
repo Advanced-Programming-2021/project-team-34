@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.GameRequest;
+import Model.Player;
 import Model.User;
 
 public class GameRequestsHandler extends Thread {
@@ -10,7 +11,20 @@ public class GameRequestsHandler extends Thread {
     }
 
     private void doMain() {
-
+        while (true) {
+            User[] users = handle();
+            if (users == null) {
+                try {
+                    wait(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                users[0].setGameRequest(GameRequest.NO);
+                users[1].setGameRequest(GameRequest.NO);
+                new Game(new Player(users[0]) , new Player(users[1]));
+            }
+        }
     }
 
     /**
