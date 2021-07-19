@@ -96,7 +96,6 @@ public class ChatroomMenu extends ViewMenu {
         o.setOnScroll(new EventHandler<ScrollEvent>() {
             @Override
             public void handle(ScrollEvent event) {
-                System.out.println(event);
                 MessageShape.addY((int) event.getDeltaY());
             }
         });
