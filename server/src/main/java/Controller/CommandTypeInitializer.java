@@ -31,6 +31,15 @@ public class CommandTypeInitializer {
         removeCard(); // remove card --cardName <cardName> --token <token>
         forbidCard(); // forbid card --cardName <cardName> --token <token>
         unForbidCard(); // un forbid card --cardName <cardName> --token <token>
+        getUserAvatar(); // get user avatar --username <username>
+    }
+
+    private static void getUserAvatar() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.GET_USER_AVATAR);
+        commandType.setMainPart(CommandTypeMainParts.GET_USER_AVATAR);
+        commandType.addField(CommandTypesFieldNames.USERNAME);
+        Command.addCommandType(commandType);
     }
 
     private static void unForbidCard() {

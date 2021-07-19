@@ -3,6 +3,7 @@ package Controller;
 import Exceptions.*;
 import FinalStrings.Results;
 import Model.*;
+import com.google.gson.Gson;
 
 
 /**
@@ -29,8 +30,8 @@ public class Doer {
             } else if (!User.checkPassword(username, password)) {
                 throw new WrongPasswordException();
             } else {
-                new Session(new Token(), username);
-                    return Results.SUCCESS;
+                Session session = new Session(new Token(), username);
+                    return Results.SUCCESS+" token "+session.getToken();
             }
         } catch (WrongPasswordException e) {
             return Results.USERNAME_AND_PASSWORD_DO_NOT_MATCH;
@@ -104,7 +105,10 @@ public class Doer {
     }
 
     public static String getMessages() {
-        return Message.getAllMessagesString();
+        //return Message.getAllMessagesString();
+        String string = new Gson().toJson(Message.getMessages());
+        System.out.println(string);
+        return string;
     }
 
     public static String newGameRequest(String tokenCode, int round) {
@@ -247,5 +251,13 @@ public class Doer {
         } catch (NoSuchTokenException e) {
             return Results.INVALID_TOKEN;
         }
+    }
+
+    public static String getUserAvatar(String username) {
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.INVALID_USERNAME;
+        }
+        return user.getAvatarName();
     }
 }

@@ -108,6 +108,13 @@ public class Message {
     }
 
     /**
+     * This method gets ArrayList< Message> of all messages.
+     */
+    public static ArrayList<Message> getMessages() {
+        return messages;
+    }
+
+    /**
      * This toString method can be used to creating the String which should be sent to the client.
      * <br>
      * e.g It returns a String like this :
@@ -126,7 +133,7 @@ public class Message {
         for (i = 0; i < replies.size()-1; i++) {
             answer += replies.get(i) + ",";
         }
-        answer += replies.get(replies.size()) + "\"";
+        answer += replies.get(replies.size()-1) + "\"";
         return answer;
     }
 }

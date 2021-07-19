@@ -18,4 +18,5 @@ public class CommandTypeMainParts {
     public static final String REMOVE_CARD = "remove card";
     public static final String FORBID_CARD = "forbid card";
     public static final String UN_FORBID_CARD = "un forbid card";
+    public static final String GET_USER_AVATAR = "get user avatar";
 }

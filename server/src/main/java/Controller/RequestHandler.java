@@ -47,9 +47,16 @@ public class RequestHandler {
                 return forbidCard(command);
             case CommandTypeNames.UN_FORBID_CARD:
                 return unForbidCard(command);
+            case CommandTypeNames.GET_USER_AVATAR:
+                return getUserAvatar(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    private static String getUserAvatar(Command command) {
+        String username = command.getField(CommandTypesFieldNames.USERNAME);
+        return Doer.getUserAvatar(username);
     }
 
     private static String login(Command command) {

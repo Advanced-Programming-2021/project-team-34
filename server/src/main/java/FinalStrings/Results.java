@@ -17,4 +17,5 @@ public class Results {
     public static final String NOT_ENOUGH_MONEY = "not enough money";
     public static final String THERE_IS_NO_CARD = "there is no card";
     public static final String NO_ACCESS = "no access";
+    public static final String INVALID_USERNAME = "invalid username";
 }
