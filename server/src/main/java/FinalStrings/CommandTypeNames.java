@@ -21,4 +21,15 @@ public class CommandTypeNames {
     public static final String FORBID_CARD = "forbid card";
     public static final String UN_FORBID_CARD = "un forbid card";
     public static final String GET_USER_AVATAR = "get user avatar";
+    public static final String GAME_SUMMON = "game summon";
+    public static final String GAME_NEXT_PHASE = "game next phase";
+    public static final String GAME_SELECT_CARD = "game select card";
+    public static final String GAME_UNSELECT_CART = "game unselect card";
+    public static final String GAME_DIRECT_ATTACK = "game direct attack";
+    public static final String GAME_ATTACK_TO_A_MONSTER = "game attack to a monster";
+    public static final String GAME_SET_POSITION = "game set position";
+    public static final String GAME_SET_CARD = "game set card";
+    public static final String GAME_FLIP_SUMMON = "game flip summon";
+    public static final String GAME_ACTIVE_EFFECT = "game active effect";
+    public static final String GAME_SURRENDER = "game surrender";
 }

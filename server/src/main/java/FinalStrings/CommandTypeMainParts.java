@@ -19,4 +19,14 @@ public class CommandTypeMainParts {
     public static final String FORBID_CARD = "forbid card";
     public static final String UN_FORBID_CARD = "un forbid card";
     public static final String GET_USER_AVATAR = "get user avatar";
+    public static final String GAME_SUMMON = "game summon";
+    public static final String GAME_NEXT_PHASE = "game next phase";
+    public static final String GAME_SURRENDER = "game surrender";
+    public static final String GAME_ACTIVE_EFFECT = "game active effect";
+    public static final String GAME_DIRECT_ATTACK = "game direct attack";
+    public static final String GAME_ATTACK_TO_A_MONSTER = "game attack to a monster";
+    public static final String GAME_FLIP_SUMMON = "game flip summon";
+    public static final String GAME_SET = "game set";
+    public static final String GAME_SELECT = "game select";
+    public static final String GAME_UNSELECT_CARD = "game unselect card";
 }
