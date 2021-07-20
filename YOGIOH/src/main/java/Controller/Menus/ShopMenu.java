@@ -60,7 +60,11 @@ public class ShopMenu {
             return "you already have this card";
         }
         Objects.requireNonNull(User.getUserByUsername(username)).increaseCoin(-card.getPrice());
-        Objects.requireNonNull(User.getUserByUsername(username)).addCard(card);
+        if (User.getUserByUsername(username).getCards().containsKey(card)) {
+            User.getUserByUsername(username).getCards().put(card, User.getUserByUsername(username).getCards().get(card) + 1);
+        } else {
+            User.getUserByUsername(username).getCards().put(card, 1);
+        }
         try {
             FileWriter writer = new FileWriter("src\\main\\resources\\data\\" + username + "cards.txt");
             writer.append(cardName).append("\n");
