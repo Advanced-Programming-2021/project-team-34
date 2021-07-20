@@ -1,5 +1,7 @@
 package Model;
 
+import Exceptions.DuplicateNicknameException;
+import Exceptions.DuplicateUsernameException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -8,10 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class User {
     public static ArrayList<User> users;
@@ -26,7 +25,7 @@ public class User {
     private int highScore;
     private ArrayList<Deck> decks = new ArrayList<Deck>();
     private Deck activeDeck;
-    private ArrayList<Card> cards = new ArrayList<Card>();
+    private HashMap<Card, Integer> cards = new HashMap<>();
     private static final int maximumNumberOfAvatar = 5;
     private String avatarName; /** address of avatar file */
     private int avatarInt;
@@ -35,15 +34,21 @@ public class User {
 //        decks = new ArrayList<>();
     }
 
-    public User(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-        this.coin = 40000;
-        this.highScore = -1;
-        this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar-1))+1;
-        this.avatarName =  "/Images/Avatars/"+(avatarInt)+".png";
-        setHighScore(0);
+    public User(String username, String password, String nickname) throws DuplicateUsernameException, DuplicateNicknameException {
+        if (getUserByUsername(username) != null) {
+            throw new DuplicateUsernameException(username);
+        } else if (getUserByNickname(nickname) != null) {
+            throw new DuplicateNicknameException(nickname);
+        } else {
+            this.username = username;
+            this.password = password;
+            this.nickname = nickname;
+            this.coin = 40000;
+            this.highScore = -1;
+            this.avatarInt = (new Random().nextInt(maximumNumberOfAvatar - 1)) + 1;
+            this.avatarName = "/Images/Avatars/" + (avatarInt) + ".png";
+            setHighScore(0);
+        }
     }
 
     public static User getUserByUsername(String username) {
@@ -89,12 +94,8 @@ public class User {
             if (users.get(i).getHighScore() < this.getHighScore()) {
                 users.add(users.get(users.size() - 1));
                 for (int j = users.size() - 2; j >= i; j--) {
-                    if (j != i) {
-                        users.add(j, users.get(j - 1));
-                    }
-                    else {
-                        users.add(j, this);
-                    }
+                    if (j != i) users.add(j, users.get(j - 1));
+                    else users.add(j, this);
                     users.remove(users.get(j + 1));
                 }
                 return;
@@ -157,11 +158,7 @@ public class User {
         return ans;
     }
 
-    public void addCard(Card card) {
-        cards.add(card);
-    }
-
-    public ArrayList<Card> getCards() {
+    public HashMap<Card, Integer> getCards() {
         return cards;
     }
 
@@ -179,35 +176,33 @@ public class User {
         users = gson.fromJson(new String(Files.readAllBytes(Paths.get("src/main/resources/allUsers.json"))),
                 new TypeToken<List<User>>() {
                 }.getType());
-        if (users != null) {
-            for (User user : users) {
-                String username = user.getUsername();
-                File file = new File("src\\main\\resources\\data\\" + username + "\\cards.txt");
-                Scanner scanner = new Scanner(file);
-                while (scanner.hasNextLine()) {
-                    String name = scanner.nextLine();
-                    if (Card.allCards.containsKey(name)) user.getCards().add(Card.allCards.get(name));
+        for (User user : users) {
+            String username = user.getUsername();
+            File file = new File("src\\main\\resources\\data\\" + username + "\\cards.txt" );
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String name = scanner.nextLine();
+                if (Card.allCards.containsKey(name)) user.getCards().put(Card.allCards.get(name), 1);
+            }
+            file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String name = scanner.nextLine();
+                Deck deck = new Deck();
+                deck.setName(name);
+                File file1 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
+                Scanner scanner1 = new Scanner(file1);
+                while (scanner1.hasNextLine()) {
+                    String name1 = scanner1.nextLine();
+                    if (Card.allCards.containsKey(name1)) deck.addCardToMainDeck(Card.getAllCards().get(name1));
                 }
-                file = new File("src\\main\\resources\\data\\" + username + "\\decks.txt");
-                scanner = new Scanner(file);
-                while (scanner.hasNextLine()) {
-                    String name = scanner.nextLine();
-                    Deck deck = new Deck();
-                    deck.setName(name);
-                    File file1 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Main.txt");
-                    Scanner scanner1 = new Scanner(file1);
-                    while (scanner1.hasNextLine()) {
-                        String name1 = scanner1.nextLine();
-                        if (Card.allCards.containsKey(name1)) deck.addCardToMainDeck(Card.getAllCards().get(name1));
-                    }
-                    File file2 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
-                    Scanner scanner2 = new Scanner(file2);
-                    while (scanner2.hasNextLine()) {
-                        String name2 = scanner2.nextLine();
-                        if (Card.allCards.containsKey(name2)) deck.addCardToSideDeck(Card.getAllCards().get(name2));
-                    }
-                    user.decks.add(deck);
+                File file2 = new File("src\\main\\resources\\data\\" + username + "\\" + name + "Side.txt");
+                Scanner scanner2 = new Scanner(file2);
+                while (scanner2.hasNextLine()) {
+                    String name2 = scanner2.nextLine();
+                    if (Card.allCards.containsKey(name2)) deck.addCardToSideDeck(Card.getAllCards().get(name2));
                 }
+                user.decks.add(deck);
             }
         }
     }
@@ -248,10 +243,9 @@ public class User {
         return users;
     }
     public Card getACardWithName(String name) {
-        for (Card card :
-                cards) {
-            if (card.getName().equals(name)) {
-                return card;
+        for (Map.Entry<Card, Integer> card : cards.entrySet()) {
+            if (card.getKey().getName().equals(name)) {
+                return card.getKey();
             }
         }return null;
     }
