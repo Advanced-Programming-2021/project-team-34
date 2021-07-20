@@ -1,8 +1,11 @@
 package View.Menus;
 
 import Controller.CommandTypeInitializer;
+import Controller.Connection;
 import Controller.MenuController;
 import Controller.MenuNames;
+import Model.User;
+import com.google.gson.Gson;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
@@ -10,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class StartMenu extends ViewMenu {
     static Scene scene;
@@ -93,6 +98,10 @@ public class StartMenu extends ViewMenu {
         boolean success = Controller.Menus.StartMenu.login(username, password);
         if (success) {
             try {
+                User user = new Gson().fromJson(Connection.sendMessageToTheServer("get user info token "+
+                        MenuController.getToken()) ,
+                        User.class);
+                MenuController.setLoggedInUser(user);
                 MainMenu.run();
             } catch (Exception e) {
                 e.printStackTrace();

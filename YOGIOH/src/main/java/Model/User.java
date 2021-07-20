@@ -30,6 +30,7 @@ public class User {
     private static final int maximumNumberOfAvatar = 5;
     private String avatarName; /** address of avatar file */
     private int avatarInt;
+    private GameRequest gameRequest = GameRequest.NO;
     {
 //        decks = new ArrayList<>();
     }
@@ -253,5 +254,13 @@ public class User {
                 return card;
             }
         }return null;
+    }
+
+    public GameRequest getGameRequest() {
+        return gameRequest;
+    }
+
+    public void setGameRequest(GameRequest gameRequest) {
+        this.gameRequest = gameRequest;
     }
 }

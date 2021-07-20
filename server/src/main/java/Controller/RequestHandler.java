@@ -49,9 +49,20 @@ public class RequestHandler {
                 return unForbidCard(command);
             case CommandTypeNames.GET_USER_AVATAR:
                 return getUserAvatar(command);
+            case CommandTypeNames.GET_USER_INFO:
+                return getUserInfo(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    /**
+     * This method returns a string which is Json format serialized information about the User.
+     * @return a string which is Json format serialized information about the User.
+     */
+    private static String getUserInfo(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.getUserInfo(tokenCode);
     }
 
     private static String getUserAvatar(Command command) {

@@ -28,6 +28,8 @@ public class Connection {
 
                         dataInputStream.close();
                         socket.close();
+                        System.out.println("\n------------------------------------------------------\n" +
+                                "request : {\n"+request+"\n}\nanswer : {\n"+result+"\n}");
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }

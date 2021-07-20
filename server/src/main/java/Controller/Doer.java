@@ -107,7 +107,6 @@ public class Doer {
     public static String getMessages() {
         //return Message.getAllMessagesString();
         String string = new Gson().toJson(Message.getMessages());
-        System.out.println(string);
         return string;
     }
 
@@ -259,5 +258,19 @@ public class Doer {
             return Results.INVALID_USERNAME;
         }
         return user.getAvatarName();
+    }
+
+    public static String getUserInfo(String tokenCode) {
+        String username;
+        try {
+            username = Session.getUsernameOfToken(tokenCode);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.ERROR;
+        }
+        return new Gson().toJson(user);
     }
 }

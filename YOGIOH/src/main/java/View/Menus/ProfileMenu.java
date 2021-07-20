@@ -1,5 +1,6 @@
 package View.Menus;
 
+import Controller.Connection;
 import Controller.MenuController;
 import Controller.MenuNames;
 import Model.User;
@@ -100,11 +101,12 @@ public class ProfileMenu extends ViewMenu {
     }
 
     private void changeNickname() {
-        boolean success = Controller.Menus.ProfileMenu.changeNickname(getStringOfAGridPane(nicknameGridPane));
-        if (success) {
+        String result = Connection.sendMessageToTheServer("change nickname newNickname "+
+                (getStringOfAGridPane(nicknameGridPane))+" token "+MenuController.getToken());
+        if (result.equals("success")) {
             message("نام مستعار شما پیروزمندانه ویراسته شد" , resultGridPane);
         } else {
-            message(Controller.Menus.ProfileMenu.getError() , resultGridPane);
+            message(result , resultGridPane);
         }
     }
 
