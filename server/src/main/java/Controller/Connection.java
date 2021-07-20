@@ -29,7 +29,7 @@ public class Connection {
                         dataInputStream.close();
                         socket.close();
                         System.out.println("\n------------------------------------------------------\n" +
-                                "request : {\n"+request+"\n}\nanswer : {\n"+result+"\n}");
+                                "request : {\n\t"+request+"\n}\nanswer : {\n\t"+result+"\n}");
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }

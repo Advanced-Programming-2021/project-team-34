@@ -2,6 +2,10 @@ package View.Menus;
 
 import Controller.Connection;
 import Controller.MenuController;
+import Model.GameRequest;
+import Model.User;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.sun.javafx.css.StyleClassSet;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -12,14 +16,23 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class LobbyMenu extends ViewMenu {
-    static int ourRequest = 0;
+    static GameRequest ourRequest;
     private static final int textY = 50, buttonsY = 140;
     static LobbyMenu lobbyMenu = new LobbyMenu();
     private Scene scene;
     Pane pane;
     public static void run() {
         try {
+            User.users = new Gson().fromJson(Connection.sendMessageToTheServer("get all users") ,
+                    new TypeToken<List<User>>(){}.getType());
+            User user = new Gson().fromJson(Connection.sendMessageToTheServer("get user info token "+
+                            MenuController.getToken()) ,
+                    User.class);
+            MenuController.setLoggedInUser(user);
+            ourRequest = MenuController.getLoggedInUser().getGameRequest();
             lobbyMenu.start(stage);
         } catch (Exception e) {
             e.printStackTrace();
@@ -37,7 +50,7 @@ public class LobbyMenu extends ViewMenu {
     }
 
     private void initializer() {
-        if (ourRequest == 0) {
+        if (ourRequest.equals(GameRequest.NO)) {
             Label label = new Label("شــمــا درخـــواســت فـعّــالی ندارید");
             label.setLayoutX((pane.getWidth()-label.getWidth())/2);
             label.setLayoutY(textY);
@@ -74,7 +87,7 @@ public class LobbyMenu extends ViewMenu {
             pane.getChildren().add(threeRoundRequestButton);
         }
         else {
-            Label label = new Label((ourRequest == 1) ? ("شــمــا درخــواست بـازی‌ای ۱ دوری داریــد") :
+            Label label = new Label((ourRequest.equals(GameRequest.ONE_ROUND)) ? ("شــمــا درخــواست بـازی‌ای ۱ دوری داریــد") :
                     ("شــمــا درخــواست بـازی‌ای ۳ دوری داریــد"));
             label.setLayoutX((pane.getWidth()-label.getWidth())/2);
             label.setLayoutY(50);
@@ -106,7 +119,7 @@ public class LobbyMenu extends ViewMenu {
         String result = Connection.sendMessageToTheServer("request game delete token "+
                 MenuController.getToken());
         if (result.equals("success")) {
-            ourRequest = 0;
+            ourRequest = GameRequest.NO;
         }
         lobbyMenu = new LobbyMenu();
         run();
@@ -116,7 +129,7 @@ public class LobbyMenu extends ViewMenu {
         String result = Connection.sendMessageToTheServer("request game round "+numberOfRounds+" token "+
                 MenuController.getToken());
         if (result.equals("success")) {
-            ourRequest = numberOfRounds;
+            ourRequest = (numberOfRounds == 1) ? GameRequest.ONE_ROUND : GameRequest.THREE_ROUND;
             //TODO : create a thread which listens if server send a message show somebody else has a same request.
         }
         print(result);

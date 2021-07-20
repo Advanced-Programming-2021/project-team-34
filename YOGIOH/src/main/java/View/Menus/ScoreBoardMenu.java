@@ -1,6 +1,9 @@
 package View.Menus;
+import Controller.Connection;
 import Controller.MenuController;
 import Model.User;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,10 +18,13 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class ScoreBoardMenu extends ViewMenu {
     public static void run() {
         try {
+            User.users = new Gson().fromJson(Connection.sendMessageToTheServer("get all users") ,
+                    new TypeToken<List<User>>(){}.getType());
             new ScoreBoardMenu().start(stage);
             User.saveAllUsers();
         } catch (Exception e) {
@@ -92,7 +98,7 @@ public class ScoreBoardMenu extends ViewMenu {
                 return;
             }
             aUser = users.get(i);
-            if (aUser == user) {
+            if (aUser.getUsername().equals(user.getUsername())) {
                 hasShowedCurrentUser = true;
                 showUser(i , user , "#3f731a");
             } else {

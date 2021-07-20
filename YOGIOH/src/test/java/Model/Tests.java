@@ -1,5 +1,7 @@
 package Model;
 
+import Exceptions.DuplicateNicknameException;
+import Exceptions.DuplicateUsernameException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -10,8 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Tests {
     @Test
-    public void test1User() {
-        User user1 = new User("mahdita" , "123456" , "mahdi");
+    public void test1User() throws DuplicateUsernameException, DuplicateNicknameException {
+        User user1 = null;
+        try {
+            user1 = new User("mahdita" , "123456" , "mahdi");
+        } catch (DuplicateUsernameException e) {
+            e.printStackTrace();
+        } catch (DuplicateNicknameException e) {
+            e.printStackTrace();
+        }
         User user2 = new User("aliRZ888" , "1234" , "aliAgha");
         User user3 = new User("user3" , "333" , "a Simple User");
         User user4 = new User("aliRezA" , "*******" , "ali reza");
@@ -35,7 +44,7 @@ public class Tests {
     }
 
     @Test
-    public void test2User() {
+    public void test2User() throws DuplicateUsernameException, DuplicateNicknameException {
         User user1 = new User("mahdi" , "1234" , "mhd");
         User user2 = new User("aliRZ888" , "888" , "aliAgha");
         assertEquals("mahdi" , user1.getUsername());

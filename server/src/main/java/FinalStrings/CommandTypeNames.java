@@ -33,4 +33,5 @@ public class CommandTypeNames {
     public static final String GAME_ACTIVE_EFFECT = "game active effect";
     public static final String GAME_SURRENDER = "game surrender";
     public static final String GET_USER_INFO = "get user info";
+    public static final String GET_ALL_USERS = "get all users";
 }

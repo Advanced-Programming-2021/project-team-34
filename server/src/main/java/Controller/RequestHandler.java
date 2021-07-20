@@ -51,9 +51,15 @@ public class RequestHandler {
                 return getUserAvatar(command);
             case CommandTypeNames.GET_USER_INFO:
                 return getUserInfo(command);
+            case CommandTypeNames.GET_ALL_USERS:
+                return getAllUsers();
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    private static String getAllUsers() {
+        return Doer.getAllUsers();
     }
 
     /**

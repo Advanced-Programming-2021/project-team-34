@@ -273,4 +273,8 @@ public class Doer {
         }
         return new Gson().toJson(user);
     }
+
+    public static String getAllUsers() {
+        return new Gson().toJson(User.getUsers());
+    }
 }

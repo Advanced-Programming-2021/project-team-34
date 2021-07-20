@@ -30,6 +30,8 @@
             <Label/>
             <Button text="پیام‌ها" onMouseClicked="#goToMessagesMenuByMouse" />
             <Label/>
+            <Button text="لابی" onMouseClicked="#goToLobbyMenuByMouse" />
+            <Label/>
             <Button text="درآمدن از حساب" onMouseClicked="#logoutByMouse" onKeyPressed="#logoutByKey"/>
             <Label/>
         </VBox>

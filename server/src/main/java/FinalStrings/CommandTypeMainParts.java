@@ -30,4 +30,5 @@ public class CommandTypeMainParts {
     public static final String GAME_SELECT = "game select";
     public static final String GAME_UNSELECT_CARD = "game unselect card";
     public static final String GET_USER_INFO = "get user info";
+    public static final String GET_ALL_USERS = "get all users";
 }

@@ -16,6 +16,7 @@ public class CommandTypeInitializer {
         signUp();// signup --username <username> --password <password> --nickname <nickname>
         logout(); // logout --token <token>
         getUserInfo(); // get user info --token <token>
+        getAllUsers(); // get all users
         changeNickname();// change nickname --token <token> --newNickname <newNickname>
         changePassword();// change password --token <token> --currentPassword <currentPassword> --newPassword <newPassword>
         changeAvatar();// change avatar --token <token> --newAvatar <newAvatar> // newAvatar is a number!
@@ -44,6 +45,13 @@ public class CommandTypeInitializer {
         gameSet(); // game set --token <token>
         gameSelectCard(); // game select --card <cardAddress> --token <token>
         gameUnselectCard(); // game unselect card --token <token>
+    }
+
+    private static void getAllUsers() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.GET_ALL_USERS);
+        commandType.setMainPart(CommandTypeMainParts.GET_ALL_USERS);
+        Command.addCommandType(commandType);
     }
 
     private static void getUserInfo() {
@@ -229,6 +237,7 @@ public class CommandTypeInitializer {
         commandType.setName(CommandTypeNames.NEW_GAME_REQUEST);
         commandType.setMainPart(CommandTypeMainParts.REQUEST_GAME);
         commandType.addField(CommandTypesFieldNames.TOKEN);
+        commandType.addField(CommandTypesFieldNames.ROUND);
         Command.addCommandType(commandType);
     }
 
