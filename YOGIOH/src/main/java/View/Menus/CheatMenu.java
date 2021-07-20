@@ -4,12 +4,9 @@ import Controller.CommandHelper.Command;
 import Controller.CommandHelper.CommandType;
 import Controller.MenuController;
 import Model.Card;
-import Model.Monster;
-import Model.SpellAndTrap;
 import Model.User;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import static View.Menus.ViewMenu.input;
 
@@ -46,11 +43,7 @@ public class CheatMenu extends Thread {
         try {
             for (String monsterCardName :
                     Card.getNameOfAllMonsters()) {
-                try {
-                    MenuController.getLoggedInUser().addCard(new Monster(monsterCardName));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                MenuController.getLoggedInUser().getCards().put(Card.getAllCards().get(monsterCardName), 100);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -58,11 +51,7 @@ public class CheatMenu extends Thread {
         try {
             for (String spellTrapCardName :
                     Card.getNameOfAllSpellsAndTraps()) {
-                try {
-                    MenuController.getLoggedInUser().addCard(new SpellAndTrap(spellTrapCardName));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                MenuController.getLoggedInUser().getCards().put(Card.getAllCards().get(spellTrapCardName), 100);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
