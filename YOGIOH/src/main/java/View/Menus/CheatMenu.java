@@ -2,6 +2,7 @@ package View.Menus;
 
 import Controller.CommandHelper.Command;
 import Controller.CommandHelper.CommandType;
+import Controller.Connection;
 import Controller.MenuController;
 import Model.Card;
 import Model.User;
@@ -32,11 +33,24 @@ public class CheatMenu extends Thread {
                 case "buy all cards":
                     buyAllCardsFree();
                     break;
+                case "send to server":
+                    sendToServer(command);
                 default:
                     System.out.println("this command was not valid!");
                     break;
             }
         }
+    }
+
+    private static void sendToServer(Command command) {
+        String notToSend = command.getField("request");
+        String toSend = "";
+        for (char c :
+                notToSend.toCharArray()) {
+            if (c != '\"') {
+                toSend += c;
+            }
+        } Connection.sendMessageToTheServer(toSend);
     }
 
     private static void buyAllCardsFree() {
@@ -64,6 +78,8 @@ public class CheatMenu extends Thread {
         User user = User.getUserByUsername(username);
         if (user != null && add.matches("\\d+")) {
             user.increaseCoin(Integer.parseInt(add));
+            Connection.sendMessageToTheServer("increase coin token "+MenuController.getToken()+
+                    " value "+add);
             System.out.println("success");
         }
         System.out.println("failure");
@@ -77,6 +93,15 @@ public class CheatMenu extends Thread {
         initializeIncreaseHealthPointCommandType();
         initializeDecreaseHealthPointCommandType();
         initializeSetAValidDeck();
+        initializeSendToServerCommand();
+    }
+
+    private void initializeSendToServerCommand() {
+        CommandType commandType = new CommandType();
+        commandType.setName("send to server");
+        commandType.setMainPart("send to server");
+        commandType.addField("request");
+        Command.addCommandType(commandType);
     }
 
     private void initializeSetAValidDeck() {
