@@ -18,4 +18,5 @@ public class Results {
     public static final String THERE_IS_NO_CARD = "there is no card";
     public static final String NO_ACCESS = "no access";
     public static final String INVALID_USERNAME = "invalid username";
+    public static final String YOU_DO_NOT_HAVE_ACCESS_TO_DO_THIS = "you don't have access to do this";
 }

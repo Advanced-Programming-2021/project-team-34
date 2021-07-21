@@ -5,46 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GameStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/LobbyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/LobbyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ScoreBoardMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MessageShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/MessageShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ChangePasswordMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ChangePasswordMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ChatroomMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ChatroomMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/ProfileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/ProfileMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/ChatroomMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/ChatroomMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allUsers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/User$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/CheatMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/CheatMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/LobbyMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ScoreBoardMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ProfileMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/allUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allUsers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Model/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandTypeInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/CommandTypeInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/Doer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Controller/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeMainParts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeMainParts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypeNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypesFieldNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/CommandTypesFieldNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/FinalStrings/Results.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/Controller/CommandTypeInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Controller/CommandTypeInitializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/Controller/Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Controller/Connection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/Controller/Doer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Controller/Doer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/Controller/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Controller/RequestHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypeMainParts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypeMainParts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypeNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypeNames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypesFieldNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/FinalStrings/CommandTypesFieldNames.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

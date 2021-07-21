@@ -20,6 +20,8 @@ public class Connection {
                         DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
                         String request = dataInputStream.readUTF();
+                        System.out.println("\n------------------------------------------------------\n" +
+                                "request : {\n\t"+request+"\n}\n");
                         String result = RequestHandler.handleRequest(request);
                         if (request.equals("end1342tth22234t53erfdweds3qwae123etrg2t3qwg321")) {
                             toContinue = false;
@@ -28,8 +30,8 @@ public class Connection {
 
                         dataInputStream.close();
                         socket.close();
-                        System.out.println("\n------------------------------------------------------\n" +
-                                "request : {\n\t"+request+"\n}\nanswer : {\n\t"+result+"\n}");
+                        System.out.println("answer : {\n\t"+result+"\n}");//\n------------------------------------------------------\n" +
+                        //"request : {\n\t"+request+"\n}\n
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }

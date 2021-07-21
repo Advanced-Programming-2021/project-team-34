@@ -230,6 +230,12 @@ public class User {
     public String getAvatarName() {
         return avatarName;
     }
+
+    public void setAvatarInt(int avatarInt) {
+        this.avatarInt = (avatarInt-1)%maximumNumberOfAvatar+1;
+        avatarName = "/Images/Avatars/" + (avatarInt) + ".png";
+    }
+
     /**
      * This method changes avatar address to the next one !
      * */

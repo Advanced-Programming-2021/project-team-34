@@ -132,6 +132,8 @@ public class ProfileMenu extends ViewMenu {
 
     private void changeAvatar() {
         MenuController.getLoggedInUser().changeAvatar();
+        Connection.sendMessageToTheServer("change avatar token "+MenuController.getToken()+
+                " newAvatar "+MenuController.getLoggedInUser().getAvatarInt());
         ImagePattern shape = new ImagePattern(
                 new Image(getClass().getResource(MenuController.getLoggedInUser().getAvatarName()).toExternalForm()));
         profileImageCircle.setFill(shape);

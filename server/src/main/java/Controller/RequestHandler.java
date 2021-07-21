@@ -53,9 +53,30 @@ public class RequestHandler {
                 return getUserInfo(command);
             case CommandTypeNames.GET_ALL_USERS:
                 return getAllUsers();
+            case CommandTypeNames.CHANGE_AVATAR:
+                return changeAvatar(command);
+            case CommandTypeNames.DELETE_MESSAGES:
+                return deleteMessage(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    private static String deleteMessage(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        String idOfMessageToDelete = command.getField(CommandTypesFieldNames.ID);
+        if (idOfMessageToDelete.matches("\\d+")) {
+            return Doer.deleteMessage(token , idOfMessageToDelete);
+        } return Results.INVALID_INT_FORMAT;
+    }
+
+    private static String changeAvatar(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        String newAvatarNameString = command.getField(CommandTypesFieldNames.NEW_AVATAR);
+        if (!newAvatarNameString.matches("\\d+"))
+            return Results.INVALID_INT_FORMAT;
+        int newAvatarNameInt = Integer.parseInt(newAvatarNameString);
+        return Doer.changeAvatar(token , newAvatarNameInt);
     }
 
     private static String getAllUsers() {

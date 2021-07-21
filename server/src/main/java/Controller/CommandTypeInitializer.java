@@ -45,6 +45,16 @@ public class CommandTypeInitializer {
         gameSet(); // game set --token <token>
         gameSelectCard(); // game select --card <cardAddress> --token <token>
         gameUnselectCard(); // game unselect card --token <token>
+        deleteMessages(); // delete message --id <id> --token <token>
+    }
+
+    private static void deleteMessages() {
+        CommandType commandType = new CommandType();
+        commandType.setName(CommandTypeNames.DELETE_MESSAGES);
+        commandType.setMainPart(CommandTypeMainParts.DELETE_MESSAGES);
+        commandType.addField(CommandTypesFieldNames.TOKEN);
+        commandType.addField(CommandTypesFieldNames.ID);
+        Command.addCommandType(commandType);
     }
 
     private static void getAllUsers() {

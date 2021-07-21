@@ -277,4 +277,43 @@ public class Doer {
     public static String getAllUsers() {
         return new Gson().toJson(User.getUsers());
     }
+
+    public static String changeAvatar(String token, int newAvatarNameInt) {
+        String username;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.ERROR;
+        }
+        user.setAvatarInt(newAvatarNameInt);
+        return Results.SUCCESS;
+    }
+
+    public static String deleteMessage(String token, String idOfMessageToDelete) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        if (user == null) {
+            return Results.ERROR;
+        }
+        Message message = null;
+        try {
+            message = Message.getMessageById(Integer.parseInt(idOfMessageToDelete));
+        } catch (NoSuchIDException e) {
+            return Results.INVALID_ID;
+        }
+        if (!message.getUsernameOfSender().equals(username)) {
+            return Results.YOU_DO_NOT_HAVE_ACCESS_TO_DO_THIS;
+        }
+        message.delete();
+        return Results.SUCCESS;
+    }
 }

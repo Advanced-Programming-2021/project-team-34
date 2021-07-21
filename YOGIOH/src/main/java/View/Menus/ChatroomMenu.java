@@ -12,11 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.input.SwipeEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -30,10 +32,10 @@ public class ChatroomMenu extends ViewMenu {
     @FXML
     Pane pane;
     @FXML
-    Circle sendButton;
+    Circle sendButton, backButton;
 
     @FXML
-    TextField messageInputTextField;
+    TextField messageInputTextField, idToReplyTextField;
     public static void run() {
         try {
             chatroomMenu.start(stage);
@@ -70,10 +72,18 @@ public class ChatroomMenu extends ViewMenu {
         }
         setOnDragAction(pane);
     }
-//    @FXML
-//    public void initialize() {
-//        //
-//    }
+    @FXML
+    public void initialize() {
+        try {
+            ImagePattern shape = new ImagePattern(
+                    new Image(getClass().getResource(
+                            "/Images/Buttons/rightArrowButton.png").toExternalForm()));
+            sendButton.setFill(shape);
+            backButton.setFill(shape);
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     public void sendByMouse(MouseEvent mouseEvent) {
         if (isPrimary(mouseEvent))
@@ -82,8 +92,14 @@ public class ChatroomMenu extends ViewMenu {
 
     private void send() {
         String messageText = messageInputTextField.getText();
-        String result = Connection.sendMessageToTheServer("send message token "+MenuController.getToken()+
-                " message \""+messageText+"\"");
+        String idToReplyString = idToReplyTextField.getText();
+        if (idToReplyString.equals("")) {
+            String result = Connection.sendMessageToTheServer("send message token " + MenuController.getToken() +
+                    " message \"" + messageText + "\"");
+        } else {
+            Connection.sendMessageToTheServer("send message token " +MenuController.getToken()+
+                    " message \""+messageText+"\" replyOn "+idToReplyString);
+        }
         run();
     }
 

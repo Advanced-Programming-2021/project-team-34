@@ -18,4 +18,5 @@ public class CommandTypesFieldNames {
     public static final String MONSTER_NUMBER = "monsterNumber";
     public static final String POSITION = "position";
     public static final String CARD_ADDRESS = "card";
+    public static final String ID = "id";
 }

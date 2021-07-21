@@ -11,11 +11,14 @@
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="View.Menus.ChatroomMenu"
-      prefHeight="800.0" prefWidth="1000.0">
+      prefHeight="1000.0" prefWidth="1000.0" layoutY="0">
+
 
     <Circle radius="25" fx:id="backButton" onMouseClicked="#backByMouse" layoutX="970" layoutY="30"/>
-    <TextField styleClass="message" fx:id="messageInputTextField" prefWidth="900" layoutX="10" layoutY="750"/>
-    <Circle radius="25" fx:id="sendButton" onMouseClicked="#sendByMouse" layoutX="940" layoutY="775"/>
+    <TextField styleClass="message" fx:id="messageInputTextField" prefWidth="930" layoutX="10" layoutY="850"/>
+    <Circle radius="25" fx:id="sendButton" onMouseClicked="#sendByMouse" layoutX="970" layoutY="875"/>
+    <TextField text="پاسخ به : " editable="false" layoutX="900" layoutY="900" prefWidth="100"/>
+    <TextField text="" layoutY="900" layoutX="10" prefWidth="880" fx:id="idToReplyTextField"/>
 
     <stylesheets>
         <URL value="@textStyle.css"/>

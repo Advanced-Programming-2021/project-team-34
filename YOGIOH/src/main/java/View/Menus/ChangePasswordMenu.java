@@ -1,5 +1,7 @@
 package View.Menus;
 
+import Controller.Connection;
+import Controller.MenuController;
 import Controller.Menus.ProfileMenu;
 import Model.User;
 import javafx.fxml.FXMLLoader;
@@ -39,12 +41,13 @@ public class ChangePasswordMenu extends ViewMenu {
     }
 
     private void changePassword() {
-        boolean success = ProfileMenu.changePassword(getStringOfAGridPane(currentPasswordGridPane , true)
-                , getStringOfAGridPane(newPasswordGridPane , true));
-        if (success) {
+        String result = Connection.sendMessageToTheServer("change password currentPassword "+
+                getStringOfAGridPane(currentPasswordGridPane , true)+" newPassword "+
+                getStringOfAGridPane(newPasswordGridPane , true)+" token "+ MenuController.getToken());
+        if (result.equals("success")) {
             System.out.println("success");
         } else {
-            System.out.println(Controller.Menus.ProfileMenu.getError());
+            System.out.println(result);
         }
     }
 

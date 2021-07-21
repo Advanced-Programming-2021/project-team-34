@@ -257,4 +257,8 @@ public class User {
     public void setGameRequest(GameRequest gameRequest) {
         this.gameRequest = gameRequest;
     }
+
+    public int getAvatarInt() {
+        return avatarInt;
+    }
 }

@@ -9,7 +9,7 @@ public class Message {
     private String messageText;
     private String usernameOfSender;
     private Message replyOnMessage = null;
-    private ArrayList<Message> replies = new ArrayList<>();
+//    private ArrayList<Message> replies = new ArrayList<>();
     private static int lastID = 0;
     private static ArrayList<Message> messages = new ArrayList<>();
 
@@ -38,7 +38,7 @@ public class Message {
         this.messageText = messageText;
         this.usernameOfSender = usernameOfSender;
         this.replyOnMessage = replyOnMessage;
-        replyOnMessage.replies.add(this);
+        //replyOnMessage.replies.add(this);
         messages.add(this);
     }
 
@@ -56,7 +56,7 @@ public class Message {
     public void delete() {
         messages.remove(this);
         if (replyOnMessage != null) {
-            replyOnMessage.replies.remove(this);
+            //replyOnMessage.replies.remove(this);
         }
     }
     
@@ -114,6 +114,9 @@ public class Message {
         return messages;
     }
 
+    public String getUsernameOfSender() {
+        return usernameOfSender;
+    }
     /**
      * This toString method can be used to creating the String which should be sent to the client.
      * <br>
@@ -125,15 +128,15 @@ public class Message {
      * <br> So the syntax is :<br>
      * message --id < id> --text < text> --usernameOfSender < username> --replyOnMessage < id> --replies < ids>
      */
-    @Override
-    public String toString() {
-        String answer = "message id "+id+" text \""+messageText+"\" usernameOfSender "+usernameOfSender+" replyOnMessage "+
-                replyOnMessage+" replies \"";
-        int i;
-        for (i = 0; i < replies.size()-1; i++) {
-            answer += replies.get(i) + ",";
-        }
-        answer += replies.get(replies.size()-1) + "\"";
-        return answer;
-    }
+//    @Override
+//    public String toString() {
+//        String answer = "message id "+id+" text \""+messageText+"\" usernameOfSender "+usernameOfSender+" replyOnMessage "+
+//                replyOnMessage+" replies \"";
+//        int i;
+//        for (i = 0; i < replies.size()-1; i++) {
+//            answer += replies.get(i) + ",";
+//        }
+//        answer += replies.get(replies.size()-1) + "\"";
+//        return answer;
+//    }
 }
