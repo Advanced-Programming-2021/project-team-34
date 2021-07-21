@@ -25,7 +25,7 @@ public class CommandTypeNames {
     public static final String GAME_SUMMON = "game summon";
     public static final String GAME_NEXT_PHASE = "game next phase";
     public static final String GAME_SELECT_CARD = "game select card";
-    public static final String GAME_UNSELECT_CART = "game unselect card";
+    public static final String GAME_UNSELECT_CARD = "game unselect card";
     public static final String GAME_DIRECT_ATTACK = "game direct attack";
     public static final String GAME_ATTACK_TO_A_MONSTER = "game attack to a monster";
     public static final String GAME_SET_POSITION = "game set position";
