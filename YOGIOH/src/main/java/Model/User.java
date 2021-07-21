@@ -261,4 +261,13 @@ public class User {
     public int getAvatarInt() {
         return avatarInt;
     }
+    public int getNumberOfCard(String name) {
+        int answer = 0;
+        for (Map.Entry<Card, Integer> card : cards.entrySet()) {
+            if (card.getKey().getName().equals(name)) {
+                answer++;
+            }
+        }
+        return answer;
+    }
 }

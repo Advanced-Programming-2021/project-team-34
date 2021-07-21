@@ -129,10 +129,12 @@ public class ShopMenu extends ViewMenu {
     private void clickHandlerOnCards(String s) {
         selectedCardName = s;
         try {
-            message(new Monster(s).getPrice()+"" , propertiesGridPane);
+            message(new Monster(s).getPrice()+"          "+MenuController.getLoggedInUser().getNumberOfCard(s) ,
+                    propertiesGridPane);
         } catch (NoMonsterWithThisNameException e) {
             try {
-                message(new SpellAndTrap(s).getPrice()+"" , propertiesGridPane);
+                message(new SpellAndTrap(s).getPrice()+
+                        "          "+MenuController.getLoggedInUser().getNumberOfCard(s) , propertiesGridPane);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -196,10 +198,39 @@ public class ShopMenu extends ViewMenu {
             message("کارت پیروزمندانه خریده شد" , resultGridPane);
             MenuController.setLoggedInUser(new Gson().fromJson(Connection.sendMessageToTheServer("get" +
                     " user info token "+MenuController.getToken()) , User.class));
+            try {
+                message(new Monster(selectedCardName).getPrice()+
+                                "          "+MenuController.getLoggedInUser().getNumberOfCard(selectedCardName) ,
+                        propertiesGridPane);
+            } catch (NoMonsterWithThisNameException e) {
+                try {
+                    message(new SpellAndTrap(selectedCardName).getPrice()+
+                            "          "+MenuController.getLoggedInUser().getNumberOfCard(selectedCardName)
+                            , propertiesGridPane);
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             message("پول : "+MenuController.getLoggedInUser().getCoin() , moneyGridPane);
         } else {
             message(result , resultGridPane);
         }
+    }
+
+    public void sellByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            sell();
+    }
+
+    private void sell() {
+        Connection.sendMessageToTheServer("sell card cardName "+selectedCardName+" token "+
+                MenuController.getToken());
+
+        MenuController.setLoggedInUser(new Gson().fromJson(Connection.sendMessageToTheServer("get" +
+                " user info token "+MenuController.getToken()) , User.class));
+
     }
 
 

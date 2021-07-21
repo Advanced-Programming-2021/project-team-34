@@ -37,9 +37,11 @@
             <GridPane fx:id="propertiesGridPane">
                 <Label text="" styleClass="informationTextSmall" prefHeight="100"/>
             </GridPane>
-            <Button text="خریدن" onMouseClicked="#buyByMouse" /> <!-- TODO : action of this button -->
+            <Button text="خریدن" onMouseClicked="#buyByMouse" />
             <Label/>
-            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" /> <!-- TODO : action of this button -->
+            <Button text="فروش" onMouseClicked="#sellByMouse"/>
+            <Label/>
+            <Button text="بازگشتن" onMouseClicked="#backByMouse" onKeyPressed="#backByKey" />
         </VBox>
     </HBox>
 
