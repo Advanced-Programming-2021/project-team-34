@@ -1,5 +1,6 @@
 package View.Menus;
 
+import Controller.Connection;
 import Controller.MenuController;
 import Controller.MenuNames;
 import Exceptions.NoMonsterWithThisNameException;
@@ -7,6 +8,7 @@ import Model.Card;
 import Model.Monster;
 import Model.SpellAndTrap;
 import Model.User;
+import com.google.gson.Gson;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -188,12 +190,15 @@ public class ShopMenu extends ViewMenu {
     }
 
     private void buy() {
-        boolean success = Controller.Menus.ShopMenu.buyCard(selectedCardName);;
-        if (success) {
+        String result = Connection.sendMessageToTheServer("buy card cardName "+selectedCardName+" token "+
+                MenuController.getToken());
+        if (result.equals("success")) {
             message("کارت پیروزمندانه خریده شد" , resultGridPane);
+            MenuController.setLoggedInUser(new Gson().fromJson(Connection.sendMessageToTheServer("get" +
+                    " user info token "+MenuController.getToken()) , User.class));
             message("پول : "+MenuController.getLoggedInUser().getCoin() , moneyGridPane);
         } else {
-            message(Controller.Menus.ShopMenu.getError() , resultGridPane);
+            message(result , resultGridPane);
         }
     }
 
