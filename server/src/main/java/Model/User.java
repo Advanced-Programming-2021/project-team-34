@@ -30,6 +30,7 @@ public class User {
     private String avatarName; /** address of avatar file */
     private int avatarInt;
     private GameRequest gameRequest = GameRequest.NO;
+    private Player player;
     {
 //        decks = new ArrayList<>();
     }
@@ -49,6 +50,14 @@ public class User {
             this.avatarName = "/Images/Avatars/" + (avatarInt) + ".png";
             setHighScore(0);
         }
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 
     public static User getUserByUsername(String username) {
