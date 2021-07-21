@@ -1,6 +1,7 @@
 package Controller.Menus;
 
 
+import Controller.Connection;
 import Controller.MenuController;
 import Exceptions.NoMonsterWithThisNameException;
 import Model.Card;
@@ -23,8 +24,58 @@ public class ShopMenu {
 
 
     public static boolean buyCard(String nameOfCardToBuy) {
-        String result = buyCard(nameOfCardToBuy , MenuController.getLoggedInUser().getUsername());
-        if (result.equals("shop completed")) {
+        String result = Connection.sendMessageToTheServer("buy card cardName " + nameOfCardToBuy + " token " + MenuController.getToken());
+        if (result.equals("success")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
+    }
+
+    public static boolean sellCard(String nameOfCardToSell) {
+        String result = Connection.sendMessageToTheServer("sell card cardName " + nameOfCardToSell + " token " + MenuController.getToken());
+        if (result.equals("success")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
+    }
+
+    public static boolean addCard(String nameOfCardToAdd) {
+        String result = Connection.sendMessageToTheServer("add card cardName " + nameOfCardToAdd + " token " + MenuController.getToken());
+        if (result.equals("success")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
+    }
+
+    public static boolean removeCard(String nameOfCardToRemove) {
+        String result = Connection.sendMessageToTheServer("remove card cardName " + nameOfCardToRemove + " token " + MenuController.getToken());
+        if (result.equals("success")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
+    }
+
+    public static boolean forbidCard(String nameOfCardToForbid) {
+        String result = Connection.sendMessageToTheServer("forbid card cardName " + nameOfCardToForbid + " token " + MenuController.getToken());
+        if (result.equals("success")) {
+            return true;
+        } else {
+            error = result;
+            return false;
+        }
+    }
+
+    public static boolean unForbidCard(String nameOfCardToUnForbid) {
+        String result = Connection.sendMessageToTheServer("un forbid card cardName " + nameOfCardToUnForbid + " token " + MenuController.getToken());
+        if (result.equals("success")) {
             return true;
         } else {
             error = result;
