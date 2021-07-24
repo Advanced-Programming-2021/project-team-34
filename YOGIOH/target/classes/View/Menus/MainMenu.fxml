@@ -28,6 +28,8 @@
             <Label/>
             <Button text="خواندن/ صدور" onMouseClicked="#goToImportExportMenuBuMouse" onKeyPressed="#goToImportExportMenuByKey"/>
             <Label/>
+            <Button text="کارت ساز" onMouseClicked="#goToCardCreatorMenuByMouse" />
+            <Label/>
             <Button text="پیام‌ها" onMouseClicked="#goToMessagesMenuByMouse" />
             <Label/>
             <Button text="لابی" onMouseClicked="#goToLobbyMenuByMouse" />

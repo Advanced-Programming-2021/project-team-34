@@ -143,6 +143,15 @@ public class MainMenu extends ViewMenu {
             LobbyMenu.run();
     }
 
+    public void goToCardCreatorMenuByMouse(MouseEvent mouseEvent) {
+        if (isPrimary(mouseEvent))
+            goToCardCreatorMenu();
+    }
+
+    private void goToCardCreatorMenu() {
+        CardCreator.run();
+    }
+
 
 //    private static boolean toContinue = true;
 //    public static void run() {

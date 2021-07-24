@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6bbc69bd-7e79-48ae-a693-347c96cadb0f" name="Default Changelist" comment="افزوده‌شدن قابلیت ویراستن نام مستعار در منوی نمایه">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/CheatMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/CheatMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/CardCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/CardCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menus/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/CardCreator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/CardCreator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/Menus/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Menus/ShopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/CheatMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/CheatMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menus/ShopMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +56,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/View/Menus" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Exceptions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../PythonFiles/zaban/src/Word.java" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
