@@ -35,6 +35,8 @@ public class Game { // todo : complete the body and check if needed extends Thre
         ArrayList<MonsterInGame> attackedMonsters = new ArrayList<>();
         ArrayList<MonsterInGame> changedPositions = new ArrayList<>();
         ArrayList<MonsterInGame> setMonsters = new ArrayList<>();
+        player1.setGame(this);
+        player2.setGame(this);
     }
 
 
@@ -579,7 +581,6 @@ public class Game { // todo : complete the body and check if needed extends Thre
     }
 
     public void surrender() {
-
     }
 
     public void initializeViewPlayers() { //TODO : modify it

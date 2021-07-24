@@ -74,7 +74,7 @@ public class CommandTypeInitializer {
 
     private static void gameUnselectCard() {
         CommandType commandType = new CommandType();
-        commandType.setName(CommandTypeNames.GAME_UNSELECT_CART);
+        commandType.setName(CommandTypeNames.GAME_UNSELECT_CARD);
         commandType.setMainPart(CommandTypeMainParts.GAME_UNSELECT_CARD);
         commandType.addField(CommandTypesFieldNames.TOKEN);
         Command.addCommandType(commandType);

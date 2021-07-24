@@ -5,7 +5,6 @@ import Exceptions.NoSuchTokenException;
 import FinalStrings.CommandTypeNames;
 import FinalStrings.CommandTypesFieldNames;
 import FinalStrings.Results;
-import Model.Card;
 import Model.Session;
 
 public class RequestHandler {
@@ -57,9 +56,82 @@ public class RequestHandler {
                 return changeAvatar(command);
             case CommandTypeNames.DELETE_MESSAGES:
                 return deleteMessage(command);
+//            case CommandTypeNames.GAME_SURRENDER:
+//                return gameSurrender(command);
+            case CommandTypeNames.GAME_DIRECT_ATTACK:
+                return gameDirectAttack(command);
+            case CommandTypeNames.GAME_ATTACK_TO_A_MONSTER:
+                return gameAttackToAMonster(command);
+            case CommandTypeNames.GAME_FLIP_SUMMON:
+                return gameFlipSummon(command);
+            case CommandTypeNames.GAME_SET_POSITION:
+                return gameSetPosition(command);
+            case CommandTypeNames.GAME_SET_CARD:
+                return gameSetCard(command);
+            case CommandTypeNames.GAME_NEXT_PHASE:
+                return gameNextPhase(command);
+            case CommandTypeNames.GAME_SUMMON:
+                return gameSummon(command);
+            case CommandTypeNames.GAME_SELECT_CARD:
+                return gameSelectCard(command);
+            case CommandTypeNames.GAME_UNSELECT_CARD:
+                return gameUnselectCard(command);
             default:
                 return Results.INVALID_SYNTAX_OF_REQUEST;
         }
+    }
+
+    private static String gameUnselectCard(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameUnselectCard(token);
+    }
+
+    private static String gameSelectCard(Command command) {
+        String cardAddress = command.getField(CommandTypesFieldNames.CARD_ADDRESS);
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameSelectCard(cardAddress, token);
+    }
+
+    private static String gameSummon(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameSummon(token);
+    }
+
+    private static String gameNextPhase(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameNextPhase(token);
+    }
+    
+    private static String gameSetCard(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameSetCard(token);
+    }
+    
+    private static String gameSetPosition(Command command) {
+        String position = command.getField(CommandTypesFieldNames.POSITION);
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameSetPosition(position, token);
+    }
+
+    private static String gameFlipSummon(Command command) {
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameFlipSummon(token);
+    }
+
+    private static String gameAttackToAMonster(Command command) {
+        String monsterNumber = command.getField(CommandTypesFieldNames.MONSTER_NUMBER);
+        String token = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameAttackToAMonster(monsterNumber, token);
+    }
+
+//    private static String gameSurrender(Command command) {
+//        String token = command.getField(CommandTypesFieldNames.TOKEN);
+//        return Doer.gameSurrender(token);
+//    }
+
+    private static String gameDirectAttack(Command command) {
+        String tokenCode = command.getField(CommandTypesFieldNames.TOKEN);
+        return Doer.gameDirectAttack(tokenCode);
     }
 
     private static String deleteMessage(Command command) {

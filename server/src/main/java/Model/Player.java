@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.Game;
 import Model.GameObjects.CardInGame;
 import Model.GameObjects.MonsterInGame;
 import Model.GameObjects.SpellAndTrapInGame;
@@ -20,11 +21,13 @@ public class Player {
     private ArrayList<SpellAndTrapInGame> spellAndTrapsOnTheField = new ArrayList<>(5);
     private ArrayList<Integer> playerLPs = new ArrayList<>();
     private CardInGame fZ;
+    private Game game;
 
     public Player(User user) {
         this.user = user;
         this.lifePoint = defaultLifePoint;
         this.score = 0;
+        user.setPlayer(this);
     }
 
     public void increaseLifePoint(int lifePointToIncrease) {
@@ -91,5 +94,13 @@ public class Player {
             }
         }
         return maxLP;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Game getGame() {
+        return game;
     }
 }

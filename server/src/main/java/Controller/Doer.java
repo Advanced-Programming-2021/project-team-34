@@ -316,4 +316,122 @@ public class Doer {
         message.delete();
         return Results.SUCCESS;
     }
+
+//    public static String gameSurrender(String token) {
+//
+//    }
+
+    public static String gameDirectAttack(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        return player.getGame().directAttack();
+    }
+
+    public static String gameAttackToAMonster(String monsterNumber,String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        return player.getGame().attackToAMonster(monsterNumber);
+    }
+
+    public static String gameFlipSummon(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().flipSummon()) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
+
+    public static String gameSetPosition(String position, String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().setPosition(position)) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
+
+    public static String gameSetCard(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().set()) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
+
+    public static String gameNextPhase(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        return player.getGame().nextPhase();
+    }
+
+    public static String gameSummon(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().summon()) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
+
+    public static String gameSelectCard(String cardAddress, String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().select(cardAddress)) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
+
+    public static String gameUnselectCard(String token) {
+        String username = null;
+        try {
+            username = Session.getUsernameOfToken(token);
+        } catch (NoSuchTokenException e) {
+            return Results.INVALID_TOKEN;
+        }
+        User user = User.getUserByUsername(username);
+        Player player = user.getPlayer();
+        if (player.getGame().unselect()) return Results.SUCCESS;
+        else return player.getGame().getError();
+    }
 }

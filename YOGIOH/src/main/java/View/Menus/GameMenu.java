@@ -2,6 +2,7 @@ package View.Menus;
 
 import Controller.CommandHelper.Command;
 import Controller.CommandHelper.CommandType;
+import Controller.Connection;
 import Controller.MenuController;
 import Controller.MenuNames;
 import Model.GameObjects.CardInGame;
@@ -77,7 +78,8 @@ public class GameMenu extends ViewMenu {
     }
 
     private static void surrender() {
-        Controller.Menus.GameMenu.surrender();
+        String result = Connection.sendMessageToTheServer("game surrender token " +
+                MenuController.getToken());
     }
 
     private static void showGraveYard() {
@@ -107,11 +109,11 @@ public class GameMenu extends ViewMenu {
     }
 
     private static void activeEffect() {
-        boolean success = Controller.Menus.GameMenu.activeEffect();
-        if (success) {
+        String success = Connection.sendMessageToTheServer("game active effect token " + MenuController.getToken());
+        if (success.equals("success")) {
             print("spell activated");
         } else {
-            print(Controller.Menus.GameMenu.getError());
+            print(success);
         }
     }
 
@@ -119,71 +121,77 @@ public class GameMenu extends ViewMenu {
         String field = command.getField("attack");
         String result;
         if (field.equals("direct")) {
-            result = Controller.Menus.GameMenu.directAttack();
+            result = Connection.sendMessageToTheServer("game direct attack token " + MenuController.getToken());
         } else {
-            result = Controller.Menus.GameMenu.attackToAMonster(field);
+            result = Connection.sendMessageToTheServer("game attack to a monster token " +
+                    MenuController.getToken() + " monsterNumber " + command.getField("attack"));
         }
         print(result);
     }
 
     private static void flipSummon() {
-        boolean success = Controller.Menus.GameMenu.flipSummon();
-        if (success) {
+        String success = Connection.sendMessageToTheServer("game flip summon token " + MenuController.getToken());
+        if (success.equals("success")) {
             print("flip summoned successfully");
         } else {
-            print(Controller.Menus.GameMenu.getError());
+            print(success);
         }
     }
 
     private static void setPosition(Command command) {
         String positionToSet = command.getField("position");
-        boolean success = Controller.Menus.GameMenu.setPosition(positionToSet);
-        if (success) {
+        String success = Connection.sendMessageToTheServer("game set position " + positionToSet + " token "
+                + MenuController.getToken());
+        if (success.equals("success")) {
             print("monster card position changed successfully");
         } else {
-            print(Controller.Menus.GameMenu.getError());
+            print(success);
         }
     }
 
     private static void set() {
-        boolean success = Controller.Menus.GameMenu.set();
-        if (success) {
+        String success = Connection.sendMessageToTheServer("game set token " + MenuController.getToken());
+        if (success.equals("success")) {
             print("set successfully");
         } else {
-            print(Controller.Menus.GameMenu.getError());
+            print(success);
         }
     }
 
     private static void nextPhase() {
-        String result = Controller.Menus.GameMenu.nextPhase();
+        String result = Connection.sendMessageToTheServer("game next phase token " +
+                MenuController.getToken());
         print(result);
     }
 
     private static void summon(Command command) {
-        boolean success = Controller.Menus.GameMenu.summon();
-        if (success) {
+        String success = Connection.sendMessageToTheServer("game summon token " +
+                MenuController.getToken());
+        if (success.equals("success")) {
             print("summoned successfully");
         } else {
-            print(Controller.Menus.GameMenu.getError());
+            print(success);
         }
     }
 
     private static void selectCard(Command command) {
         String cardAddress = command.getField("select");
-        boolean success;
+        String success;
         if (cardAddress.equals("-d")) {
-            success = Controller.Menus.GameMenu.unselect();
-            if (success) {
+            success = Connection.sendMessageToTheServer("game unselect card token " +
+                    MenuController.getToken());
+            if (success.equals("success")) {
                 print("card deselected");
             }
         } else {
-            success = Controller.Menus.GameMenu.select(cardAddress);
-            if (success) {
+            success = Connection.sendMessageToTheServer("game select card " + cardAddress + " token " +
+                    MenuController.getToken());
+            if (success.equals("success")) {
                 print("card selected");
             }
         }
-        if (!success) {
-            print(Controller.Menus.GameMenu.getError());
+        if (!success.equals("success")) {
+            print(success);
         }
 
     }
