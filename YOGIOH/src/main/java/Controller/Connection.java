@@ -10,7 +10,7 @@ public class Connection {
     static String host = "localhost";
     public static String sendMessageToTheServer(String messageToSend){
         try {
-            socket = new Socket(host , 12345);
+            socket = new Socket("4.tcp.ngrok.io" , 10866);
             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
             DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
